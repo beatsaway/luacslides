@@ -1,0 +1,209 @@
+# Y7.1  Make a light blink
+01	cover   	 43 words	78
+02	starter 	 44 words	80
+03	hook    	 46 words	100
+04	predict 	 76 words	90
+05	idea    	 54 words	80
+06	build   	 43 words	44
+07	code    	 53 words	112
+08	test    	 50 words	62
+09	debug   	 61 words	85
+10	check   	 55 words	80
+11	stretch 	 37 words	76
+12	exit    	 47 words	70
+
+# Y7.2  A button that lights a lamp
+01	cover   	 52 words	78
+02	starter 	 35 words	80
+03	hook    	 47 words	100
+04	predict 	 80 words	90
+05	idea    	 43 words	80
+06	build   	 42 words	44
+07	code    	 68 words	112
+08	test    	 60 words	62
+09	debug   	 74 words	85
+10	check   	 78 words	80
+11	stretch 	 63 words	76
+12	exit    	 45 words	70
+
+# Y7.3  Two things must be true
+01	cover   	 40 words	78
+02	starter 	 46 words	80
+03	hook    	 51 words	100
+04	predict 	 66 words	90
+05	idea    	 42 words	80
+06	build   	 38 words	44
+07	code    	 71 words	112
+08	test    	 43 words	62
+09	debug   	 57 words	85
+10	check   	 34 words	80
+11	stretch 	 73 words	76
+12	exit    	 40 words	70
+
+# Y7.4  The board remembers
+01	cover   	 41 words	78
+02	starter 	 43 words	80
+03	hook    	 42 words	100
+04	predict 	 71 words	90
+05	idea    	 37 words	80
+06	build   	 41 words	44
+07	code    	 74 words	112
+08	test    	 47 words	62
+09	debug   	 52 words	85
+10	check   	 60 words	80
+11	stretch 	 53 words	76
+12	exit    	 43 words	70
+
+# Y7.5  Design a crossing
+01	cover   	 40 words	78
+02	starter 	 37 words	80
+03	hook    	 52 words	100
+04	predict 	 66 words	90
+05	idea    	 45 words	80
+06	build   	 39 words	44
+07	code    	110 words	112
+08	test    	 55 words	62
+09	debug   	 59 words	85
+10	check   	 49 words	80
+11	stretch 	 55 words	76
+12	exit    	 55 words	70
+
+# Y8.1  Not just on and off
+01	cover   	 48 words	78
+02	starter 	 42 words	80
+03	hook    	 53 words	100
+04	predict 	 50 words	90
+05	idea    	 46 words	80
+06	build   	 33 words	44
+07	code    	 65 words	112
+08	test    	 43 words	62
+09	debug   	 65 words	85
+10	check   	 52 words	80
+11	stretch 	 58 words	76
+12	exit    	 40 words	70
+
+# Y8.2  A lamp that knows it's dark
+01	cover   	 45 words	78
+02	starter 	 34 words	80
+03	hook    	 45 words	100
+04	predict 	 77 words	90
+05	idea    	 34 words	80
+06	build   	 32 words	44
+07	code    	 64 words	112
+08	test    	 56 words	62
+09	debug   	 78 words	85
+10	check   	 72 words	80
+11	stretch 	 55 words	76
+12	exit    	 48 words	70
+
+# Y8.3  Dimming is a trick
+01	cover   	 45 words	78
+02	starter 	 46 words	80
+03	hook    	 49 words	100
+04	predict 	 84 words	90
+05	idea    	 43 words	80
+06	build   	 39 words	44
+07	code    	 76 words	112
+08	test    	 51 words	62
+09	debug   	 56 words	85
+10	check   	 57 words	80
+11	stretch 	 45 words	76
+12	exit    	 45 words	70
+
+# Y8.4  A number that means degrees
+01	cover   	 47 words	78
+02	starter 	 38 words	80
+03	hook    	 46 words	100
+04	predict 	 55 words	90
+05	idea    	 42 words	80
+06	build   	 31 words	44
+07	code    	 86 words	112
+08	test    	 48 words	62
+09	debug   	 61 words	85
+10	check   	 62 words	80
+11	stretch 	 50 words	76
+12	exit    	 45 words	70
+
+# Y8.5  A plant alarm that will not chatter
+01	cover   	 50 words	78
+02	starter 	 52 words	80
+03	hook    	 54 words	100
+04	predict 	 62 words	90
+05	idea    	 42 words	80
+06	build   	 37 words	44
+07	code    	 82 words	112
+08	test    	 46 words	62
+09	debug   	 97 words	85  over
+10	check   	 52 words	80
+11	stretch 	 51 words	76
+12	exit    	 42 words	70
+
+# Y9.1  A motor needs more than a pin
+01	cover   	 51 words	78
+02	starter 	 48 words	80
+03	hook    	 48 words	100
+04	predict 	 90 words	90
+05	idea    	 34 words	80
+06	build   	 34 words	44
+07	code    	 64 words	112
+08	test    	 51 words	62
+09	debug   	 62 words	85
+10	check   	 70 words	80
+11	stretch 	 60 words	76
+12	exit    	 44 words	70
+
+# Y9.2  Control the speed
+01	cover   	 46 words	78
+02	starter 	 39 words	80
+03	hook    	 57 words	100
+04	predict 	 71 words	90
+05	idea    	 41 words	80
+06	build   	 38 words	44
+07	code    	 67 words	112
+08	test    	 52 words	62
+09	debug   	 60 words	85
+10	check   	 53 words	80
+11	stretch 	 55 words	76
+12	exit    	 44 words	70
+
+# Y9.3  A servo asks for a position
+01	cover   	 48 words	78
+02	starter 	 33 words	80
+03	hook    	 52 words	100
+04	predict 	 72 words	90
+05	idea    	 43 words	80
+06	build   	 29 words	44
+07	code    	 73 words	112
+08	test    	 52 words	62
+09	debug   	 73 words	85
+10	check   	 32 words	80
+11	stretch 	 54 words	76
+12	exit    	 44 words	70
+
+# Y9.4  A system that corrects itself
+01	cover   	 43 words	78
+02	starter 	 41 words	80
+03	hook    	 53 words	100
+04	predict 	 76 words	90
+05	idea    	 40 words	80
+06	build   	 37 words	44
+07	code    	 90 words	112
+08	test    	 41 words	62
+09	debug   	 60 words	85
+10	check   	 54 words	80
+11	stretch 	 45 words	76
+12	exit    	 50 words	70
+
+# Y9.5  A device that reports
+01	cover   	 46 words	78
+02	starter 	 45 words	80
+03	hook    	 47 words	100
+04	predict 	 66 words	90
+05	idea    	 39 words	80
+06	build   	 36 words	44
+07	code    	 70 words	112
+08	test    	 44 words	62
+09	debug   	 64 words	85
+10	check   	 63 words	80
+11	stretch 	 54 words	76
+12	exit    	 44 words	70

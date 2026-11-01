@@ -16,8 +16,9 @@
   h1{margin:0;font-size:46px;line-height:1.04;letter-spacing:-.02em}
   .lede{margin:18px 0 0;max-width:56ch;font-size:17px;line-height:1.55;color:#2A1A12}
   .rule{width:140px;height:7px;background:#1E4D48;margin:30px 0 34px}
-  .cards{display:grid;gap:16px;grid-template-columns:1.35fr 1fr}
+  .cards{display:grid;gap:16px;grid-template-columns:1fr 1fr}
   @media (max-width:720px){.cards{grid-template-columns:1fr}}
+  a.card.feature{grid-column:1 / -1}
   a.card{display:flex;flex-direction:column;padding:26px 26px 22px;background:#F8E5CF;
          border-top:7px solid #F2C04A;text-decoration:none;color:inherit;
          transition:transform .16s ease,box-shadow .16s ease}
@@ -36,30 +37,36 @@
   <p class="eyebrow">Physical computing · Arduino · Key Stage 3</p>
   <h1>Electronics that does something</h1>
   <p class="lede">Three units, five lessons each, written for Years 7, 8 and 9.
-     Every lesson runs the same way: two questions from last time, one idea, a
-     build, a test, a fault to find, and an exit ticket.</p>
+     Every lesson opens with one question and spends the hour answering it.</p>
   <div class="rule"></div>
   <div class="cards">
-    <a class="card" href="v2026/index.html">
-      <p class="tag">Current · 2026</p>
-      <h2>Fifteen lessons, rebuilt</h2>
-      <p class="sub">Year 7 makes it respond. Year 8 makes it measure. Year 9 makes
-         it move. Twelve slides per lesson, click-to-reveal answers, speaker notes
-         on every slide.</p>
+    <a class="card feature" href="v2027/index.html">
+      <p class="tag">Current · 2027</p>
+      <h2>One question a lesson</h2>
+      <p class="sub">The same fifteen lessons, with the inquiry in charge of every
+         slide, and photographs instead of flat drawings. Year 7 makes it respond.
+         Year 8 makes it measure. Year 9 makes it move.</p>
       <p class="cta">Open the course &rarr;</p>
+    </a>
+    <a class="card old" href="v2026/index.html">
+      <p class="tag">Previous · 2026</p>
+      <h2>Fifteen lessons, rebuilt</h2>
+      <p class="sub">Twelve slides per lesson, click-to-reveal answers. The
+         questions sat beside the teaching. Superseded by the 2027 course.</p>
+      <p class="cta">Open the previous version &rarr;</p>
     </a>
     <a class="card old" href="v2025/index.html">
       <p class="tag">Archive · 2025</p>
       <h2>The first version</h2>
       <p class="sub">Kept for reference. Six lessons a year, ten slides each, no
-         reveal answers. Superseded by the 2026 course.</p>
+         reveal answers.</p>
       <p class="cta">Open the archive &rarr;</p>
     </a>
   </div>
   <footer>
-    <p><a href="v2026/CURRICULUM.txt">The 2026 course on paper</a> &nbsp;·&nbsp;
-       <a href="v2026/preview-all.html">Every 2026 slide on one page</a> &nbsp;·&nbsp;
-       <a href="v2026/README.txt">What is in the folder</a></p>
+    <p><a href="v2027/CURRICULUM.txt">The 2027 course on paper</a> &nbsp;·&nbsp;
+       <a href="v2027/preview-all.html">Every 2027 slide on one page</a> &nbsp;·&nbsp;
+       <a href="v2027/README.txt">What is in the folder</a></p>
   </footer>
 </main>
 </body>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Y7.4 · The board remembers</title>
+<style>
+@font-face{font-family:'Fira Sans';font-weight:400;font-style:normal;src:url(assets/fonts/FiraSans-400.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSans-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:700;font-style:normal;src:url(assets/fonts/FiraSans-700.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSansCondensed-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:600;font-style:normal;src:url(assets/fonts/FiraSansCondensed-600.woff2) format('woff2')}
+*{box-sizing:border-box}
+:root{--k:1;--dx:0px}
+html,body{overflow-x:hidden}
+body{margin:0;background:#2a1a12;font-family:'Fira Sans',sans-serif}
+/* Outside the show, every slide is scaled down to whatever the window can
+   hold, so a tablet sees the whole slide instead of a crop. --k and --dx are
+   set by the script below: --k shrinks it, --dx centres it, and the negative
+   bottom margin takes back the space the shrink leaves behind. In the show
+   the play rules position the slide themselves. */
+.slide{position:relative;width:1280px;height:720px;background:#E3B08E;overflow:hidden;
+  margin:0 0 calc(28px - (1 - var(--k)) * 720px);
+  transform:translateX(var(--dx)) scale(var(--k));transform-origin:top left}
+.sh{position:absolute}
+.img{background-repeat:no-repeat}
+.tx{position:absolute;display:flex;flex-direction:column;overflow:hidden}
+.tx p{margin:0;white-space:pre-wrap;flex:0 0 auto}
+/* a code line lit up by the card that explains it: the marker sits on the
+   text itself, not across the whole column, so it reads as a highlight */
+.tx p.hl span{background:rgba(242,192,74,.55);
+  box-shadow:0 0 0 4px rgba(242,192,74,.55);border-radius:2px}
+[data-t^="card:"]{cursor:pointer}
+.n{position:absolute;right:8px;bottom:6px;font:600 12px 'Fira Sans Condensed';
+  color:#8a6a52;z-index:9}
+/* ── reveal ──────────────────────────────────────────────────────── */
+.rv{visibility:hidden}
+.slide .rv.on{visibility:visible}
+/* ── present mode ────────────────────────────────────────────────── */
+body.play{overflow:hidden;background:#0d0703}
+body.play .slide{display:none;margin:0}
+body.play .slide.on{display:block;position:fixed;left:50%;top:50%;
+  transform:translate(-50%,-50%) scale(var(--s,1));transform-origin:center center;
+  box-shadow:0 0 0 1px rgba(0,0,0,.35);cursor:pointer}
+/* ── the way in ──────────────────────────────────────────────────── */
+/* Present sits in the bottom-right corner of the window, not of the slide, so
+   it is reachable without scrolling and never lands on a slide's own content.
+   The teal ring is what makes it a button rather than a smudge: the fill is the
+   same cream as a slide, and a cream pill on a cream slide would disappear. */
+.present{position:fixed;right:14px;bottom:14px;z-index:99;display:flex;
+  align-items:center;gap:7px;padding:7px 14px 7px 12px;border:0;border-radius:999px;
+  background:#F8E5CF;color:#24140E;cursor:pointer;
+  font:600 11px 'Fira Sans Condensed';letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:0 0 0 2px #1E4D48,0 5px 18px rgba(0,0,0,.5);opacity:.8;
+  transition:opacity .15s ease,transform .15s ease}
+.present:hover{opacity:1;transform:translateY(-1px)}
+.present:focus-visible{outline:2px solid #F2C04A;outline-offset:4px}
+.present svg{display:block;flex:0 0 auto}
+body.play .present{display:none}
+@media print{.present{display:none}}
+</style></head>
+<body><section class="slide" id="s1" data-beat="cover" data-steps="0">
+<div class="n">1/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="sh" style="left:664px;top:58px;width:132px;height:50px;background:#F2C04A;"></div>
+<div class="tx" data-box="680,64,46,44" style="left:680px;top:64px;width:46px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:42.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:42.67px;font-weight:700;color:#000000;">04</span></p></div>
+<div class="tx" data-box="742,72,52,22" style="left:742px;top:72px;width:52px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#000000;letter-spacing:1.87px;">OF 5</span></p></div>
+<div class="sh" style="left:664px;top:116px;width:552px;height:540px;background:#DCE7DA;"></div>
+<div class="sh img" style="left:680px;top:132px;width:520px;height:508px;background-image:url(assets/img/v27/c-y74.jpg);background-size:cover;background-position:center"></div>
+<div class="tx" data-box="64,64,560,22" style="left:64px;top:64px;width:560px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.53px;">YEAR 7 · LESSON 4 OF 5</span></p></div>
+<div class="tx" data-box="64,96,560,230" style="left:64px;top:96px;width:560px;height:230px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:53.33px;line-height:1.02"><span style="font-family:'Fira Sans';font-size:53.33px;font-weight:700;color:#000000;">The person has gone through. How does the turnstile still know the count?</span></p></div>
+<div class="sh" style="left:64px;top:340px;width:220px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,360,560,18" style="left:64px;top:360px;width:560px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#4E2E1F;letter-spacing:1.87px;">TODAY'S AIM</span></p></div>
+<div class="tx" data-box="64,386,566,130" style="left:64px;top:386px;width:566px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:500;color:#2A1A12;">By the end you will keep a count that survives, and recognise the bug that resets it every second.</span></p></div>
+<div class="sh" style="left:64px;top:540px;width:520px;height:34px;background:#F2C04A;"></div>
+<div class="tx" data-box="78,548,488,20" style="left:78px;top:548px;width:488px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">THE BOARD REMEMBERS</span></p></div>
+<div class="tx" data-box="64,694,560,18" style="left:64px;top:694px;width:560px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+</section>
+<section class="slide" id="s2" data-beat="starter" data-steps="2">
+<div class="n">2/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="tx" data-box="64,46,760,22" style="left:64px;top:46px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.53px;">STARTER · FOR TODAY'S QUESTION</span></p></div>
+<div class="tx" data-box="64,72,1000,50" style="left:64px;top:72px;width:1000px;height:50px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:41.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:41.33px;font-weight:700;color:#24140E;">Two things this question needs</span></p></div>
+<div class="sh" style="left:64px;top:128px;width:300px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:164px;width:1152px;height:168px;background:#F8E5CF;"></div>
+<div class="sh" style="left:88px;top:184px;width:42px;height:42px;background:#F2C04A;"></div>
+<div class="tx" data-box="88,190,42,32" style="left:88px;top:190px;width:42px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:700;color:#000000;">1</span></p></div>
+<div class="tx" data-box="150,180,1004,74" style="left:150px;top:180px;width:1004px;height:74px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:30.67px;line-height:1.16"><span style="font-family:'Fira Sans';font-size:30.67px;font-weight:700;color:#24140E;">Last lesson the lift checked two things at one moment. Where is that answer a second later?</span></p></div>
+<div class="sh" style="left:88px;top:264px;width:1104px;height:48px;background:#DCE7DA;"></div>
+<div class="tx" data-box="104,276,300,24" style="left:104px;top:276px;width:300px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.00px;">ANSWER</span></p></div>
+<div class="tx" data-box="1000,276,176,24" style="left:1000px;top:276px;width:176px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:right;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#4E2E1F;">click to reveal</span></p></div>
+<div class="sh rv" data-step="1" style="left:88px;top:264px;width:1104px;height:48px;background:#F2C04A;"></div>
+<div class="tx rv" data-step="1" data-box="110,274,1062,32" style="left:110px;top:274px;width:1062px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.1"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:700;color:#000000;">Nowhere, unless the program stores it.</span></p></div>
+<div class="sh rv" data-step="1" style="left:64px;top:354px;width:1152px;height:168px;background:#F8E5CF;"></div>
+<div class="sh rv" data-step="1" style="left:88px;top:374px;width:42px;height:42px;background:#F2C04A;"></div>
+<div class="tx rv" data-step="1" data-box="88,380,42,32" style="left:88px;top:380px;width:42px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:700;color:#000000;">2</span></p></div>
+<div class="tx rv" data-step="1" data-box="150,370,1004,74" style="left:150px;top:370px;width:1004px;height:74px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:30.67px;line-height:1.16"><span style="font-family:'Fira Sans';font-size:30.67px;font-weight:700;color:#24140E;">What does digitalRead tell you?</span></p></div>
+<div class="sh rv" data-step="1" style="left:88px;top:454px;width:1104px;height:48px;background:#DCE7DA;"></div>
+<div class="tx rv" data-step="1" data-box="104,466,300,24" style="left:104px;top:466px;width:300px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.00px;">ANSWER</span></p></div>
+<div class="tx rv" data-step="1" data-box="1000,466,176,24" style="left:1000px;top:466px;width:176px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:right;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#4E2E1F;">click to reveal</span></p></div>
+<div class="sh rv" data-step="2" style="left:88px;top:454px;width:1104px;height:48px;background:#F2C04A;"></div>
+<div class="tx rv" data-step="2" data-box="110,464,1062,32" style="left:110px;top:464px;width:1062px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.1"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:700;color:#000000;">HIGH or LOW, right now, and nothing about the past.</span></p></div>
+<div class="tx rv" data-step="2" data-box="64,552,1152,26" style="left:64px;top:552px;width:1152px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:500;color:#2A1A12;">A reading dies when the moment does. A count must not.</span></p></div>
+<div class="tx rv" data-step="2" data-box="64,694,1152,18" style="left:64px;top:694px;width:1152px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+</section>
+<section class="slide" id="s3" data-beat="hook" data-steps="1">
+<div class="n">3/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="tx" data-box="64,28,760,22" style="left:64px;top:28px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.53px;">THE QUESTION · TURN AND TALK</span></p></div>
+<div class="tx" data-box="64,54,1152,78" style="left:64px;top:54px;width:1152px;height:78px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#24140E;">The person has gone through. How does the turnstile still know the count?</span></p></div>
+<div class="sh" style="left:64px;top:140px;width:220px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:164px;width:748px;height:386px;background:#DCE7DA;"></div>
+<div class="sh img" style="left:76px;top:176px;width:724px;height:362px;background-image:url(assets/img/v27/q-y74.jpg);background-size:cover;background-position:center"></div>
+<div class="sh" style="left:832px;top:164px;width:384px;height:386px;background:#F8E5CF;"></div>
+<div class="tx" data-box="852,184,344,22" style="left:852px;top:184px;width:344px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#4E2E1F;letter-spacing:1.87px;">WITH A PARTNER</span></p></div>
+<div class="tx" data-box="852,220,344,300" style="left:852px;top:220px;width:344px;height:300px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:29.33px;line-height:1.22"><span style="font-family:'Fira Sans';font-size:29.33px;font-weight:500;color:#24140E;">If it forgot after every person, what number would it show at the end of the day?</span></p></div>
+<div class="sh" style="left:64px;top:566px;width:1152px;height:96px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,584,520,22" style="left:88px;top:584px;width:520px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#4E2E1F;letter-spacing:1.87px;">THE FIRST PIECE OF THE ANSWER</span></p></div>
+<div class="tx" data-box="860,584,320,22" style="left:860px;top:584px;width:320px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:right;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#4E2E1F;">click to reveal</span></p></div>
+<div class="tx" data-box="64,694,1152,18" style="left:64px;top:694px;width:1152px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+<div class="sh rv" data-step="1" style="left:64px;top:566px;width:1152px;height:96px;background:#F2C04A;"></div>
+<div class="tx rv" data-step="1" data-box="88,580,1104,70" style="left:88px;top:580px;width:1104px;height:70px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">The count has to live somewhere the loop does not throw away.</span></p></div>
+</section>
+<section class="slide" id="s4" data-beat="predict" data-steps="1">
+<div class="n">4/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="tx" data-box="64,46,760,22" style="left:64px;top:46px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.53px;">PREDICT · A PIECE OF THE QUESTION</span></p></div>
+<div class="tx" data-box="64,72,1000,44" style="left:64px;top:72px;width:1000px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:41.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:41.33px;font-weight:700;color:#24140E;">Where the count is thrown away</span></p></div>
+<div class="sh" style="left:64px;top:126px;width:300px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:152px;width:1152px;height:100px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,166,1104,74" style="left:88px;top:166px;width:1104px;height:74px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:32.00px;line-height:1.16"><span style="font-family:'Fira Sans';font-size:32.00px;font-weight:700;color:#24140E;">This loop runs with int count = 0; on its first line. You press the button three times. What prints?</span></p></div>
+<div class="sh" style="left:64px;top:272px;width:368px;height:196px;background:#FBF1E7;"></div>
+<div class="sh" style="left:84px;top:290px;width:42px;height:42px;background:#F2C04A;"></div>
+<div class="tx" data-box="84,296,42,32" style="left:84px;top:296px;width:42px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:700;color:#000000;">A</span></p></div>
+<div class="tx" data-box="84,348,328,108" style="left:84px;top:348px;width:328px;height:108px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.16"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">1, 2, 3</span></p></div>
+<div class="sh" style="left:456px;top:272px;width:368px;height:196px;background:#FBF1E7;"></div>
+<div class="sh" style="left:476px;top:290px;width:42px;height:42px;background:#F2C04A;"></div>
+<div class="tx" data-box="476,296,42,32" style="left:476px;top:296px;width:42px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:700;color:#000000;">B</span></p></div>
+<div class="tx" data-box="476,348,328,108" style="left:476px;top:348px;width:328px;height:108px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.16"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">1, then 0, then 1, then 0…</span></p></div>
+<div class="sh" style="left:848px;top:272px;width:368px;height:196px;background:#FBF1E7;"></div>
+<div class="sh" style="left:868px;top:290px;width:42px;height:42px;background:#F2C04A;"></div>
+<div class="tx" data-box="868,296,42,32" style="left:868px;top:296px;width:42px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:700;color:#000000;">C</span></p></div>
+<div class="tx" data-box="868,348,328,108" style="left:868px;top:348px;width:328px;height:108px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.16"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">3, 3, 3</span></p></div>
+<div class="sh" style="left:64px;top:486px;width:1152px;height:154px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,500,400,20" style="left:88px;top:500px;width:400px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.00px;">THE ANSWER</span></p></div>
+<div class="tx" data-box="936,500,256,20" style="left:936px;top:500px;width:256px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:right;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#4E2E1F;">click to reveal</span></p></div>
+<div class="sh rv" data-step="1" style="left:64px;top:486px;width:1152px;height:154px;background:#F2C04A;"></div>
+<div class="tx rv" data-step="1" data-box="88,500,1104,20" style="left:88px;top:500px;width:1104px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#000000;letter-spacing:2.00px;">THE ANSWER</span></p></div>
+<div class="tx rv" data-step="1" data-box="88,524,1104,44" style="left:88px;top:524px;width:1104px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.1"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#000000;">1, then 0, then 1, then 0…</span></p></div>
+<div class="tx rv" data-step="1" data-box="88,572,1104,56" style="left:88px;top:572px;width:1104px;height:56px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">count is built fresh at the top of every pass. It is not remembering, it is being rebuilt. Move the line outside loop() and it survives.</span></p></div>
+<div class="tx rv" data-step="1" data-box="64,654,1152,24" style="left:64px;top:654px;width:1152px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:21.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:21.33px;font-weight:500;color:#4E2E1F;">Hands up for the one you chose — then we find out.</span></p></div>
+<div class="tx rv" data-step="1" data-box="64,694,1152,18" style="left:64px;top:694px;width:1152px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+</section>
+<section class="slide" id="s5" data-beat="idea" data-steps="0">
+<div class="n">5/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="tx" data-box="64,36,760,22" style="left:64px;top:36px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.53px;">THE IDEA · THIS ANSWERS THE QUESTION</span></p></div>
+<div class="tx" data-box="64,62,1152,52" style="left:64px;top:62px;width:1152px;height:52px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:37.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:37.33px;font-weight:700;color:#24140E;">A variable lives where you put it</span></p></div>
+<div class="sh" style="left:64px;top:122px;width:220px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:148px;width:548px;height:500px;background:#F8E5CF;"></div>
+<div class="tx" data-box="84,172,508,250" style="left:84px;top:172px;width:508px;height:250px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#24140E;">Declared outside loop(), the box survives. Declared inside, it is emptied every time round.</span></p></div>
+<div class="sh" style="left:84px;top:440px;width:72px;height:5px;background:#1E4D48;"></div>
+<div class="tx" data-box="84,460,508,150" style="left:84px;top:460px;width:508px;height:150px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.28"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:500;color:#4E2E1F;">The number survives because of where the line is written, not because of what it says.</span></p></div>
+<div class="sh" style="left:632px;top:148px;width:584px;height:500px;background:#DCE7DA;"></div>
+<div class="sh img" style="left:644px;top:160px;width:560px;height:476px;background-image:url(assets/img/v27/i-y74.jpg);background-size:cover;background-position:center"></div>
+</section>
+<section class="slide" id="s6" data-beat="build" data-steps="0">
+<div class="n">6/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,46,760,22" style="left:64px;top:46px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#F8E5CF;letter-spacing:2.53px;">BUILD · 15 MINUTES</span></p></div>
+<div class="tx" data-box="64,72,660,50" style="left:64px;top:72px;width:660px;height:50px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:41.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:41.33px;font-weight:700;color:#F8E5CF;">Keep the button, add a counter</span></p></div>
+<div class="sh" style="left:64px;top:126px;width:300px;height:7px;background:#F2C04A;"></div>
+<div class="sh" style="left:64px;top:176px;width:44px;height:44px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,182,44,34" style="left:64px;top:182px;width:44px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">1</span></p></div>
+<div class="tx" data-box="128,174,600,84" style="left:128px;top:174px;width:600px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:27.33px;line-height:1.14"><span style="font-family:'Fira Sans';font-size:27.33px;font-weight:400;color:#F8E5CF;">Keep the button and pull-down from Y7.2 on pin 2.</span></p></div>
+<div class="sh" style="left:64px;top:284px;width:44px;height:44px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,290,44,34" style="left:64px;top:290px;width:44px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">2</span></p></div>
+<div class="tx" data-box="128,282,600,84" style="left:128px;top:282px;width:600px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:27.33px;line-height:1.14"><span style="font-family:'Fira Sans';font-size:27.33px;font-weight:400;color:#F8E5CF;">Add an LED and 220 Ω on pin 13.</span></p></div>
+<div class="sh" style="left:64px;top:392px;width:44px;height:44px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,398,44,34" style="left:64px;top:398px;width:44px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">3</span></p></div>
+<div class="tx" data-box="128,390,600,84" style="left:128px;top:390px;width:600px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:27.33px;line-height:1.14"><span style="font-family:'Fira Sans';font-size:27.33px;font-weight:400;color:#F8E5CF;">Open the Serial Monitor and set it to 9600 baud.</span></p></div>
+<div class="sh" style="left:64px;top:500px;width:44px;height:44px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,506,44,34" style="left:64px;top:506px;width:44px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">4</span></p></div>
+<div class="tx" data-box="128,498,600,84" style="left:128px;top:498px;width:600px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:27.33px;line-height:1.14"><span style="font-family:'Fira Sans';font-size:27.33px;font-weight:400;color:#F8E5CF;">Write int count = 0; above setup().</span></p></div>
+<div class="sh" style="left:768px;top:0px;width:512px;height:720px;background:#DCE7DA;"></div>
+<div class="sh img" style="left:796px;top:40px;width:456px;height:564px;background-image:url(assets/img/tinkercad-button.png);background-size:contain;background-position:center"></div>
+<div class="tx" data-box="796,620,456,60" style="left:796px;top:620px;width:456px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.2"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#2A1A12;">Illustrative interface. Use the live Tinkercad menus.</span></p></div>
+<div class="tx" data-box="64,694,660,18" style="left:64px;top:694px;width:660px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#BFD9D2;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+</section>
+<section class="slide" id="s7" data-beat="code" data-steps="0">
+<div class="n">7/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="tx" data-box="64,46,760,22" style="left:64px;top:46px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.53px;">DECODE THE CODE</span></p></div>
+<div class="tx" data-box="64,72,700,44" style="left:64px;top:72px;width:700px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:41.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:41.33px;font-weight:700;color:#24140E;">One line that keeps a number</span></p></div>
+<div class="sh" style="left:64px;top:126px;width:300px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:152px;width:600px;height:496px;background:#FBF1E7;"></div>
+<div class="tx" data-t="code" data-box="92,176,544,460" style="left:92px;top:176px;width:544px;height:460px;justify-content:center;padding:0 0px"><p data-line="0" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">int count = 0;</span></p><p data-line="1" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;"> </span></p><p data-line="2" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">void setup() {</span></p><p data-line="3" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">  pinMode(2, INPUT);</span></p><p data-line="4" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">  Serial.begin(9600);</span></p><p data-line="5" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">}</span></p><p data-line="6" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;"> </span></p><p data-line="7" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">void loop() {</span></p><p data-line="8" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">  if (digitalRead(2) == HIGH) {</span></p><p data-line="9" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">    count = count + 1;</span></p><p data-line="10" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">    Serial.println(count);</span></p><p data-line="11" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">    delay(250);</span></p><p data-line="12" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">  }</span></p><p data-line="13" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.13px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:22.13px;font-weight:400;color:#24292E;">}</span></p></div>
+<div class="sh" data-t="card:0" style="left:696px;top:152px;width:520px;height:148px;background:#F2C04A;"></div>
+<div class="tx" data-t="card:0" data-box="716,168,480,24" style="left:716px;top:168px;width:480px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">INT COUNT = 0;</span></p></div>
+<div class="tx" data-t="card:0" data-box="716,196,480,96" style="left:716px;top:196px;width:480px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:22.00px;font-weight:400;color:#000000;">Made once, before setup runs. The value stays until you change it or unplug the board.</span></p></div>
+<div class="sh" data-t="card:9" style="left:696px;top:316px;width:520px;height:148px;background:#F8E5CF;"></div>
+<div class="tx" data-t="card:9" data-box="716,332,480,24" style="left:716px;top:332px;width:480px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">COUNT = COUNT + 1;</span></p></div>
+<div class="tx" data-t="card:9" data-box="716,360,480,96" style="left:716px;top:360px;width:480px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:22.00px;font-weight:400;color:#000000;">Read the old value, add one, put it back. The right-hand side is worked out first.</span></p></div>
+<div class="sh" data-t="card:11" style="left:696px;top:480px;width:520px;height:148px;background:#F8E5CF;"></div>
+<div class="tx" data-t="card:11" data-box="716,496,480,24" style="left:716px;top:496px;width:480px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">DELAY(250);</span></p></div>
+<div class="tx" data-t="card:11" data-box="716,524,480,96" style="left:716px;top:524px;width:480px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:22.00px;font-weight:400;color:#000000;">A crude debounce. Without it, one press is counted many times.</span></p></div>
+<div class="tx" data-box="696,646,520,24" style="left:696px;top:646px;width:520px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:21.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:21.33px;font-weight:500;color:#7A4A33;">Try it with and without delay(250).</span></p></div>
+<div class="tx" data-box="64,694,1152,18" style="left:64px;top:694px;width:1152px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+</section>
+<section class="slide" id="s8" data-beat="test" data-steps="0">
+<div class="n">8/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,46,760,22" style="left:64px;top:46px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#F8E5CF;letter-spacing:2.53px;">TEST · PROOF YOU CAN ANSWER IT</span></p></div>
+<div class="tx" data-box="64,72,1152,50" style="left:64px;top:72px;width:1152px;height:50px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:41.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:41.33px;font-weight:700;color:#F8E5CF;">What success looks like</span></p></div>
+<div class="sh" style="left:64px;top:126px;width:300px;height:7px;background:#F2C04A;"></div>
+<div class="sh" style="left:64px;top:160px;width:1152px;height:98px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,176,40,40" style="left:88px;top:176px;width:40px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#1E4D48;">✓</span></p></div>
+<div class="tx" data-box="140,174,700,72" style="left:140px;top:174px;width:700px;height:72px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.16"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:400;color:#2A1A12;">Three presses give 1, then 2, then 3.</span></p></div>
+<div class="sh" style="left:880px;top:182px;width:312px;height:54px;background:#DAF1EE;"></div>
+<div class="tx" data-box="896,192,280,36" style="left:896px;top:192px;width:280px;height:36px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#1E4D48;">1 2 3</span></p></div>
+<div class="sh" style="left:64px;top:278px;width:1152px;height:98px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,294,40,40" style="left:88px;top:294px;width:40px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#1E4D48;">✓</span></p></div>
+<div class="tx" data-box="140,292,700,72" style="left:140px;top:292px;width:700px;height:72px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.16"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:400;color:#2A1A12;">Holding the button counts slowly, not in a blur.</span></p></div>
+<div class="sh" style="left:880px;top:300px;width:312px;height:54px;background:#DAF1EE;"></div>
+<div class="tx" data-box="896,310,280,36" style="left:896px;top:310px;width:280px;height:36px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#1E4D48;">250 ms</span></p></div>
+<div class="sh" style="left:64px;top:396px;width:1152px;height:98px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,412,40,40" style="left:88px;top:412px;width:40px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#1E4D48;">✓</span></p></div>
+<div class="tx" data-box="140,410,700,72" style="left:140px;top:410px;width:700px;height:72px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.16"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:400;color:#2A1A12;">Press the board's reset button: it starts again at 0.</span></p></div>
+<div class="sh" style="left:880px;top:418px;width:312px;height:54px;background:#DAF1EE;"></div>
+<div class="tx" data-box="896,428,280,36" style="left:896px;top:428px;width:280px;height:36px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#1E4D48;">0</span></p></div>
+<div class="sh" style="left:64px;top:528px;width:1152px;height:96px;background:#F2C04A;"></div>
+<div class="tx" data-box="88,540,1104,20" style="left:88px;top:540px;width:1104px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#000000;letter-spacing:2.00px;">WATCH FOR</span></p></div>
+<div class="tx" data-box="88,562,1104,52" style="left:88px;top:562px;width:1104px;height:52px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">A blur of numbers means the debounce delay is missing. One press must give one number.</span></p></div>
+<div class="tx" data-box="64,694,1152,18" style="left:64px;top:694px;width:1152px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#BFD9D2;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+</section>
+<section class="slide" id="s9" data-beat="debug" data-steps="1">
+<div class="n">9/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,46,760,22" style="left:64px;top:46px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#F8E5CF;letter-spacing:2.53px;">DEBUG · 5 MINUTES</span></p></div>
+<div class="tx" data-box="64,72,1152,50" style="left:64px;top:72px;width:1152px;height:50px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:41.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:41.33px;font-weight:700;color:#F8E5CF;">It does not work. Find the fault.</span></p></div>
+<div class="sh" style="left:64px;top:126px;width:300px;height:7px;background:#F2C04A;"></div>
+<div class="sh" style="left:64px;top:158px;width:560px;height:226px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,174,512,20" style="left:88px;top:174px;width:512px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#7A4A33;letter-spacing:2.00px;">WHAT YOU SEE</span></p></div>
+<div class="tx" data-box="88,202,512,162" style="left:88px;top:202px;width:512px;height:162px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:400;color:#2A1A12;">Every press prints 1. The number never goes above it.</span></p></div>
+<div class="sh" style="left:660px;top:158px;width:556px;height:66px;background:#FBF1E7;"></div>
+<div class="sh" style="left:676px;top:169px;width:40px;height:40px;background:#F2C04A;"></div>
+<div class="tx" data-box="676,175,40,30" style="left:676px;top:175px;width:40px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#000000;">A</span></p></div>
+<div class="tx" data-box="730,167,470,48" style="left:730px;top:167px;width:470px;height:48px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.1"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">The button is broken</span></p></div>
+<div class="sh" style="left:660px;top:236px;width:556px;height:66px;background:#F8E5CF;"></div>
+<div class="sh" style="left:676px;top:247px;width:40px;height:40px;background:#F2C04A;"></div>
+<div class="tx" data-box="676,253,40,30" style="left:676px;top:253px;width:40px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#000000;">B</span></p></div>
+<div class="tx" data-box="730,245,470,48" style="left:730px;top:245px;width:470px;height:48px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.1"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">count is declared inside loop()</span></p></div>
+<div class="sh" style="left:660px;top:314px;width:556px;height:66px;background:#F8E5CF;"></div>
+<div class="sh" style="left:676px;top:325px;width:40px;height:40px;background:#F2C04A;"></div>
+<div class="tx" data-box="676,331,40,30" style="left:676px;top:331px;width:40px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#000000;">C</span></p></div>
+<div class="tx" data-box="730,323,470,48" style="left:730px;top:323px;width:470px;height:48px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.1"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Serial.begin is missing</span></p></div>
+<div class="sh" style="left:64px;top:400px;width:1152px;height:222px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,416,400,20" style="left:88px;top:416px;width:400px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#7A4A33;letter-spacing:2.00px;">THE FAULT</span></p></div>
+<div class="tx" data-box="936,416,256,20" style="left:936px;top:416px;width:256px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:right;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;">click to reveal</span></p></div>
+<div class="sh rv" data-step="1" style="left:64px;top:400px;width:1152px;height:222px;background:#F2C04A;"></div>
+<div class="tx rv" data-step="1" data-box="88,416,1104,20" style="left:88px;top:416px;width:1104px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#000000;letter-spacing:2.00px;">THE FAULT</span></p></div>
+<div class="tx rv" data-step="1" data-box="88,440,1104,70" style="left:88px;top:440px;width:1104px;height:70px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:32.00px;line-height:1.12"><span style="font-family:'Fira Sans';font-size:32.00px;font-weight:700;color:#000000;">int count = 0; is inside loop().</span></p></div>
+<div class="tx rv" data-step="1" data-box="88,518,1104,90" style="left:88px;top:518px;width:1104px;height:90px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.22"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:400;color:#2A1A12;">Move it above setup(). A variable declared inside a function is thrown away when that function ends, so every pass starts from zero.</span></p></div>
+<div class="tx rv" data-step="1" data-box="64,694,1152,18" style="left:64px;top:694px;width:1152px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#BFD9D2;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+</section>
+<section class="slide" id="s10" data-beat="check" data-steps="1">
+<div class="n">10/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="tx" data-box="64,44,760,22" style="left:64px;top:44px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.53px;">CHECK · ONE QUESTION</span></p></div>
+<div class="tx" data-box="64,70,1152,76" style="left:64px;top:70px;width:1152px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:32.67px;line-height:1.14"><span style="font-family:'Fira Sans';font-size:32.67px;font-weight:700;color:#24140E;">Where must a counter be declared so it survives from one loop() to the next?</span></p></div>
+<div class="sh" style="left:64px;top:152px;width:300px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:182px;width:368px;height:148px;background:#FBF1E7;"></div>
+<div class="sh" style="left:84px;top:198px;width:40px;height:40px;background:#F2C04A;"></div>
+<div class="tx" data-box="84,204,40,30" style="left:84px;top:204px;width:40px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#000000;">A</span></p></div>
+<div class="tx" data-box="84,248,328,70" style="left:84px;top:248px;width:328px;height:70px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.14"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:500;color:#2A1A12;">Inside loop()</span></p></div>
+<div class="sh" style="left:456px;top:182px;width:368px;height:148px;background:#FBF1E7;"></div>
+<div class="sh" style="left:476px;top:198px;width:40px;height:40px;background:#F2C04A;"></div>
+<div class="tx" data-box="476,204,40,30" style="left:476px;top:204px;width:40px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#000000;">B</span></p></div>
+<div class="tx" data-box="476,248,328,70" style="left:476px;top:248px;width:328px;height:70px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.14"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:500;color:#2A1A12;">Outside both functions, at the top</span></p></div>
+<div class="sh" style="left:848px;top:182px;width:368px;height:148px;background:#FBF1E7;"></div>
+<div class="sh" style="left:868px;top:198px;width:40px;height:40px;background:#F2C04A;"></div>
+<div class="tx" data-box="868,204,40,30" style="left:868px;top:204px;width:40px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#000000;">C</span></p></div>
+<div class="tx" data-box="868,248,328,70" style="left:868px;top:248px;width:328px;height:70px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.14"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:500;color:#2A1A12;">Inside setup()</span></p></div>
+<div class="sh" style="left:64px;top:358px;width:1152px;height:230px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,374,700,20" style="left:88px;top:374px;width:700px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#7A4A33;letter-spacing:2.00px;">THE ANSWER</span></p></div>
+<div class="tx" data-box="936,374,256,20" style="left:936px;top:374px;width:256px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:right;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;">click to reveal</span></p></div>
+<div class="sh rv" data-step="1" style="left:64px;top:358px;width:1152px;height:230px;background:#F2C04A;"></div>
+<div class="tx rv" data-step="1" data-box="88,374,1104,20" style="left:88px;top:374px;width:1104px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#000000;letter-spacing:2.00px;">ANSWER — B</span></p></div>
+<div class="tx rv" data-step="1" data-box="88,400,1104,76" style="left:88px;top:400px;width:1104px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:30.67px;line-height:1.14"><span style="font-family:'Fira Sans';font-size:30.67px;font-weight:700;color:#000000;">Outside both functions, at the top of the file.</span></p></div>
+<div class="tx rv" data-step="1" data-box="88,486,1104,90" style="left:88px;top:486px;width:1104px;height:90px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.22"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">A variable made inside a function lives only while that function runs. At the top of the file it lives for as long as the program.</span></p></div>
+<div class="tx rv" data-step="1" data-box="64,606,1152,52" style="left:64px;top:606px;width:1152px;height:52px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:21.33px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:21.33px;font-weight:500;color:#2A1A12;">If you chose another one, say why. That is the useful bit.</span></p></div>
+<div class="tx rv" data-step="1" data-box="64,694,1152,18" style="left:64px;top:694px;width:1152px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+</section>
+<section class="slide" id="s11" data-beat="stretch" data-steps="0">
+<div class="n">11/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="tx" data-box="64,46,760,22" style="left:64px;top:46px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.53px;">STRETCH · IF YOU FINISHED EARLY</span></p></div>
+<div class="tx" data-box="64,72,1000,50" style="left:64px;top:72px;width:1000px;height:50px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:41.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:41.33px;font-weight:700;color:#24140E;">If that was easy</span></p></div>
+<div class="sh" style="left:64px;top:126px;width:300px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:158px;width:1152px;height:142px;background:#F8E5CF;"></div>
+<div class="sh" style="left:64px;top:158px;width:10px;height:142px;background:#F2C04A;"></div>
+<div class="tx" data-box="96,176,1080,24" style="left:96px;top:176px;width:1080px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#7A4A33;letter-spacing:1.73px;">COUNT DOWN</span></p></div>
+<div class="tx" data-box="96,204,1080,86" style="left:96px;top:204px;width:1080px;height:86px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:400;color:#2A1A12;">Add a second button that subtracts one. Use &amp;&amp; to stop it going below zero, and print EMPTY when the count is 0.</span></p></div>
+<div class="sh" style="left:64px;top:316px;width:1152px;height:142px;background:#F8E5CF;"></div>
+<div class="sh" style="left:64px;top:316px;width:10px;height:142px;background:#F2C04A;"></div>
+<div class="tx" data-box="96,334,1080,24" style="left:96px;top:334px;width:1080px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#7A4A33;letter-spacing:1.73px;">FIX THE DOUBLE COUNT PROPERLY</span></p></div>
+<div class="tx" data-box="96,362,1080,86" style="left:96px;top:362px;width:1080px;height:86px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:400;color:#2A1A12;">Remove delay(250). Store millis() each time you count, and only count again if 300 ms have passed. That is debouncing, and every real button needs it.</span></p></div>
+<div class="tx" data-box="64,532,1152,48" style="left:64px;top:532px;width:1152px;height:48px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:500;color:#2A1A12;">delay() stops the whole program. millis() lets it keep running. That difference matters in Year 9.</span></p></div>
+<div class="tx" data-box="64,694,1152,18" style="left:64px;top:694px;width:1152px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;letter-spacing:1.60px;">Y7.4 · THE BOARD REMEMBERS</span></p></div>
+</section>
+<section class="slide" id="s12" data-beat="exit" data-steps="0">
+<div class="n">12/12</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="tx" data-box="64,44,760,22" style="left:64px;top:44px;width:760px;height:22px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#4E2E1F;letter-spacing:2.53px;">EXIT TICKET · BEFORE YOU LOG OFF</span></p></div>
+<div class="tx" data-box="64,70,1152,48" style="left:64px;top:70px;width:1152px;height:48px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:38.67px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:38.67px;font-weight:700;color:#24140E;">Two questions, then close the laptop.</span></p></div>
+<div class="sh" style="left:64px;top:122px;width:300px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:152px;width:716px;height:116px;background:#F8E5CF;"></div>
+<div class="sh" style="left:84px;top:186px;width:42px;height:42px;background:#F2C04A;"></div>
+<div class="tx" data-box="84,192,42,32" style="left:84px;top:192px;width:42px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:700;color:#000000;">1</span></p></div>
+<div class="tx" data-box="144,168,612,88" style="left:144px;top:168px;width:612px;height:88px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:400;color:#2A1A12;">What happens to a variable declared inside loop()?</span></p></div>
+<div class="sh" style="left:64px;top:284px;width:716px;height:116px;background:#F8E5CF;"></div>
+<div class="sh" style="left:84px;top:318px;width:42px;height:42px;background:#F2C04A;"></div>
+<div class="tx" data-box="84,324,42,32" style="left:84px;top:324px;width:42px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:700;color:#000000;">2</span></p></div>
+<div class="tx" data-box="144,300,612,88" style="left:144px;top:300px;width:612px;height:88px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.33px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:25.33px;font-weight:400;color:#2A1A12;">Which line adds one to count?</span></p></div>
+<div class="sh" style="left:808px;top:152px;width:408px;height:248px;background:#F2C04A;"></div>
+<div class="tx" data-box="828,168,368,20" style="left:828px;top:168px;width:368px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#000000;letter-spacing:1.73px;">FINISH THE SENTENCE</span></p></div>
+<div class="tx" data-box="828,196,368,190" style="left:828px;top:196px;width:368px;height:190px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:28.00px;line-height:1.22"><span style="font-family:'Fira Sans';font-size:28.00px;font-weight:500;color:#000000;">The count survives because the variable lives ________ the loop.</span></p></div>
+<div class="sh" style="left:808px;top:412px;width:408px;height:60px;background:#F8E5CF;"></div>
+<div class="tx" data-box="828,422,368,42" style="left:828px;top:422px;width:368px;height:42px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.15"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#2A1A12;">Then answer the question on the cover.</span></p></div>
+<div class="sh" style="left:0px;top:500px;width:1280px;height:128px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,520,1152,20" style="left:64px;top:520px;width:1152px;height:20px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#FFFFFF;letter-spacing:2.00px;">NEXT LESSON</span></p></div>
+<div class="tx" data-box="64,546,1152,44" style="left:64px;top:546px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:33.33px;line-height:1.1"><span style="font-family:'Fira Sans';font-size:33.33px;font-weight:700;color:#FFFFFF;">Y7.5 — Design a crossing</span></p></div>
+<div class="tx" data-box="64,596,1152,24" style="left:64px;top:596px;width:1152px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:21.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:21.33px;font-weight:500;color:#BFD9D2;">Four lessons of pieces. Now a whole machine.</span></p></div>
+</section>
+<button class="present" type="button" title="Present · Ctrl+Enter" aria-label="Present">
+<svg width="9" height="11" viewBox="0 0 9 11" aria-hidden="true"><path d="M0 0l9 5.5L0 11z" fill="currentColor"/></svg>Present</button>
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  if (!slides.length) return;
+  let i = 0, playing = false;
+
+  // how far each slide has been revealed: 0 = question only, N = every answer out
+  const shown = slides.map(() => 0);
+  function maxStep(el) { return +el.dataset.steps || 0; }
+  function paint(el, n) {
+    for (const rv of el.querySelectorAll('.rv'))
+      rv.classList.toggle('on', (+rv.dataset.step || 0) <= n);
+  }
+  slides.forEach(el => paint(el, 0));
+
+  // ── outside the show: fit the slide to the window ──────────────────
+  function shrink() {
+    if (playing) return;
+    const k = Math.min(1, (innerWidth - 24) / 1280);
+    const root = document.documentElement.style;
+    root.setProperty('--k', k.toFixed(4));
+    root.setProperty('--dx', ((innerWidth - 1280 * k) / 2).toFixed(1) + 'px');
+  }
+  shrink();
+  addEventListener('resize', shrink);
+
+  // ── a card on the code slide lights up the line it explains ────────
+  for (const el of document.querySelectorAll('[data-t^="card:"]')) {
+    const n = el.getAttribute('data-t').slice(5);
+    const scope = el.closest('.slide');
+    const lines = scope ? scope.querySelectorAll('[data-line="' + n + '"]') : [];
+    if (!lines.length) continue;
+    const on = v => lines.forEach(l => l.classList.toggle('hl', v));
+    el.addEventListener('mouseenter', () => on(true));
+    el.addEventListener('mouseleave', () => on(false));
+    el.addEventListener('click', e => {
+      // in the show a click means "next", so leave it alone there
+      if (document.body.classList.contains('play')) return;
+      e.stopPropagation();
+      on(true);
+      setTimeout(() => on(false), 1600);
+    });
+  }
+
+  function fit() {
+    if (!playing) return;
+    const s = Math.min(innerWidth / 1280, innerHeight / 720);
+    slides[i].style.setProperty('--s', s);
+  }
+  function show(n) {
+    const next = Math.max(0, Math.min(slides.length - 1, n));
+    // arriving on a slide always resets it, the way Google Slides does
+    if (next !== i) { shown[next] = 0; paint(slides[next], 0); }
+    i = next;
+    slides.forEach((el, k) => el.classList.toggle('on', k === i));
+    fit();
+  }
+  // forward: reveal the next answer on this slide, only then move on
+  function forward() {
+    const el = slides[i];
+    if (shown[i] < maxStep(el)) { shown[i]++; paint(el, shown[i]); return; }
+    if (i < slides.length - 1) { show(i + 1); }
+  }
+  function back() {
+    const el = slides[i];
+    if (shown[i] > 0) { shown[i] = 0; paint(el, 0); return; }
+    if (i > 0) { show(i - 1); }
+  }
+  function play(on) {
+    playing = on;
+    document.body.classList.toggle('play', on);
+    if (on) {
+      show(i);
+      if (!document.fullscreenElement && document.documentElement.requestFullscreen)
+        document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      slides.forEach(el => el.classList.remove('on'));
+      if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+      shrink();
+    }
+  }
+
+  addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      play(!playing);
+      return;
+    }
+    if (!playing) return;
+    const k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === ' ' || k === 'PageDown') {
+      e.preventDefault(); forward();
+    } else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') {
+      e.preventDefault(); back();
+    } else if (k === 'Home') {
+      e.preventDefault(); show(0);
+    } else if (k === 'End') {
+      e.preventDefault();
+      const last = slides.length - 1;
+      show(last);
+      shown[last] = maxStep(slides[last]); paint(slides[last], shown[last]);
+    } else if (k === 'Escape') {
+      play(false);
+    }
+  });
+
+  // the button in the corner: start from whatever is on screen, not from slide 1
+  function nearestSlide() {
+    const mid = innerHeight / 2;
+    let best = 0, closest = Infinity;
+    slides.forEach((el, k) => {
+      const r = el.getBoundingClientRect();
+      const d = Math.abs((r.top + r.bottom) / 2 - mid);
+      if (d < closest) { closest = d; best = k; }
+    });
+    return best;
+  }
+  const present = document.querySelector('.present');
+  if (present) present.addEventListener('click', e => {
+    e.stopPropagation();
+    if (playing) return;
+    // entering the show starts a fresh slide, the way arriving from elsewhere does
+    slides.forEach((el, k) => { shown[k] = 0; paint(el, 0); });
+    i = nearestSlide();
+    play(true);
+  });
+
+  addEventListener('click', e => {
+    if (playing) { e.shiftKey ? back() : forward(); return; }
+    // outside the slideshow, clicking a slide with a hidden answer reveals it
+    const el = e.target.closest('.slide');
+    if (!el) return;
+    const n = slides.indexOf(el);
+    if (shown[n] < maxStep(el)) { shown[n]++; paint(el, shown[n]); }
+  });
+
+  addEventListener('resize', fit);
+  addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement && playing) play(false);
+  });
+})();
+</script>
+</body></html>

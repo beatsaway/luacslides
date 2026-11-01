@@ -1,17 +1,19 @@
 ELECTRONICS · YEARS 7, 8 AND 9
 A static site. No build step, no server, no dependencies.
 
-  index.html        the chooser for both versions
-  v2026/            the current course: 15 lessons, 12 slides each
+  index.html        the chooser
+  v2027/            the current course: 15 lessons, 12 slides each
+  v2026/            the previous course, kept for reference
   v2025/            the first version, kept for reference
 
 Published at https://luacslides.netlify.app/ . Open index.html in a browser,
 or that address, and everything else is linked from there.
 
-WHAT IS IN v2026
+WHAT IS IN v2027
   15 PowerPoint decks, a self-contained HTML preview of each, one page with
   all 180 slides, a chooser, the course on paper (CURRICULUM.txt), and the
-  notes for using the folder (README.txt).
+  notes for using the folder (README.txt). Each lesson is one inquiry. The
+  pictures are photographs in assets/img/v27.
 
 HOW TO PRESENT
   From the HTML: open a lesson, press the Present button at the bottom right
@@ -24,10 +26,10 @@ HOW TO PRESENT
   click-to-reveal animations, one click each. Speaker notes are on every slide.
 
 SOURCE
-  These files are generated. The lesson content, the layouts and the diagram
-  drawing code live in newyeardraft3/gslides/v26/ and are compiled here by
-  `python -m v26.build`. Edits made directly to this folder are overwritten.
+  v2027 is generated from newyeardraft3/gslides/v27/ by `python -m v27.build`.
+  v2026 is generated from v26/ by `python -m v26.build`. Edits inside a version
+  folder are overwritten by the next build of that version. This page is not.
 
 TYPE
   Fira Sans, by Carrois Type Design, SIL Open Font License. The font files are
-  in v2026/assets/fonts.
+  in each version's assets/fonts.
