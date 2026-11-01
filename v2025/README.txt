@@ -19,35 +19,21 @@ pictures are in assets/, and each preview is one HTML file.
 WHAT IT IS FOR
 --------------
 
-An Arduino course for Years 7, 8 and 9: 16 lessons, 158 slides.
+An Arduino course for Years 7, 8 and 9: 18 lessons, six in each year.
+The wording is ordinary classroom English. The ideas are the key points from
+the course notes, not a separate topic list.
 
-    1 first lesson, shared      L01  Introduction to Arduino
-    5 Year 7 lessons            Y7-L02 .. Y7-L06
-    5 Year 8 lessons            Y8-L02 .. Y8-L06
-    5 Year 9 lessons            Y9-L02 .. Y9-L06
+    Year 7   the board, a button, a sensor number, a knob,
+             loops and functions, variables and decisions
+    Year 8   voltage current and resistance, three colours, a screen,
+             temperature and humidity, movement, distance
+    Year 9   a buzzer, a DC motor, a servo, a stepper,
+             a board with Wi-Fi, a solar cell
 
-All three years start on the same first lesson, then split their own way.
-That is 1 + 5 + 5 + 5 = 16 lessons.
+A lesson is a question, the idea, the build, the code, one thing to try,
+and a check. The check answer stays hidden until you click.
 
-Every lesson is ten slides in the same order, so a class only has to learn the
-pattern once:
-
-     1  title        name of the lesson and one line saying what it is
-     2  hook         three pictures and one question to open the lesson
-     3  one idea     the single sentence the lesson is built on
-     4  hardware     a diagram of the part and how it connects
-     5  setup        the build in four numbered steps
-     6  code         the program, explained line by line
-     7  mission 1    first thing to do in Tinkercad, with a goal to check
-     8  mission 2    the same again, one step harder
-     9  check        one question, answer hidden until you click
-    10  exit ticket  what to write down before logging off
-
-That is where "two missions" comes from: slides 7 and 8 are the two things the
-class builds, one after the other.
-
-Each lesson is about 10 minutes of talking. The words to say in class are in
-the speaker notes of the .pptx, not on the slide.
+The words to say in class are in the speaker notes of the .pptx, not on the slide.
 
 
 THE FILES
@@ -57,8 +43,8 @@ index.html
     The chooser. Open this one first. One card per lesson, with a link to read
     it in the browser and a link to download the PowerPoint.
 
-preview-L01-Introduction-to-Arduino.html
-preview-Y7-L02-Press-a-button.html    ... and one more per lesson
+preview-Y7-1-Meet-the-board.html
+    ... and one more per lesson
     The lesson as a web page: the same slides, the same fonts, the same
     pictures, one after another. Use this in class instead of PowerPoint if you
     like. It goes full screen, it opens instantly, and questions hide their
@@ -71,12 +57,12 @@ preview-Y7-L02-Press-a-button.html    ... and one more per lesson
     always hides it again, so a second class can use the same file.
 
 preview-all.html
-    All 158 slides on one long page, in course order. Not for teaching: it is
+    Every slide on one long page, in course order. Not for teaching: it is
     there to read the whole course straight through, so a mistake or a crowded
     slide is easy to spot.
 
-L01-Introduction-to-Arduino.pptx
-Y7-L02-Press-a-button.pptx    ... and one more per lesson
+Y7-1-Meet-the-board.pptx
+    ... and one more per lesson
     The lesson as a real deck, 16:9, with speaker notes. Opens in PowerPoint,
     Keynote or Google Slides. It uses Fira Sans; if that font is not installed
     the deck still reads fine but the spacing shifts a little. Installing the

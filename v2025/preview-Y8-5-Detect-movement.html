@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Year 8 · Lesson 5 · Detect movement</title>
+<style>
+@font-face{font-family:'Fira Sans';font-weight:400;font-style:normal;src:url(assets/fonts/FiraSans-400.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSans-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:700;font-style:normal;src:url(assets/fonts/FiraSans-700.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSansCondensed-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:600;font-style:normal;src:url(assets/fonts/FiraSansCondensed-600.woff2) format('woff2')}
+*{box-sizing:border-box}
+:root{--k:1;--dx:0px}
+html,body{overflow-x:hidden}
+body{margin:0;background:#2a1a12;font-family:'Fira Sans',sans-serif}
+/* Outside the show, every slide is scaled down to whatever the window can
+   hold, so a tablet sees the whole slide instead of a crop. --k and --dx are
+   set by the script below: --k shrinks it, --dx centres it, and the negative
+   bottom margin takes back the space the shrink leaves behind. In the show
+   the play rules position the slide themselves. */
+.slide{position:relative;width:1280px;height:720px;background:#E3B08E;overflow:hidden;
+  margin:0 0 calc(28px - (1 - var(--k)) * 720px);
+  transform:translateX(var(--dx)) scale(var(--k));transform-origin:top left}
+.sh{position:absolute}
+.img{background-repeat:no-repeat}
+.tx{position:absolute;display:flex;flex-direction:column;overflow:hidden}
+.tx p{margin:0;white-space:pre-wrap;flex:0 0 auto}
+/* a code line lit up by the card that explains it: the marker sits on the
+   text itself, not across the whole column, so it reads as a highlight */
+.tx p.hl span{background:rgba(242,192,74,.55);
+  box-shadow:0 0 0 4px rgba(242,192,74,.55);border-radius:2px}
+[data-t^="card:"]{cursor:pointer}
+.n{position:absolute;right:8px;bottom:6px;font:600 12px 'Fira Sans Condensed';
+  color:#8a6a52;z-index:9}
+/* ── reveal ──────────────────────────────────────────────────────── */
+.rv{visibility:hidden}
+.slide .rv.on{visibility:visible}
+/* ── present mode ────────────────────────────────────────────────── */
+body.play{overflow:hidden;background:#0d0703}
+body.play .slide{display:none;margin:0}
+body.play .slide.on{display:block;position:fixed;left:50%;top:50%;
+  transform:translate(-50%,-50%) scale(var(--s,1));transform-origin:center center;
+  box-shadow:0 0 0 1px rgba(0,0,0,.35);cursor:pointer}
+/* ── the way in ──────────────────────────────────────────────────── */
+/* Present sits in the bottom-right corner of the window, not of the slide, so
+   it is reachable without scrolling and never lands on a slide's own content.
+   The teal ring is what makes it a button rather than a smudge: the fill is the
+   same cream as a slide, and a cream pill on a cream slide would disappear. */
+.present{position:fixed;right:14px;bottom:14px;z-index:99;display:flex;
+  align-items:center;gap:7px;padding:7px 14px 7px 12px;border:0;border-radius:999px;
+  background:#F8E5CF;color:#24140E;cursor:pointer;
+  font:600 11px 'Fira Sans Condensed';letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:0 0 0 2px #1E4D48,0 5px 18px rgba(0,0,0,.5);opacity:.8;
+  transition:opacity .15s ease,transform .15s ease}
+.present:hover{opacity:1;transform:translateY(-1px)}
+.present:focus-visible{outline:2px solid #F2C04A;outline-offset:4px}
+.present svg{display:block;flex:0 0 auto}
+body.play .present{display:none}
+@media print{.present{display:none}}
+</style></head>
+<body><section class="slide" id="s1" data-beat="cover" data-steps="0">
+<div class="n">1/7</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/hook-alarm.png);background-size:cover;background-position:center"></div>
+<div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
+<div class="tx" data-box="107,168,632,26" style="left:107px;top:168px;width:632px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">ELECTRONICS</span></p></div>
+<div class="tx" data-box="107,188,568,220" style="left:107px;top:188px;width:568px;height:220px;justify-content:flex-end;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:61.33px;line-height:0.98"><span style="font-family:'Fira Sans';font-size:61.33px;font-weight:700;color:#000000;">Detect movement</span></p></div>
+<div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will turn an LED on when a sensor sees movement.</span></p></div>
+</section>
+<section class="slide" id="s2" data-beat="hook" data-steps="1">
+<div class="n">2/7</div>
+<div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.93px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:26.93px;font-weight:700;color:#24140E;">A light comes on when you walk in, and not when you stand still. What is it sensing?</span></p></div>
+<div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
+<div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-alarm.png);background-size:cover;background-position:center"></div>
+<div class="tx" data-box="88,436,315,100" style="left:88px;top:436px;width:315px;height:100px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#2A1A12;">An alarm that waits.</span></p></div>
+<div class="sh img" style="left:483px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-headlights.png);background-size:cover;background-position:center"></div>
+<div class="tx" data-box="483,436,315,100" style="left:483px;top:436px;width:315px;height:100px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#2A1A12;">A light that switches itself.</span></p></div>
+<div class="sh img" style="left:878px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-lift.png);background-size:cover;background-position:center"></div>
+<div class="tx" data-box="878,436,315,100" style="left:878px;top:436px;width:315px;height:100px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#2A1A12;">It should notice a person.</span></p></div>
+<div class="tx" data-box="64,550,1216,34" style="left:64px;top:550px;width:1216px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">It is not sending out a beam.</span></p></div>
+<div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
+<div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">It looks for a change in heat.</span></p></div>
+</section>
+<section class="slide" id="s3" data-beat="idea" data-steps="0">
+<div class="n">3/7</div>
+<div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">HIGH when the heat moves</span></p></div>
+<div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
+<div class="tx" data-box="88,316,512,32" style="left:88px;top:316px;width:512px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">Two slots</span></p></div>
+<div class="tx" data-box="88,356,512,84" style="left:88px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Both slots see the same heat when nothing moves, so the signal cancels out.</span></p></div>
+<div class="sh" style="left:656px;top:143px;width:560px;height:300px;background:#DCE7DA;"></div>
+<div class="tx" data-box="680,316,512,32" style="left:680px;top:316px;width:512px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">A person walks past</span></p></div>
+<div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">One slot sees the warmer body first, then the other. That difference makes the output HIGH.</span></p></div>
+<div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">Two small dials: one sets how easily it triggers, one sets how long it stays HIGH.</span></p></div>
+</section>
+<section class="slide" id="s4" data-beat="steps" data-steps="0">
+<div class="n">4/7</div>
+<div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the sensor and an LED</span></p></div>
+<div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
+<div class="tx" data-box="78,153,175,24" style="left:78px;top:153px;width:175px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.00px;font-weight:500;color:#2A1A12;">The build</span></p></div>
+<div class="sh" style="left:64px;top:208px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,216,47,32" style="left:64px;top:216px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">1</span></p></div>
+<div class="tx" data-box="129,208,555,76" style="left:129px;top:208px;width:555px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">VCC to 5 V, GND to GND.</span></p></div>
+<div class="sh" style="left:64px;top:296px;width:616px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:316px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,324,47,32" style="left:64px;top:324px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">2</span></p></div>
+<div class="tx" data-box="129,316,555,76" style="left:129px;top:316px;width:555px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">OUT to pin 2.</span></p></div>
+<div class="sh" style="left:64px;top:404px;width:616px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:424px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,432,47,32" style="left:64px;top:432px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">3</span></p></div>
+<div class="tx" data-box="129,424,555,76" style="left:129px;top:424px;width:555px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">LED and 220 Ω from pin 13 to GND.</span></p></div>
+<div class="sh" style="left:64px;top:512px;width:616px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:532px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,540,47,32" style="left:64px;top:540px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">4</span></p></div>
+<div class="tx" data-box="129,532,555,76" style="left:129px;top:532px;width:555px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Wait about a minute after power, so the sensor can settle.</span></p></div>
+<div class="sh" style="left:768px;top:0px;width:512px;height:720px;background:#DCE7DA;"></div>
+<div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/hook-alarm.png);background-size:contain;background-position:center"></div>
+<div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
+</section>
+<section class="slide" id="s5" data-beat="code" data-steps="0">
+<div class="n">5/7</div>
+<div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">LED on when it sees you</span></p></div>
+<div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
+<div class="tx" data-box="96,170,500,486" style="left:96px;top:170px;width:500px;height:486px;justify-content:center;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">void setup() {</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  pinMode(2, INPUT);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  pinMode(13, OUTPUT);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">}</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">void loop() {</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  int motion = digitalRead(2);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  if (motion == HIGH) {</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">    digitalWrite(13, HIGH);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  } else {</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">    digitalWrite(13, LOW);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  }</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">}</span></p></div>
+<div class="sh" style="left:664px;top:143px;width:552px;height:164px;background:#F2C04A;"></div>
+<div class="tx" data-box="685,160,509,30" style="left:685px;top:160px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">digitalRead</span></p></div>
+<div class="tx" data-box="685,195,509,102" style="left:685px;top:195px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">The module has already turned the heat signal into HIGH or LOW.</span></p></div>
+<div class="sh" style="left:664px;top:322px;width:552px;height:164px;background:#DCE7DA;"></div>
+<div class="tx" data-box="685,339,509,30" style="left:685px;top:339px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">HIGH</span></p></div>
+<div class="tx" data-box="685,374,509,102" style="left:685px;top:374px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">Movement. The LED comes on.</span></p></div>
+<div class="sh" style="left:664px;top:501px;width:552px;height:164px;background:#F8E5CF;"></div>
+<div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">LOW</span></p></div>
+<div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">No movement. The LED goes off, after the sensor's own timer allows it.</span></p></div>
+</section>
+<section class="slide" id="s6" data-beat="mission" data-steps="1">
+<div class="n">6/7</div>
+<div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Find the time dial</span></p></div>
+<div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,204,47,32" style="left:64px;top:204px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">1</span></p></div>
+<div class="tx" data-box="129,196,676,76" style="left:129px;top:196px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Walk past. Time how long the LED stays on.</span></p></div>
+<div class="sh" style="left:64px;top:280px;width:741px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:300px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,308,47,32" style="left:64px;top:308px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">2</span></p></div>
+<div class="tx" data-box="129,300,676,76" style="left:129px;top:300px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Turn the time dial a little.</span></p></div>
+<div class="sh" style="left:64px;top:384px;width:741px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:404px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,412,47,32" style="left:64px;top:412px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">3</span></p></div>
+<div class="tx" data-box="129,404,676,76" style="left:129px;top:404px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Walk past again and time it.</span></p></div>
+<div class="sh" style="left:64px;top:488px;width:741px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:508px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,516,47,32" style="left:64px;top:516px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">4</span></p></div>
+<div class="tx" data-box="129,508,676,76" style="left:129px;top:508px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Write down which way made the light stay on longer.</span></p></div>
+<div class="sh" style="left:853px;top:0px;width:427px;height:720px;background:#F2C04A;"></div>
+<div class="tx" data-box="891,210,389,24" style="left:891px;top:210px;width:389px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
+<div class="tx" data-box="891,244,352,178" style="left:891px;top:244px;width:352px;height:178px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:50.67px;line-height:1.02"><span style="font-family:'Fira Sans';font-size:50.67px;font-weight:700;color:#000000;">What does that dial change?</span></p></div>
+<div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
+<div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">How long the output stays HIGH.</span></p></div>
+</section>
+<section class="slide" id="s7" data-beat="check" data-steps="1">
+<div class="n">7/7</div>
+<div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
+<div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">Why is it called passive?</span></p></div>
+<div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,331,704,76" style="left:64px;top:331px;width:704px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:400;color:#2A1A12;">The sensor is watching a corridor.</span></p></div>
+<div class="sh" style="left:768px;top:0px;width:512px;height:720px;background:#F2C04A;"></div>
+<div class="tx" data-box="821,180,459,24" style="left:821px;top:180px;width:459px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">ANSWER</span></p></div>
+<div class="tx rv" data-step="1" data-box="821,214,405,160" style="left:821px;top:214px;width:405px;height:160px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:66.67px;line-height:0.92"><span style="font-family:'Fira Sans';font-size:66.67px;font-weight:700;color:#000000;">It does not send a beam.</span></p></div>
+<div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
+<div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">It only receives infrared from warm objects. It does not send anything out.</span></p></div>
+</section>
+<button class="present" type="button" title="Present · Ctrl+Enter" aria-label="Present">
+<svg width="9" height="11" viewBox="0 0 9 11" aria-hidden="true"><path d="M0 0l9 5.5L0 11z" fill="currentColor"/></svg>Present</button>
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  if (!slides.length) return;
+  let i = 0, playing = false;
+
+  // how far each slide has been revealed: 0 = question only, N = every answer out
+  const shown = slides.map(() => 0);
+  function maxStep(el) { return +el.dataset.steps || 0; }
+  function paint(el, n) {
+    for (const rv of el.querySelectorAll('.rv'))
+      rv.classList.toggle('on', (+rv.dataset.step || 0) <= n);
+  }
+  slides.forEach(el => paint(el, 0));
+
+  // ── outside the show: fit the slide to the window ──────────────────
+  function shrink() {
+    if (playing) return;
+    const k = Math.min(1, (innerWidth - 24) / 1280);
+    const root = document.documentElement.style;
+    root.setProperty('--k', k.toFixed(4));
+    root.setProperty('--dx', ((innerWidth - 1280 * k) / 2).toFixed(1) + 'px');
+  }
+  shrink();
+  addEventListener('resize', shrink);
+
+  // ── a card on the code slide lights up the line it explains ────────
+  for (const el of document.querySelectorAll('[data-t^="card:"]')) {
+    const n = el.getAttribute('data-t').slice(5);
+    const scope = el.closest('.slide');
+    const lines = scope ? scope.querySelectorAll('[data-line="' + n + '"]') : [];
+    if (!lines.length) continue;
+    const on = v => lines.forEach(l => l.classList.toggle('hl', v));
+    el.addEventListener('mouseenter', () => on(true));
+    el.addEventListener('mouseleave', () => on(false));
+    el.addEventListener('click', e => {
+      // in the show a click means "next", so leave it alone there
+      if (document.body.classList.contains('play')) return;
+      e.stopPropagation();
+      on(true);
+      setTimeout(() => on(false), 1600);
+    });
+  }
+
+  function fit() {
+    if (!playing) return;
+    const s = Math.min(innerWidth / 1280, innerHeight / 720);
+    slides[i].style.setProperty('--s', s);
+  }
+  function show(n) {
+    const next = Math.max(0, Math.min(slides.length - 1, n));
+    // arriving on a slide always resets it, the way Google Slides does
+    if (next !== i) { shown[next] = 0; paint(slides[next], 0); }
+    i = next;
+    slides.forEach((el, k) => el.classList.toggle('on', k === i));
+    fit();
+  }
+  // forward: reveal the next answer on this slide, only then move on
+  function forward() {
+    const el = slides[i];
+    if (shown[i] < maxStep(el)) { shown[i]++; paint(el, shown[i]); return; }
+    if (i < slides.length - 1) { show(i + 1); }
+  }
+  function back() {
+    const el = slides[i];
+    if (shown[i] > 0) { shown[i] = 0; paint(el, 0); return; }
+    if (i > 0) { show(i - 1); }
+  }
+  function play(on) {
+    playing = on;
+    document.body.classList.toggle('play', on);
+    if (on) {
+      show(i);
+      if (!document.fullscreenElement && document.documentElement.requestFullscreen)
+        document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      slides.forEach(el => el.classList.remove('on'));
+      if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+      shrink();
+    }
+  }
+
+  addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      play(!playing);
+      return;
+    }
+    if (!playing) return;
+    const k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === ' ' || k === 'PageDown') {
+      e.preventDefault(); forward();
+    } else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') {
+      e.preventDefault(); back();
+    } else if (k === 'Home') {
+      e.preventDefault(); show(0);
+    } else if (k === 'End') {
+      e.preventDefault();
+      const last = slides.length - 1;
+      show(last);
+      shown[last] = maxStep(slides[last]); paint(slides[last], shown[last]);
+    } else if (k === 'Escape') {
+      play(false);
+    }
+  });
+
+  // the button in the corner: start from whatever is on screen, not from slide 1
+  function nearestSlide() {
+    const mid = innerHeight / 2;
+    let best = 0, closest = Infinity;
+    slides.forEach((el, k) => {
+      const r = el.getBoundingClientRect();
+      const d = Math.abs((r.top + r.bottom) / 2 - mid);
+      if (d < closest) { closest = d; best = k; }
+    });
+    return best;
+  }
+  const present = document.querySelector('.present');
+  if (present) present.addEventListener('click', e => {
+    e.stopPropagation();
+    if (playing) return;
+    // entering the show starts a fresh slide, the way arriving from elsewhere does
+    slides.forEach((el, k) => { shown[k] = 0; paint(el, 0); });
+    i = nearestSlide();
+    play(true);
+  });
+
+  addEventListener('click', e => {
+    if (playing) { e.shiftKey ? back() : forward(); return; }
+    // outside the slideshow, clicking a slide with a hidden answer reveals it
+    const el = e.target.closest('.slide');
+    if (!el) return;
+    const n = slides.indexOf(el);
+    if (shown[n] < maxStep(el)) { shown[n]++; paint(el, shown[n]); }
+  });
+
+  addEventListener('resize', fit);
+  addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement && playing) play(false);
+  });
+})();
+</script>
+</body></html>
