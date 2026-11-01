@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Electronics · Years 7, 8 and 9</title>
+<style>
+@font-face{font-family:'Fira Sans';font-weight:400;font-style:normal;src:url(assets/fonts/FiraSans-400.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSans-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:700;font-style:normal;src:url(assets/fonts/FiraSans-700.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSansCondensed-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:600;font-style:normal;src:url(assets/fonts/FiraSansCondensed-600.woff2) format('woff2')}
+*{box-sizing:border-box}
+body{margin:0;padding:64px 40px 96px;background:#E3B08E;
+  font-family:'Fira Sans',sans-serif;color:#24140E;-webkit-font-smoothing:antialiased}
+header{max-width:1120px;margin:0 auto 56px}
+.eyebrow{margin:0 0 12px;font:600 13px 'Fira Sans Condensed';letter-spacing:.18em;
+  text-transform:uppercase;color:#4E2E1F}
+h1{margin:0;font-size:52px;line-height:1.02;letter-spacing:-.015em;max-width:16ch}
+.lede{margin:18px 0 0;max-width:60ch;font-size:18px;line-height:1.5;color:#2A1A12}
+.rule{width:140px;height:7px;background:#1E4D48;margin:28px 0 0}
+main{max-width:1120px;margin:0 auto}
+section{display:grid;grid-template-columns:300px 1fr;gap:40px;
+  padding:40px 0;border-top:2px solid rgba(42,26,18,.18)}
+.year{margin:0;font:600 13px 'Fira Sans Condensed';letter-spacing:.18em;
+  text-transform:uppercase;color:#4E2E1F}
+.unit h2{margin:8px 0 0;font-size:30px;line-height:1.08}
+.line{margin:10px 0 0;font-size:15px;line-height:1.45;color:#2A1A12}
+.outcome{margin:14px 0 0;font-size:14px;line-height:1.5;color:#4E2E1F}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;padding:22px 22px 18px;background:#F8E5CF;
+  border-top:7px solid #F2C04A;text-decoration:none;color:inherit;
+  transition:transform .16s ease,box-shadow .16s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(42,26,18,.22)}
+.tag{margin:0 0 8px;font:600 11.5px 'Fira Sans Condensed';letter-spacing:.14em;
+  text-transform:uppercase;color:#4E2E1F}
+.card h2{margin:0;font-size:21px;line-height:1.16;letter-spacing:-.005em}
+.sub{margin:9px 0 0;font-size:13.5px;line-height:1.4;color:#4E2E1F;flex:1}
+.cta{margin:16px 0 0;font:500 13px 'Fira Sans Condensed';letter-spacing:.06em;
+  color:#1E4D48}
+footer{max-width:1120px;margin:56px auto 0;font-size:14px;line-height:1.6;color:#4E2E1F}
+footer a{color:#2A1A12}
+@media (max-width:820px){section{grid-template-columns:1fr;gap:22px}}
+</style></head>
+<body>
+<header>
+  <p class="eyebrow">Physical computing · Arduino · 15 lessons</p>
+  <h1>Electronics that does something</h1>
+  <p class="lede">Three units, five lessons each. Every lesson runs the same way:
+     two questions from last time, one idea, a build, a test, a fault to find,
+     and an exit ticket. No lesson needs the one before it to be finished, but
+     they are written in order.</p>
+  <div class="rule"></div>
+</header>
+<main>
+    <section>
+      <div class="unit">
+        <p class="year">Year 7</p>
+        <h2>Make it respond</h2>
+        <p class="line">On/off, one input, a rule, a number kept, a machine with states.</p>
+        <p class="outcome">By the end of Year 7 a pupil can switch an output from code, read a button safely, combine two conditions, keep a count that survives, and design a short sequence of states.</p>
+      </div>
+      <div class="grid">
+      <a class="card" href="preview-Y7-1-A-pin-you-can-switch.html">
+        <p class="tag">Lesson 1 of 5</p>
+        <h2>A pin you can switch</h2>
+        <p class="sub">Light an LED from code, and find out what the resistor is for.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y7-2-Reading-a-button.html">
+        <p class="tag">Lesson 2 of 5</p>
+        <h2>Reading a button</h2>
+        <p class="sub">A light that comes on while a button is held, and why a loose pin lies.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y7-3-Two-conditions.html">
+        <p class="tag">Lesson 3 of 5</p>
+        <h2>Two conditions</h2>
+        <p class="sub">A lift that moves only when the door is shut and the button is pressed.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y7-4-The-board-remembers.html">
+        <p class="tag">Lesson 4 of 5</p>
+        <h2>The board remembers</h2>
+        <p class="sub">A counter that survives from one pass of loop() to the next.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y7-5-Design-a-crossing.html">
+        <p class="tag">Lesson 5 of 5</p>
+        <h2>Design a crossing</h2>
+        <p class="sub">Four states, one loop, and a traffic light that behaves.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      </div>
+    </section>
+    <section>
+      <div class="unit">
+        <p class="year">Year 8</p>
+        <h2>Measure it</h2>
+        <p class="line">Ranges, sensors, calibration, and a device that decides for itself.</p>
+        <p class="outcome">By the end of Year 8 a pupil can read a range, explain why a sensor needs a divider, use PWM, turn a raw number into a real unit, and build a device with two thresholds that does not chatter.</p>
+      </div>
+      <div class="grid">
+      <a class="card" href="preview-Y8-1-A-pin-that-reads-a-range.html">
+        <p class="tag">Lesson 1 of 5</p>
+        <h2>A pin that reads a range</h2>
+        <p class="sub">From HIGH and LOW to a number between 0 and 1023.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y8-2-A-sensor-is-a-resistor.html">
+        <p class="tag">Lesson 2 of 5</p>
+        <h2>A sensor is a resistor that changes</h2>
+        <p class="sub">Light, a voltage divider, and a rule that turns a lamp on.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y8-3-Dimming-is-a-trick.html">
+        <p class="tag">Lesson 3 of 5</p>
+        <h2>Dimming is a trick</h2>
+        <p class="sub">PWM, duty cycle, and why the pin is never at 2.5 V.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y8-4-A-number-that-means-degrees.html">
+        <p class="tag">Lesson 4 of 5</p>
+        <h2>A number that means degrees</h2>
+        <p class="sub">Calibration, the TMP36, and the 0.5 V that everything hangs on.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y8-5-A-device-that-decides.html">
+        <p class="tag">Lesson 5 of 5</p>
+        <h2>A device that decides</h2>
+        <p class="sub">Sense, decide, act — with two thresholds so it cannot chatter.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      </div>
+    </section>
+    <section>
+      <div class="unit">
+        <p class="year">Year 9</p>
+        <h2>Make it move</h2>
+        <p class="line">Current, power switching, position, feedback, and a message.</p>
+        <p class="outcome">By the end of Year 9 a pupil can explain why a pin cannot drive a motor, switch a big current with a transistor, command a position, close a feedback loop, and send a reading as a formatted message.</p>
+      </div>
+      <div class="grid">
+      <a class="card" href="preview-Y9-1-A-pin-is-a-signal.html">
+        <p class="tag">Lesson 1 of 5</p>
+        <h2>A pin is a signal, not a supply</h2>
+        <p class="sub">Why a motor needs a transistor, a diode and its own ground.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y9-2-Control-the-speed.html">
+        <p class="tag">Lesson 2 of 5</p>
+        <h2>Control the speed</h2>
+        <p class="sub">PWM through a transistor, and the deadband at the bottom.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y9-3-A-servo-asks-for-a-position.html">
+        <p class="tag">Lesson 3 of 5</p>
+        <h2>A servo asks for a position</h2>
+        <p class="sub">Pulses, angles, and why the servo needs its own supply.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y9-4-A-system-that-corrects-itself.html">
+        <p class="tag">Lesson 4 of 5</p>
+        <h2>A system that corrects itself</h2>
+        <p class="sub">Feedback: measure, compare, act, repeat.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      <a class="card" href="preview-Y9-5-A-device-that-reports.html">
+        <p class="tag">Lesson 5 of 5</p>
+        <h2>A device that reports</h2>
+        <p class="sub">Framing, labels, and the design brief for your own device.</p>
+        <p class="cta">Open the lesson &rarr;</p>
+      </a>
+      </div>
+    </section>
+</main>
+<footer>
+  <p><a href="preview-all.html">Every slide from all fifteen lessons on one page</a>
+     &nbsp;·&nbsp; <a href="README.txt">What is in this folder</a>
+     &nbsp;·&nbsp; <a href="CURRICULUM.txt">The full plan</a></p>
+</footer>
+</body></html>

@@ -1,0 +1,7 @@
+# exported slide PNGs, made by _export.ps1 for eyeballing layout
+_shots/
+# python bytecode from the build scripts
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

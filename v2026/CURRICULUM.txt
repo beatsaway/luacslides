@@ -1,0 +1,662 @@
+ELECTRONICS · YEARS 7, 8 AND 9
+The full plan: every lesson, its idea, its build, its questions.
+
+This file is generated from the lesson content, so it cannot drift out
+of step with the slides. Twelve slides per lesson; the beat in brackets
+is the slide the line comes from.
+
+
+==========================================================================
+YEAR 7 · MAKE IT RESPOND
+==========================================================================
+
+On/off, one input, a rule, a number kept, a machine with states.
+
+By the end of Year 7 a pupil can switch an output from code, read a button
+safely, combine two conditions, keep a count that survives, and design a
+short sequence of states.
+
+--------------------------------------------------------------------------
+Y7.1  A pin you can switch
+--------------------------------------------------------------------------
+
+  Light an LED from code, and find out what the resistor is for.
+
+  By the end: By the end you will light an LED from code, and know why it
+  needs a resistor.
+
+  [idea] A pin is a switch that code controls
+    HIGH puts 5 V on the pin. LOW puts 0 V on it. Nothing in between.
+
+  [build] A blinking LED
+    1. Drag an Arduino Uno and a breadboard onto the canvas.
+    2. Add an LED. The long leg is the positive one.
+    3. Run a 220 Ω resistor from pin 13 to the long leg.
+    4. Wire the short leg to a GND pin.
+
+  [code] Six lines, one blinking light. Decoded: pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH); delay(500).
+
+  [predict] An LED is connected to a 5 V pin with no resistor. What
+  happens?
+    Answer: It lights — and then it burns out.
+
+  [debug] The LED is in the breadboard, the code is uploaded, and nothing
+  lights.
+    Fault: The LED is in backwards.
+
+  [check] What does digitalWrite(13, HIGH) do to pin 13?
+    A. Reads the voltage on pin 13
+    B. Connects pin 13 to 5 V
+    C. Connects pin 13 to GND
+    Answer: B. It connects pin 13 to 5 V.
+    HIGH is 5 V, LOW is 0 V, and a digital pin can do nothing else.
+    Reading is a different instruction: digitalRead.
+
+  [exit] A pin is a ________ that code can switch.
+
+--------------------------------------------------------------------------
+Y7.2  Reading a button
+--------------------------------------------------------------------------
+
+  A light that comes on while a button is held, and why a loose pin lies.
+
+  By the end: By the end you will light an LED while a button is held —
+  and explain why a loose pin cannot be trusted.
+
+  [idea] An input pin must be held at a known voltage
+    A resistor ties the pin to 0 V, so it stays LOW until the button pulls
+    it up to 5 V.
+
+  [build] A press-light
+    1. Push the button so it straddles the centre trench.
+    2. One side to 5 V, the other side to pin 2.
+    3. 10 kΩ from pin 2 down to GND.
+    4. LED and 220 Ω from pin 13 to GND.
+
+  [code] Read it, then use it. Decoded: pinMode(2, INPUT); digitalRead(2);
+  digitalWrite(13, pressed).
+
+  [predict] A button is wired to pin 2, and nothing else is on pin 2. The
+  button is open. What does digitalRead(2) return?
+    Answer: It changes at random.
+
+  [debug] The LED is on all the time, and the Monitor shows 1, even with
+  nothing pressed.
+    Fault: The button is shorted across its own legs.
+
+  [check] Why does pin 2 need the 10 kΩ resistor?
+    A. To protect the button from too much current
+    B. To hold the pin at 0 V when the button is open
+    C. To make the LED brighter
+    Answer: B. To hold the pin at 0 V when the button is open.
+    The button is the only path to 5 V, and it is open. The resistor is
+    the only path to 0 V, and it is always there. Without it the pin
+    floats.
+
+  [exit] A pin with nothing holding it is ________.
+
+--------------------------------------------------------------------------
+Y7.3  Two conditions
+--------------------------------------------------------------------------
+
+  A lift that moves only when the door is shut and the button is pressed.
+
+  By the end: By the end you will combine two inputs with && and ||, and
+  write the rule down before you code it.
+
+  [idea] && means both, || means either
+    Write the rule as a table first. Four rows for two buttons, and the
+    answer is visible before any code.
+
+  [build] Lift safety
+    1. Button A to pin 2, button B to pin 3.
+    2. A 10 kΩ pull-down from each pin to GND.
+    3. LED and 220 Ω on pin 13.
+    4. Fill in the four-row truth table in your book.
+
+  [code] One rule, two inputs. Decoded: &&; ||; else.
+
+  [predict] The motor must run only when the door is shut AND the button
+  is pressed. Which line does that?
+    Answer: The second one: &&.
+
+  [debug] The LED comes on when either button is pressed, not only when
+  both are.
+    Fault: The || on the if line.
+
+  [check] Which operator is true when at least one of two buttons is
+  pressed?
+    A. &&
+    B. ||
+    C. !
+    Answer: B. || — or.
+    || is false only when both sides are false. ! is not a joiner: it
+    flips one condition, so !HIGH is LOW.
+
+  [exit] The lift moves only when the door is shut ________ the button is
+  pressed.
+
+--------------------------------------------------------------------------
+Y7.4  The board remembers
+--------------------------------------------------------------------------
+
+  A counter that survives from one pass of loop() to the next.
+
+  By the end: By the end you will keep a count that survives, and
+  recognise the bug that resets it every second.
+
+  [idea] A variable lives where you put it
+    Declared outside loop(), the box survives. Declared inside, it is
+    emptied every time round.
+
+  [build] A press counter
+    1. Keep the button and pull-down from Y7.2 on pin 2.
+    2. Add an LED and 220 Ω on pin 13.
+    3. Open the Serial Monitor and set it to 9600 baud.
+    4. Write int count = 0; above setup().
+
+  [code] One line that keeps a number. Decoded: int count = 0;; count =
+  count + 1;; delay(250);.
+
+  [predict] This loop runs with int count = 0; on its first line. You
+  press the button three times. What prints?
+    Answer: 1, then 0, then 1, then 0…
+
+  [debug] The count is always 0 or always 1, however many times you press.
+    Fault: int count = 0; is inside loop().
+
+  [check] Where must a counter be declared so it survives from one loop()
+  to the next?
+    A. Inside loop()
+    B. Outside both functions, at the top
+    C. Inside setup()
+    Answer: B. Outside both functions, at the top of the file.
+    A variable made inside a function lives only while that function runs.
+    At the top of the file it lives for as long as the program.
+
+  [exit] A variable is a named ________ in memory.
+
+--------------------------------------------------------------------------
+Y7.5  Design a crossing
+--------------------------------------------------------------------------
+
+  Four states, one loop, and a traffic light that behaves.
+
+  By the end: By the end you will design the states of a traffic light,
+  build it, and time it.
+
+  [idea] A sequence of states is a machine
+    List the states. Then list what moves you from one to the next. That
+    list is the program.
+
+  [build] A traffic light
+    1. Red on pin 11, amber on 10, green on 9.
+    2. Every LED gets its own 220 Ω resistor.
+    3. All three short legs share the GND rail.
+    4. Draw the states and the times in your book first.
+
+  [code] Four states, in order. Decoded: Every state sets every pin;
+  delay(6000); Order matters.
+
+  [predict] A traffic light has three LEDs. How many can be on at the same
+  time?
+    Answer: Sometimes two — red and amber together.
+
+  [debug] Green and red are lit at the same time.
+    Fault: One digitalWrite(..., LOW) is missing.
+
+  [check] What is a state?
+    A. A delay
+    B. The set of outputs at one moment
+    C. A pin number
+    Answer: B. The set of outputs at one moment.
+    A state is the whole picture: which lamps are on right now. A machine
+    is a list of states and the rules for moving between them.
+
+  [exit] A machine is a list of ________ and the rules between them.
+
+
+==========================================================================
+YEAR 8 · MEASURE IT
+==========================================================================
+
+Ranges, sensors, calibration, and a device that decides for itself.
+
+By the end of Year 8 a pupil can read a range, explain why a sensor needs
+a divider, use PWM, turn a raw number into a real unit, and build a device
+with two thresholds that does not chatter.
+
+--------------------------------------------------------------------------
+Y8.1  A pin that reads a range
+--------------------------------------------------------------------------
+
+  From HIGH and LOW to a number between 0 and 1023.
+
+  By the end: By the end you will read a dial as a number from 0 to 1023,
+  and know what that number means.
+
+  [idea] An analog pin says how much, not just yes or no
+    analogRead gives a step from 0 to 1023, and each step is a share of 5
+    V.
+
+  [build] A dimmer dial
+    1. Outer legs of the pot to 5 V and GND.
+    2. Middle leg — the wiper — to A0.
+    3. LED and 220 Ω on pin 9.
+    4. Turn the knob and watch the Serial Monitor.
+
+  [code] Read the dial, print the number. Decoded: analogRead(A0);
+  map(raw, 0, 1023, 0, 100); Serial.println(percent).
+
+  [predict] The dial is exactly halfway. What does analogRead(A0) return?
+    Answer: About 512.
+
+  [debug] The reading jumps between 0 and 1023, with nothing in between.
+    Fault: The middle leg is not connected to A0.
+
+  [check] analogRead(A0) returns 512. What is the voltage on A0?
+    A. 512 V
+    B. About 2.5 V
+    C. 0.5 V
+    Answer: B. About 2.5 V.
+    512 is about half of 1023, so the voltage is about half of 5 V. The
+    reading is a step number, and the voltage is what it is counting.
+
+  [exit] An analog pin answers ________, not yes or no.
+
+--------------------------------------------------------------------------
+Y8.2  A sensor is a resistor that changes
+--------------------------------------------------------------------------
+
+  Light, a voltage divider, and a rule that turns a lamp on.
+
+  By the end: By the end you will turn a light sensor into a number, and
+  explain why it cannot be connected on its own.
+
+  [idea] The board measures voltage, not resistance
+    Two resistors in a row split the 5 V. Change one, and the middle
+    moves.
+
+  [build] A night light
+    1. 5 V to one leg of the LDR.
+    2. The other leg of the LDR to A0.
+    3. 10 kΩ from A0 down to GND.
+    4. LED and 220 Ω on pin 9.
+
+  [code] Sensor, rule, action. Decoded: int light = analogRead(A0);; if
+  (light < 300); digitalWrite(9, HIGH).
+
+  [predict] An LDR is the top half of a voltage divider. You shine a light
+  on it. What happens to the voltage at the middle?
+    Answer: It rises.
+
+  [debug] The reading is stuck at 1023 and the LED never comes on,
+  whatever you do.
+    Fault: There is no path from A0 down to GND.
+
+  [check] Why can't the LDR be connected straight from 5 V to A0?
+    A. It would use too much current
+    B. A0 measures voltage, and the LDR only changes resistance
+    C. The LDR would burn out
+    Answer: B. Because A0 measures voltage, and the LDR only changes
+    resistance.
+    On its own, the LDR would put almost 5 V on A0 whatever the light. The
+    second resistor is what turns a change in resistance into a change in
+    voltage.
+
+  [exit] The board measures ________, not resistance.
+
+--------------------------------------------------------------------------
+Y8.3  Dimming is a trick
+--------------------------------------------------------------------------
+
+  PWM, duty cycle, and why the pin is never at 2.5 V.
+
+  By the end: By the end you will dim an LED, and explain why the pin is
+  never actually at half voltage.
+
+  [idea] Fast switching looks like an in-between value
+    The pin is only ever at 5 V or 0 V. The average is what you see.
+
+  [build] A dimmer
+    1. Pot on A0, outer legs to 5 V and GND.
+    2. LED and 220 Ω on pin 6 — a PWM pin.
+    3. Pins 3, 5, 6, 9, 10, 11 can dim.
+    4. Print the value you send to the pin.
+
+  [code] From a dial to a duty cycle. Decoded: analogWrite(6, level);
+  map(knob, 0, 1023, 0, 255); pin 6.
+
+  [predict] analogWrite(6, 128) sends a 50% signal to an LED. What is the
+  voltage on pin 6?
+    Answer: 5 V half the time, 0 V half the time.
+
+  [debug] The LED is either fully on or fully off. The knob does nothing
+  in between.
+    Fault: Pin 7 cannot do PWM.
+
+  [check] A pin is HIGH for 1 ms and LOW for 3 ms, over and over. What is
+  the average voltage?
+    A. 1.25 V
+    B. 2.5 V
+    C. 3.75 V
+    Answer: A. 1.25 V.
+    It is on for one quarter of the time. One quarter of 5 V is 1.25 V.
+    That fraction is called the duty cycle.
+
+  [exit] Fast switching looks like an ________ value.
+
+--------------------------------------------------------------------------
+Y8.4  A number that means degrees
+--------------------------------------------------------------------------
+
+  Calibration, the TMP36, and the 0.5 V that everything hangs on.
+
+  By the end: By the end you will turn a raw reading into degrees Celsius,
+  and know why the formula has a 0.5 in it.
+
+  [idea] Two points you trust are enough
+    Find two readings you know, draw the line between them, and every
+    other reading has a value.
+
+  [build] A thermometer
+    1. Hold the TMP36 with the flat face towards you.
+    2. Left leg to 5 V, right leg to GND.
+    3. Middle leg to A0.
+    4. Open the Serial Monitor at 9600.
+
+  [code] Three lines from a reading to a temperature. Decoded: raw * 5.0 /
+  1024.0; (volts - 0.5); * 100.0.
+
+  [predict] A TMP36 outputs 0.75 V at 25 °C. What will analogRead show?
+    Answer: About 153.
+
+  [debug] The temperature reads −50.00 C, every single time.
+    Fault: raw * 5 / 1024 is done in whole numbers, so it is always 0.
+
+  [check] Why does the formula subtract 0.5?
+    A. To correct for room temperature
+    B. The sensor outputs 0.5 V at 0 °C
+    C. To convert volts to millivolts
+    Answer: B. Because the sensor outputs 0.5 V at 0 °C.
+    The output is offset by half a volt so the sensor can report
+    temperatures below zero. Without subtracting it, 0 °C would read as 50
+    °C.
+
+  [exit] Calibration turns a reading into a ________.
+
+--------------------------------------------------------------------------
+Y8.5  A device that decides
+--------------------------------------------------------------------------
+
+  Sense, decide, act — with two thresholds so it cannot chatter.
+
+  By the end: By the end you will build a device that senses, decides and
+  acts, and stop it chattering at the threshold.
+
+  [idea] Two thresholds beat one
+    Switch on below the low mark. Switch off above the high mark. The gap
+    is the memory.
+
+  [build] A plant alarm
+    1. Probe into A0 and 5 V (two nails work).
+    2. 10 kΩ from A0 down to GND.
+    3. Buzzer on pin 8, LED on pin 9.
+    4. Test in dry air, then in a wet cup.
+
+  [code] A flag, two rules, two outputs. Decoded: if (wetness < 380) dry =
+  1;; if (wetness > 420) dry = 0;; digitalWrite(8, dry).
+
+  [predict] The threshold is 400. The reading wobbles between 398 and 402.
+  What does the buzzer do?
+    Answer: It chatters.
+
+  [debug] The buzzer is on when the soil is wet, and off when it is dry.
+    Fault: The rule is inverted: this divider reads high when wet, but the
+    code treats high as dry.
+
+  [check] Why two thresholds instead of one?
+    A. To make the code longer
+    B. So a wobbling reading cannot make the output chatter
+    C. Because analogRead is noisy
+    Answer: B. So a wobbling reading cannot make the output chatter.
+    One threshold flips on every wobble. The gap means the output changes
+    only when the reading has really moved.
+
+  [exit] A device senses, ________ and acts.
+
+
+==========================================================================
+YEAR 9 · MAKE IT MOVE
+==========================================================================
+
+Current, power switching, position, feedback, and a message.
+
+By the end of Year 9 a pupil can explain why a pin cannot drive a motor,
+switch a big current with a transistor, command a position, close a
+feedback loop, and send a reading as a formatted message.
+
+--------------------------------------------------------------------------
+Y9.1  A pin is a signal, not a supply
+--------------------------------------------------------------------------
+
+  Why a motor needs a transistor, a diode and its own ground.
+
+  By the end: By the end you will switch a motor with a small signal, and
+  explain why the pin alone would fail.
+
+  [idea] A small current can switch a big one
+    The pin drives the base. The transistor carries the motor's current.
+
+  [build] A motor driver
+    1. Motor and a separate 5 V supply.
+    2. NPN: collector to the motor, emitter to GND.
+    3. 1 kΩ from pin 9 to the base.
+    4. Diode across the motor, and join both grounds.
+
+  [code] The pin only says on or off. Decoded: digitalWrite(9, HIGH); the
+  transistor; delay(2000).
+
+  [predict] A motor needs 400 mA. A pin can safely give 20 mA. What
+  happens if you connect the motor straight to the pin?
+    Answer: The pin overheats and may be destroyed.
+
+  [debug] The motor does not turn. The transistor is wired correctly and
+  the code runs.
+    Fault: There is no common ground.
+
+  [check] Why is there a diode across the motor?
+    A. To stop the motor spinning backwards
+    B. To give the motor's collapsing magnetic field a safe path
+    C. To reduce the current
+    Answer: B. To give the collapsing magnetic field a safe path.
+    A motor is a coil. Switch it off and the field collapses, and the coil
+    generates a voltage spike that can destroy the transistor. The diode
+    sends that current round the motor instead.
+
+  [exit] The pin carries the ________; the transistor carries the power.
+
+--------------------------------------------------------------------------
+Y9.2  Control the speed
+--------------------------------------------------------------------------
+
+  PWM through a transistor, and the deadband at the bottom.
+
+  By the end: By the end you will control a motor's speed with PWM, and
+  explain why half duty is not exactly half speed.
+
+  [idea] Switching fast controls the average power
+    The transistor is a switch. Open and close it quickly and the motor
+    sees the average.
+
+  [build] A speed control
+    1. Keep the transistor and motor from Y9.1.
+    2. Pot: outer legs 5 V and GND, wiper to A0.
+    3. Drive the base from pin 9 — a PWM pin.
+    4. Keep the motor supply separate, grounds joined.
+
+  [code] A dial on the base. Decoded: analogWrite(9, speed); map(..., 0,
+  255); delay(50).
+
+  [predict] You send 50% PWM to a motor. Is it exactly half speed?
+    Answer: Roughly half, but not exactly.
+
+  [debug] The motor runs at full speed whatever the knob does.
+    Fault: The motor's negative lead goes straight to ground, so the
+    transistor is bypassed.
+
+  [check] At 25% duty, what fraction of the supply voltage does the motor
+  see on average?
+    A. A quarter
+    B. A half
+    C. All of it
+    Answer: A. A quarter.
+    The pin is on for a quarter of each cycle, so the average is a quarter
+    of the supply. That is why 25% duty feels much slower than half.
+
+  [exit] PWM controls the ________ power.
+
+--------------------------------------------------------------------------
+Y9.3  A servo asks for a position
+--------------------------------------------------------------------------
+
+  Pulses, angles, and why the servo needs its own supply.
+
+  By the end: By the end you will command a servo to an angle, and explain
+  why its signal is not a dimmer's.
+
+  [idea] A pulse is an instruction, not a power level
+    Every 20 ms the board sends a pulse. Its width sets the angle the
+    servo holds.
+
+  [build] A dial-controlled arm
+    1. Signal wire to pin 9.
+    2. Power from a separate 5 V supply.
+    3. Join the grounds.
+    4. Pot on A0 to choose the angle.
+
+  [code] Ask for an angle. Decoded: #include <Servo.h>; arm.attach(9);;
+  arm.write(angle);.
+
+  [predict] A servo gets a pulse every 20 ms. What does the width of the
+  pulse tell it?
+    Answer: What angle to hold.
+
+  [debug] The servo twitches, and sometimes the whole board resets when it
+  moves.
+    Fault: The servo is taking its current from the board.
+
+  [check] A pulse of 1.5 ms means what?
+    A. 0°
+    B. 90°
+    C. 180°
+    Answer: B. 90°.
+    1.5 ms is halfway between 1.0 and 2.0 ms, and halfway between 0° and
+    180° is 90°.
+
+  [exit] A servo is told a ________, not a speed.
+
+--------------------------------------------------------------------------
+Y9.4  A system that corrects itself
+--------------------------------------------------------------------------
+
+  Feedback: measure, compare, act, repeat.
+
+  By the end: By the end you will close a feedback loop: a servo that
+  turns towards the light and settles.
+
+  [idea] Measure, compare, act, repeat
+    The error is the difference between the target and the measurement.
+    The controller acts on the error.
+
+  [build] A light tracker
+    1. Two LDRs, left and right, into A0 and A1.
+    2. Each needs its own 10 kΩ to GND.
+    3. Servo signal on pin 9, separate supply.
+    4. Shade one sensor and watch the arm turn.
+
+  [code] The loop, in twelve lines. Decoded: left > right + 40; angle =
+  angle - 2; constrain(angle, 0, 180).
+
+  [predict] A heater switches on below 20 °C and off above 21 °C. The room
+  is at 20.5 °C. What happens?
+    Answer: It depends what it was doing before.
+
+  [debug] The arm swings past the light and keeps hunting back and forth.
+    Fault: The deadband is too narrow for how much the two sensors
+    disagree.
+
+  [check] What is the error in a control loop?
+    A. A mistake in the code
+    B. The difference between the target and the measurement
+    C. The delay between readings
+    Answer: B. The difference between the target and the measurement.
+    Error = target − measured. The controller's job is to reduce it. When
+    the error is inside the deadband, the system stops correcting.
+
+  [exit] The error is the difference between the ________ and the
+  measurement.
+
+--------------------------------------------------------------------------
+Y9.5  A device that reports
+--------------------------------------------------------------------------
+
+  Framing, labels, and the design brief for your own device.
+
+  By the end: By the end you will send a reading as a message, and design
+  a device that senses, decides, acts and reports.
+
+  [idea] Data needs a format
+    Label, value, separator, end of line. That is a protocol, and it is
+    all you need.
+
+  [build] A reporting sensor
+    1. Use any sensor from Year 8 on A0.
+    2. Serial at 9600 baud.
+    3. One line per reading, with a label per value.
+    4. Read it in the Monitor, or on a second board.
+
+  [code] Labels, values, and one newline. Decoded: print vs println; L:
+  and V:; volts, 2.
+
+  [predict] The board prints 23.5, then 23.4, then 23.6, with nothing
+  between them. What does the receiver see?
+    Answer: One long number.
+
+  [debug] The Monitor shows L:512,V:2.50L:498,V:2.43L:… all on one line.
+    Fault: There is no newline at the end of the message.
+
+  [check] Why does a message need an end marker?
+    A. To make it longer
+    B. So the receiver knows where one reading stops and the next begins
+    C. To slow the data down
+    Answer: B. So the receiver knows where one reading stops and the next
+    begins.
+    A stream of characters has no natural boundaries. A newline, a length
+    or a fixed size is what turns characters into messages.
+
+  [exit] A protocol is an agreement about what the ________ mean.
+
+
+==========================================================================
+WHAT A PUPIL CAN DO AT THE END OF EACH YEAR
+==========================================================================
+
+Year 7, Make it respond: By the end of Year 7 a pupil can switch an output
+from code, read a button safely, combine two conditions, keep a count that
+survives, and design a short sequence of states.
+
+Year 8, Measure it: By the end of Year 8 a pupil can read a range, explain
+why a sensor needs a divider, use PWM, turn a raw number into a real unit,
+and build a device with two thresholds that does not chatter.
+
+Year 9, Make it move: By the end of Year 9 a pupil can explain why a pin
+cannot drive a motor, switch a big current with a transistor, command a
+position, close a feedback loop, and send a reading as a formatted
+message.
+
+Year 7 to 8 and 8 to 9 are not prerequisites in the administrative
+sense: a class that starts at Year 9 still gets a complete unit, with
+the Year 8 ideas it needs restated on the starter slide. The three
+years are written as one arc for a pupil who does all three.
