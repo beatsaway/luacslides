@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Year 8 · Lesson 2 · Colour from three LEDs</title>
+<style>
+@font-face{font-family:'Fira Sans';font-weight:400;font-style:normal;src:url(assets/fonts/FiraSans-400.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSans-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:700;font-style:normal;src:url(assets/fonts/FiraSans-700.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSansCondensed-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:600;font-style:normal;src:url(assets/fonts/FiraSansCondensed-600.woff2) format('woff2')}
+*{box-sizing:border-box}
+body{margin:0;background:#2a1a12;font-family:'Fira Sans',sans-serif}
+.slide{position:relative;width:1280px;height:720px;background:#E3B08E;overflow:hidden;
+  margin:0 auto 28px;transform-origin:top left}
+.sh{position:absolute}
+.img{background-repeat:no-repeat}
+.tx{position:absolute;display:flex;flex-direction:column;overflow:hidden}
+.tx p{margin:0;white-space:pre-wrap;flex:0 0 auto}
+.n{position:absolute;right:8px;bottom:6px;font:600 12px 'Fira Sans Condensed';
+  color:#8a6a52;z-index:9}
+/* ── reveal ──────────────────────────────────────────────────────── */
+.rv{visibility:hidden}
+.slide .rv.on{visibility:visible}
+/* ── present mode ────────────────────────────────────────────────── */
+body.play{overflow:hidden;background:#0d0703}
+body.play .slide{display:none;margin:0}
+body.play .slide.on{display:block;position:fixed;left:50%;top:50%;
+  transform:translate(-50%,-50%) scale(var(--s,1));transform-origin:center center;
+  box-shadow:0 0 0 1px rgba(0,0,0,.35);cursor:pointer}
+/* ── the way in ──────────────────────────────────────────────────── */
+/* Present sits in the bottom-right corner of the window, not of the slide, so
+   it is reachable without scrolling and never lands on a slide's own content.
+   The teal ring is what makes it a button rather than a smudge: the fill is the
+   same cream as a slide, and a cream pill on a cream slide would disappear. */
+.present{position:fixed;right:14px;bottom:14px;z-index:99;display:flex;
+  align-items:center;gap:7px;padding:7px 14px 7px 12px;border:0;border-radius:999px;
+  background:#F8E5CF;color:#24140E;cursor:pointer;
+  font:600 11px 'Fira Sans Condensed';letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:0 0 0 2px #1E4D48,0 5px 18px rgba(0,0,0,.5);opacity:.8;
+  transition:opacity .15s ease,transform .15s ease}
+.present:hover{opacity:1;transform:translateY(-1px)}
+.present:focus-visible{outline:2px solid #F2C04A;outline-offset:4px}
+.present svg{display:block;flex:0 0 auto}
+body.play .present{display:none}
+@media print{.present{display:none}}
+</style></head>
+<body><section class="slide" id="s1" data-beat="cover" data-steps="0">
+<div class="n">1/10</div>
+<div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
+<div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/rgb-cover.jpg);background-size:cover;background-position:center"></div>
+<div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
+<div class="tx" data-box="107,168,632,26" style="left:107px;top:168px;width:632px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">YEAR 8 · ELECTRONICS · LESSON 2</span></p></div>
+<div class="tx" data-box="107,188,568,220" style="left:107px;top:188px;width:568px;height:220px;justify-content:flex-end;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:61.33px;line-height:0.98"><span style="font-family:'Fira Sans';font-size:61.33px;font-weight:700;color:#000000;">Colour from Three LEDs</span></p></div>
+<div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">Mixing light, not paint</span></p></div>
+</section>
+<section class="slide" id="s2" data-beat="hook" data-steps="1">
+<div class="n">2/10</div>
+<div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#24140E;">A screen shows millions of colours. How many lights does it have?</span></p></div>
+<div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
+<div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-screen.png);background-size:cover;background-position:center"></div>
+<div class="tx" data-box="88,436,315,100" style="left:88px;top:436px;width:315px;height:100px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#2A1A12;">Phone screen. Hold a magnifier to it.</span></p></div>
+<div class="sh img" style="left:483px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-tv.png);background-size:cover;background-position:center"></div>
+<div class="tx" data-box="483,436,315,100" style="left:483px;top:436px;width:315px;height:100px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#2A1A12;">Television. Same trick, much bigger.</span></p></div>
+<div class="sh img" style="left:878px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-stage.png);background-size:cover;background-position:center"></div>
+<div class="tx" data-box="878,436,315,100" style="left:878px;top:436px;width:315px;height:100px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#2A1A12;">Stage light. Three lamps, one lens.</span></p></div>
+<div class="tx" data-box="64,550,1216,34" style="left:64px;top:550px;width:1216px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Zoom into a white screen and you will see dots, not white.</span></p></div>
+<div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
+<div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Three: red, green and blue. Every other colour is a mix.</span></p></div>
+</section>
+<section class="slide" id="s3" data-beat="idea" data-steps="0">
+<div class="n">3/10</div>
+<div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Three LEDs in one package</span></p></div>
+<div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F8E5CF;"></div>
+<div class="tx" data-box="88,316,512,32" style="left:88px;top:316px;width:512px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">One lens, four legs</span></p></div>
+<div class="tx" data-box="88,356,512,84" style="left:88px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Three colours and one leg they share.</span></p></div>
+<div class="sh" style="left:656px;top:143px;width:560px;height:300px;background:#DCE7DA;"></div>
+<div class="tx" data-box="680,316,512,32" style="left:680px;top:316px;width:512px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">Shared leg to ground</span></p></div>
+<div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">On a common cathode part, it is the longest leg.</span></p></div>
+<div class="sh" style="left:64px;top:471px;width:373px;height:91px;background:#DAF1EE;"></div>
+<div class="tx" data-box="64,492,373,40" style="left:64px;top:492px;width:373px;height:40px;justify-content:center;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:500;color:#000000;">Red + green</span></p></div>
+<div class="tx" data-box="64,574,373,62" style="left:64px;top:574px;width:373px;height:62px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Yellow.</span></p></div>
+<div class="sh" style="left:448px;top:471px;width:373px;height:91px;background:#DAF1EE;"></div>
+<div class="tx" data-box="448,492,373,40" style="left:448px;top:492px;width:373px;height:40px;justify-content:center;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:500;color:#000000;">Red + blue</span></p></div>
+<div class="tx" data-box="448,574,373,62" style="left:448px;top:574px;width:373px;height:62px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Purple.</span></p></div>
+<div class="sh" style="left:832px;top:471px;width:373px;height:91px;background:#DAF1EE;"></div>
+<div class="tx" data-box="832,492,373,40" style="left:832px;top:492px;width:373px;height:40px;justify-content:center;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:500;color:#000000;">All three</span></p></div>
+<div class="tx" data-box="832,574,373,62" style="left:832px;top:574px;width:373px;height:62px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">White.</span></p></div>
+<div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">Light adds up. Paint takes away.</span></p></div>
+</section>
+<section class="slide" id="s4" data-beat="picture" data-steps="0">
+<div class="n">4/10</div>
+<div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">The RGB LED, up close</span></p></div>
+<div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
+<div class="sh img" style="left:64px;top:143px;width:1149px;height:467px;background-image:url(assets/img/rgb-parts.png);background-size:contain;background-position:center"></div>
+<div class="tx" data-box="64,624,1149,34" style="left:64px;top:624px;width:1149px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">Four legs: one shared, three colours.</span></p></div>
+</section>
+<section class="slide" id="s5" data-beat="steps" data-steps="0">
+<div class="n">5/10</div>
+<div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the RGB LED</span></p></div>
+<div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
+<div class="tx" data-box="78,153,175,24" style="left:78px;top:153px;width:175px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.00px;font-weight:500;color:#2A1A12;">Five-minute challenge</span></p></div>
+<div class="sh" style="left:64px;top:208px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,216,47,32" style="left:64px;top:216px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">1</span></p></div>
+<div class="tx" data-box="129,208,555,76" style="left:129px;top:208px;width:555px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Drag an RGB LED onto the canvas.</span></p></div>
+<div class="sh" style="left:64px;top:296px;width:616px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:316px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,324,47,32" style="left:64px;top:324px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">2</span></p></div>
+<div class="tx" data-box="129,316,555,76" style="left:129px;top:316px;width:555px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Longest leg to GND. That is the shared one.</span></p></div>
+<div class="sh" style="left:64px;top:404px;width:616px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:424px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,432,47,32" style="left:64px;top:432px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">3</span></p></div>
+<div class="tx" data-box="129,424,555,76" style="left:129px;top:424px;width:555px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Red to pin 9, green to 10, blue to 11. A 220 Ω resistor on each.</span></p></div>
+<div class="sh" style="left:64px;top:512px;width:616px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:532px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,540,47,32" style="left:64px;top:540px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">4</span></p></div>
+<div class="tx" data-box="129,532,555,76" style="left:129px;top:532px;width:555px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.18"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Run it. You should get one colour, not a rainbow.</span></p></div>
+<div class="sh" style="left:768px;top:0px;width:512px;height:720px;background:#DCE7DA;"></div>
+<div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-rgb.png);background-size:contain;background-position:center"></div>
+<div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Illustrative interface. Use the live Tinkercad menus.</span></p></div>
+</section>
+<section class="slide" id="s6" data-beat="code" data-steps="0">
+<div class="n">6/10</div>
+<div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Decode the code</span></p></div>
+<div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
+<div class="tx" data-box="96,170,500,486" style="left:96px;top:170px;width:500px;height:486px;justify-content:center;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">void setup() {</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  pinMode(9, OUTPUT);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  pinMode(10, OUTPUT);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  pinMode(11, OUTPUT);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">}</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">void loop() {</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  analogWrite(9, 255);   // red</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  analogWrite(10, 255);  // green</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">  analogWrite(11, 0);    // blue</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.36"><span style="font-family:Consolas, 'Courier New', monospace;font-size:23.33px;font-weight:400;color:#24292E;">}</span></p></div>
+<div class="sh" style="left:664px;top:143px;width:552px;height:164px;background:#F2C04A;"></div>
+<div class="tx" data-box="685,160,509,30" style="left:685px;top:160px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">analogWrite = how much</span></p></div>
+<div class="tx" data-box="685,195,509,102" style="left:685px;top:195px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">0 to 255. The pin switches fast and your eye averages it.</span></p></div>
+<div class="sh" style="left:664px;top:322px;width:552px;height:164px;background:#DCE7DA;"></div>
+<div class="tx" data-box="685,339,509,30" style="left:685px;top:339px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">255 and 255 = yellow</span></p></div>
+<div class="tx" data-box="685,374,509,102" style="left:685px;top:374px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">Red and green at full, blue off.</span></p></div>
+<div class="sh" style="left:664px;top:501px;width:552px;height:164px;background:#F8E5CF;"></div>
+<div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">Change one number</span></p></div>
+<div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">That changes the colour, not only the brightness.</span></p></div>
+</section>
+<section class="slide" id="s7" data-beat="mission" data-steps="1">
+<div class="n">7/10</div>
+<div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Mission 1: Mix Three</span></p></div>
+<div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,204,47,32" style="left:64px;top:204px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">1</span></p></div>
+<div class="tx" data-box="129,196,676,76" style="left:129px;top:196px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Make yellow, then purple.</span></p></div>
+<div class="sh" style="left:64px;top:280px;width:741px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:300px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,308,47,32" style="left:64px;top:308px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">2</span></p></div>
+<div class="tx" data-box="129,300,676,76" style="left:129px;top:300px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Make white. All three at 255.</span></p></div>
+<div class="sh" style="left:64px;top:384px;width:741px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:404px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,412,47,32" style="left:64px;top:412px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">3</span></p></div>
+<div class="tx" data-box="129,404,676,76" style="left:129px;top:404px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Now make orange. Which number has to drop?</span></p></div>
+<div class="sh" style="left:64px;top:488px;width:741px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:508px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,516,47,32" style="left:64px;top:516px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">4</span></p></div>
+<div class="tx" data-box="129,508,676,76" style="left:129px;top:508px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Write your three numbers down.</span></p></div>
+<div class="sh" style="left:853px;top:0px;width:427px;height:720px;background:#F2C04A;"></div>
+<div class="tx" data-box="891,210,389,24" style="left:891px;top:210px;width:389px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">WATCH CLOSELY</span></p></div>
+<div class="tx" data-box="891,244,352,178" style="left:891px;top:244px;width:352px;height:178px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:50.67px;line-height:1.02"><span style="font-family:'Fira Sans';font-size:50.67px;font-weight:700;color:#000000;">What makes white?</span></p></div>
+<div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
+<div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">All three at full. Light adds up to white.</span></p></div>
+</section>
+<section class="slide" id="s8" data-beat="mission" data-steps="1">
+<div class="n">8/10</div>
+<div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Mission 2: Same Colour, Less Light</span></p></div>
+<div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,204,47,32" style="left:64px;top:204px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">1</span></p></div>
+<div class="tx" data-box="129,196,676,76" style="left:129px;top:196px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Pick a colour and note its three numbers.</span></p></div>
+<div class="sh" style="left:64px;top:280px;width:741px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:300px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,308,47,32" style="left:64px;top:308px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">2</span></p></div>
+<div class="tx" data-box="129,300,676,76" style="left:129px;top:300px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Halve all three. Is it still the same colour?</span></p></div>
+<div class="sh" style="left:64px;top:384px;width:741px;height:5px;background:#1E4D48;"></div>
+<div class="sh" style="left:64px;top:404px;width:47px;height:47px;background:#F2C04A;"></div>
+<div class="tx" data-box="64,412,47,32" style="left:64px;top:412px;width:47px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#000000;">3</span></p></div>
+<div class="tx" data-box="129,404,676,76" style="left:129px;top:404px;width:676px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.15"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:700;color:#2A1A12;">Now change only the blue.</span></p></div>
+<div class="sh" style="left:64px;top:596px;width:741px;height:100px;background:#1E4D48;"></div>
+<div class="tx" data-box="88,613,700,24" style="left:88px;top:613px;width:700px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#FFFFFF;letter-spacing:2.00px;">EXTENSION · A FADE</span></p></div>
+<div class="tx" data-box="88,641,693,58" style="left:88px;top:641px;width:693px;height:58px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#FFFFFF;">Count red from 0 to 255 in steps of 5 and the colour fades up by itself.</span></p></div>
+<div class="sh" style="left:853px;top:0px;width:427px;height:720px;background:#F2C04A;"></div>
+<div class="tx" data-box="891,210,389,24" style="left:891px;top:210px;width:389px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">THINK FIRST</span></p></div>
+<div class="tx" data-box="891,244,352,178" style="left:891px;top:244px;width:352px;height:178px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:50.67px;line-height:1.02"><span style="font-family:'Fira Sans';font-size:50.67px;font-weight:700;color:#000000;">Why does halving keep the colour?</span></p></div>
+<div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
+<div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">The mix is a ratio. Brightness is the total.</span></p></div>
+</section>
+<section class="slide" id="s9" data-beat="check" data-steps="1">
+<div class="n">9/10</div>
+<div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">QUICK CHECK</span></p></div>
+<div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">Quick check: making yellow</span></p></div>
+<div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,331,704,76" style="left:64px;top:331px;width:704px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:400;color:#2A1A12;">Red 255, green 255, blue 0.</span></p></div>
+<div class="tx" data-box="64,412,704,96" style="left:64px;top:412px;width:704px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:28.00px;line-height:1.25"><span style="font-family:'Fira Sans';font-size:28.00px;font-weight:500;color:#2A1A12;">Which two numbers would make purple?</span></p></div>
+<div class="tx" data-box="64,512,704,34" style="left:64px;top:512px;width:704px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Think first. Then raise your hand.</span></p></div>
+<div class="sh" style="left:768px;top:0px;width:512px;height:720px;background:#F2C04A;"></div>
+<div class="tx" data-box="821,180,459,24" style="left:821px;top:180px;width:459px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">ANSWER</span></p></div>
+<div class="tx rv" data-step="1" data-box="821,214,405,160" style="left:821px;top:214px;width:405px;height:160px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:86.67px;line-height:0.92"><span style="font-family:'Fira Sans';font-size:86.67px;font-weight:700;color:#000000;">Red + blue</span></p></div>
+<div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
+<div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">Red and blue at full, green at zero. Green is what makes it yellow.</span></p></div>
+</section>
+<section class="slide" id="s10" data-beat="close" data-steps="0">
+<div class="n">10/10</div>
+<div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">BEFORE YOU LOG OFF</span></p></div>
+<div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">Wrap-up and exit ticket</span></p></div>
+<div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,331,704,76" style="left:64px;top:331px;width:704px;height:76px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:400;color:#2A1A12;">Every colour on a screen is three numbers between 0 and 255.</span></p></div>
+<div class="tx" data-box="64,412,704,96" style="left:64px;top:412px;width:704px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:28.00px;line-height:1.25"><span style="font-family:'Fira Sans';font-size:28.00px;font-weight:500;color:#2A1A12;">Name a colour. What three numbers would make it?</span></p></div>
+<div class="tx" data-box="64,512,704,34" style="left:64px;top:512px;width:704px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Write your answer on a slip or in the chat.</span></p></div>
+<div class="sh" style="left:768px;top:0px;width:512px;height:720px;background:#F2C04A;"></div>
+<div class="sh img" style="left:793px;top:96px;width:462px;height:470px;background-image:url(assets/img/rgb-cover.jpg);background-size:contain;background-position:center"></div>
+<div class="tx" data-box="793,596,462,34" style="left:793px;top:596px;width:462px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Three colours, one lens.</span></p></div>
+<div class="sh" style="left:0px;top:578px;width:1280px;height:142px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,612,1152,24" style="left:64px;top:612px;width:1152px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#FFFFFF;letter-spacing:2.00px;">EXIT TICKET</span></p></div>
+<div class="tx" data-box="64,644,1152,46" style="left:64px;top:644px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:28.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:28.00px;font-weight:500;color:#FFFFFF;">My colour is ________ . It needs red ________ .</span></p></div>
+</section>
+<button class="present" type="button" title="Present · Ctrl+Enter" aria-label="Present">
+<svg width="9" height="11" viewBox="0 0 9 11" aria-hidden="true"><path d="M0 0l9 5.5L0 11z" fill="currentColor"/></svg>Present</button>
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  if (!slides.length) return;
+  let i = 0, playing = false;
+
+  // how far each slide has been revealed: 0 = question only, N = every answer out
+  const shown = slides.map(() => 0);
+  function maxStep(el) { return +el.dataset.steps || 0; }
+  function paint(el, n) {
+    for (const rv of el.querySelectorAll('.rv'))
+      rv.classList.toggle('on', (+rv.dataset.step || 0) <= n);
+  }
+  slides.forEach(el => paint(el, 0));
+
+  function fit() {
+    if (!playing) return;
+    const s = Math.min(innerWidth / 1280, innerHeight / 720);
+    slides[i].style.setProperty('--s', s);
+  }
+  function show(n) {
+    const next = Math.max(0, Math.min(slides.length - 1, n));
+    // arriving on a slide always resets it, the way Google Slides does
+    if (next !== i) { shown[next] = 0; paint(slides[next], 0); }
+    i = next;
+    slides.forEach((el, k) => el.classList.toggle('on', k === i));
+    fit();
+  }
+  // forward: reveal the next answer on this slide, only then move on
+  function forward() {
+    const el = slides[i];
+    if (shown[i] < maxStep(el)) { shown[i]++; paint(el, shown[i]); return; }
+    if (i < slides.length - 1) { show(i + 1); }
+  }
+  function back() {
+    const el = slides[i];
+    if (shown[i] > 0) { shown[i] = 0; paint(el, 0); return; }
+    if (i > 0) { show(i - 1); }
+  }
+  function play(on) {
+    playing = on;
+    document.body.classList.toggle('play', on);
+    if (on) {
+      show(i);
+      if (!document.fullscreenElement && document.documentElement.requestFullscreen)
+        document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      slides.forEach(el => el.classList.remove('on'));
+      if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    }
+  }
+
+  addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      play(!playing);
+      return;
+    }
+    if (!playing) return;
+    const k = e.key;
+    if (k === 'ArrowRight' || k === 'ArrowDown' || k === ' ' || k === 'PageDown') {
+      e.preventDefault(); forward();
+    } else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') {
+      e.preventDefault(); back();
+    } else if (k === 'Home') {
+      e.preventDefault(); show(0);
+    } else if (k === 'End') {
+      e.preventDefault();
+      const last = slides.length - 1;
+      show(last);
+      shown[last] = maxStep(slides[last]); paint(slides[last], shown[last]);
+    } else if (k === 'Escape') {
+      play(false);
+    }
+  });
+
+  // the button in the corner: start from whatever is on screen, not from slide 1
+  function nearestSlide() {
+    const mid = innerHeight / 2;
+    let best = 0, closest = Infinity;
+    slides.forEach((el, k) => {
+      const r = el.getBoundingClientRect();
+      const d = Math.abs((r.top + r.bottom) / 2 - mid);
+      if (d < closest) { closest = d; best = k; }
+    });
+    return best;
+  }
+  const present = document.querySelector('.present');
+  if (present) present.addEventListener('click', e => {
+    e.stopPropagation();
+    if (playing) return;
+    // entering the show starts a fresh slide, the way arriving from elsewhere does
+    slides.forEach((el, k) => { shown[k] = 0; paint(el, 0); });
+    i = nearestSlide();
+    play(true);
+  });
+
+  addEventListener('click', e => {
+    if (playing) { e.shiftKey ? back() : forward(); return; }
+    // outside the slideshow, clicking a slide with a hidden answer reveals it
+    const el = e.target.closest('.slide');
+    if (!el) return;
+    const n = slides.indexOf(el);
+    if (shown[n] < maxStep(el)) { shown[n]++; paint(el, shown[n]); }
+  });
+
+  addEventListener('resize', fit);
+  addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement && playing) play(false);
+  });
+})();
+</script>
+</body></html>

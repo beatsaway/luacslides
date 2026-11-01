@@ -1,0 +1,189 @@
+# L01-Introduction-to-Arduino.pptx
+01	cover     	 15 words	eyebrow · title · claim · one photograph
+02	hook      	 53 words	question + 3 items + footnote + gold takeaway
+03	idea      	 56 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	  7 words	title + one photograph, no body text
+05	steps     	 47 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 64 words	title + code + up to 3 annotation cards
+07	mission   	 44 words	title + up to 4 steps + gold panel + optional teal band
+08	check     	 35 words	statement + inquiry prompt + giant answer panel
+
+# Y7-L02-Press-a-button.pptx
+01	cover     	 16 words	eyebrow · title · claim · one photograph
+02	hook      	 64 words	question + 3 items + footnote + gold takeaway
+03	idea      	 62 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 19 words	title + one photograph, no body text
+05	steps     	 58 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 73 words	title + code + up to 3 annotation cards
+07	mission   	 51 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 67 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 46 words	statement + inquiry prompt + giant answer panel
+10	close     	 53 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y7-L03-Turn-a-knob.pptx
+01	cover     	 19 words	eyebrow · title · claim · one photograph
+02	hook      	 65 words	question + 3 items + footnote + gold takeaway
+03	idea      	 62 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 17 words	title + one photograph, no body text
+05	steps     	 59 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 82 words	title + code + up to 3 annotation cards
+07	mission   	 58 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 73 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 44 words	statement + inquiry prompt + giant answer panel
+10	close     	 57 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y7-L04-Sense-the-light.pptx
+01	cover     	 15 words	eyebrow · title · claim · one photograph
+02	hook      	 62 words	question + 3 items + footnote + gold takeaway
+03	idea      	 59 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 19 words	title + one photograph, no body text
+05	steps     	 53 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 77 words	title + code + up to 3 annotation cards
+07	mission   	 57 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 65 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 41 words	statement + inquiry prompt + giant answer panel
+10	close     	 56 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y7-L05-Make-a-sound.pptx
+01	cover     	 20 words	eyebrow · title · claim · one photograph
+02	hook      	 72 words	question + 3 items + footnote + gold takeaway
+03	idea      	 62 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 17 words	title + one photograph, no body text
+05	steps     	 49 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 57 words	title + code + up to 3 annotation cards
+07	mission   	 46 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 62 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 45 words	statement + inquiry prompt + giant answer panel
+10	close     	 57 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y7-L06-Eight-keys.pptx
+01	cover     	 18 words	eyebrow · title · claim · one photograph
+02	hook      	 57 words	question + 3 items + footnote + gold takeaway
+03	idea      	 59 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 17 words	title + one photograph, no body text
+05	steps     	 44 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	104 words	title + code + up to 3 annotation cards
+07	mission   	 53 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 57 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 46 words	statement + inquiry prompt + giant answer panel
+10	close     	 54 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y8-L02-Colour-from-three-LEDs.pptx
+01	cover     	 15 words	eyebrow · title · claim · one photograph
+02	hook      	 64 words	question + 3 items + footnote + gold takeaway
+03	idea      	 46 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 13 words	title + one photograph, no body text
+05	steps     	 56 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 68 words	title + code + up to 3 annotation cards
+07	mission   	 41 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 65 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 40 words	statement + inquiry prompt + giant answer panel
+10	close     	 53 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y8-L03-Seeing-with-sound.pptx
+01	cover     	 15 words	eyebrow · title · claim · one photograph
+02	hook      	 60 words	question + 3 items + footnote + gold takeaway
+03	idea      	 57 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 12 words	title + one photograph, no body text
+05	steps     	 50 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 73 words	title + code + up to 3 annotation cards
+07	mission   	 49 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 66 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 41 words	statement + inquiry prompt + giant answer panel
+10	close     	 55 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y8-L04-A-voltage-that-means-degrees.pptx
+01	cover     	 22 words	eyebrow · title · claim · one photograph
+02	hook      	 63 words	question + 3 items + footnote + gold takeaway
+03	idea      	 65 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 13 words	title + one photograph, no body text
+05	steps     	 35 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 72 words	title + code + up to 3 annotation cards
+07	mission   	 45 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 72 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 48 words	statement + inquiry prompt + giant answer panel
+10	close     	 55 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y8-L05-A-plant-that-asks-for-water.pptx
+01	cover     	 24 words	eyebrow · title · claim · one photograph
+02	hook      	 59 words	question + 3 items + footnote + gold takeaway
+03	idea      	 55 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 14 words	title + one photograph, no body text
+05	steps     	 43 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 68 words	title + code + up to 3 annotation cards
+07	mission   	 55 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 62 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 44 words	statement + inquiry prompt + giant answer panel
+10	close     	 60 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y8-L06-Measuring-a-push.pptx
+01	cover     	 19 words	eyebrow · title · claim · one photograph
+02	hook      	 59 words	question + 3 items + footnote + gold takeaway
+03	idea      	 52 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 18 words	title + one photograph, no body text
+05	steps     	 35 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 76 words	title + code + up to 3 annotation cards
+07	mission   	 53 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 69 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 49 words	statement + inquiry prompt + giant answer panel
+10	close     	 49 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y9-L02-Motors-need-a-driver.pptx
+01	cover     	 19 words	eyebrow · title · claim · one photograph
+02	hook      	 66 words	question + 3 items + footnote + gold takeaway
+03	idea      	 75 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 20 words	title + one photograph, no body text
+05	steps     	 51 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	104 words	title + code + up to 3 annotation cards
+07	mission   	 60 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 71 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 53 words	statement + inquiry prompt + giant answer panel
+10	close     	 49 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y9-L03-Motors-that-know-their-place.pptx
+01	cover     	 20 words	eyebrow · title · claim · one photograph
+02	hook      	 62 words	question + 3 items + footnote + gold takeaway
+03	idea      	 75 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 17 words	title + one photograph, no body text
+05	steps     	 45 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 97 words	title + code + up to 3 annotation cards
+07	mission   	 56 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 75 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 49 words	statement + inquiry prompt + giant answer panel
+10	close     	 54 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y9-L04-Counting-instead-of-measuring.pptx
+01	cover     	 20 words	eyebrow · title · claim · one photograph
+02	hook      	 63 words	question + 3 items + footnote + gold takeaway
+03	idea      	 67 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 15 words	title + one photograph, no body text
+05	steps     	 46 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 95 words	title + code + up to 3 annotation cards
+07	mission   	 50 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 73 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 50 words	statement + inquiry prompt + giant answer panel
+10	close     	 53 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y9-L05-When-two-rules-disagree.pptx
+01	cover     	 21 words	eyebrow · title · claim · one photograph
+02	hook      	 62 words	question + 3 items + footnote + gold takeaway
+03	idea      	 75 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 15 words	title + one photograph, no body text
+05	steps     	 39 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	123 words	title + code + up to 3 annotation cards
+07	mission   	 57 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 85 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 50 words	statement + inquiry prompt + giant answer panel
+10	close     	 52 words	eyebrow + heading + statement + prompt + answer panel or photo
+
+# Y9-L06-A-device-that-talks.pptx
+01	cover     	 18 words	eyebrow · title · claim · one photograph
+02	hook      	 64 words	question + 3 items + footnote + gold takeaway
+03	idea      	 70 words	title + up to 2 cards + optional 3-box strip + footnote
+04	picture   	 14 words	title + one photograph, no body text
+05	steps     	 39 words	title + badge + up to 4 steps + optional screenshot half
+06	code      	 77 words	title + code + up to 3 annotation cards
+07	mission   	 49 words	title + up to 4 steps + gold panel + optional teal band
+08	mission   	 76 words	title + up to 4 steps + gold panel + optional teal band
+09	check     	 47 words	statement + inquiry prompt + giant answer panel
+10	close     	 56 words	eyebrow + heading + statement + prompt + answer panel or photo
