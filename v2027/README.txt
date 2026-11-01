@@ -61,7 +61,7 @@ on where they are and spends it on the electronics.
 
   Cover        The inquiry, then the aim: what they will be able to do.
   Starter      Two facts the inquiry needs. Retrieval, aimed at today.
-  Inquiry      The same question, one photograph, a turn-and-talk, then the first piece of the answer.
+  Inquiry      The same question, one photograph, talk to a partner, then the answer.
   Predict      One piece of the inquiry. Everyone commits before the reveal.
   Idea         The sentence that answers the inquiry, and a photograph of it.
   Build        Four numbered steps and the wiring picture.

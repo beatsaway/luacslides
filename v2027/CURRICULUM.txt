@@ -20,18 +20,16 @@ short sequence of states.
 Y7.1  Make a light blink
 --------------------------------------------------------------------------
 
-  One light, one board, one line of code that switches it on.
+  Code turns a pin on and off. A resistor protects the LED.
 
-  Inquiry: Who decides when the light blinks — and what keeps that from
-  burning it out?
+  Inquiry: How do you use code to turn a light on and off?
 
-  By the end: By the end you will make a light blink on cue, and know why
-  it needs that little resistor.
+  Aim: By the end you will make an LED blink, and explain why it needs a
+  resistor.
 
-  [idea] A pin is a metal leg that code can switch
-    HIGH is the decision: 5 V, and the light is on. LOW takes the 5 V
-    away. The resistor is not the decision. It is what lets the light
-    survive it.
+  [idea] A pin is on or off
+    HIGH means 5 V, so the LED is on. LOW means 0 V, so the LED is off.
+    The resistor stays in the circuit either way. It limits the current.
 
   [build] A blinking light
     1. Drag an Arduino Uno and a breadboard onto the canvas.
@@ -58,25 +56,23 @@ Y7.1  Make a light blink
     HIGH is 5 V, LOW is 0 V, and a digital pin can do nothing else.
     Reading is a different instruction: digitalRead.
 
-  [exit] Code decides when the light blinks. The resistor stops the light
-  from ________.
+  [exit] HIGH means the pin is at 5 V. The resistor limits the ________.
 
 --------------------------------------------------------------------------
 Y7.2  A button that lights a lamp
 --------------------------------------------------------------------------
 
-  Make a light that comes on only while a button is held — and find out
-  why a loose wire lies.
+  A light that comes on only while you hold the button.
 
-  Inquiry: How can a doorbell tell a real press from a wire that is just
-  hanging loose?
+  Inquiry: How does the board know that a button has been pressed?
 
-  By the end: By the end you will make a light that comes on while a
-  button is held, and explain why a loose pin cannot be trusted.
+  Aim: By the end you will make a light come on while a button is held,
+  and explain why the pin needs a resistor to 0 V.
 
-  [idea] An input pin must be held at a known voltage
-    A resistor ties the pin to 0 V, so it stays LOW until the button pulls
-    it up to 5 V.
+  [idea] Give the pin a known voltage
+    A resistor to 0 V holds the pin LOW while the button is open. Press
+    the button and the pin is connected to 5 V, so digitalRead returns
+    HIGH.
 
   [build] A press-light
     1. Push the button so it straddles the centre trench.
@@ -101,25 +97,27 @@ Y7.2  A button that lights a lamp
     C. To make the LED brighter
     Answer: B. To hold the pin at 0 V when the button is open.
     The button is the only path to 5 V, and it is open. The resistor is
-    the only path to 0 V, and it is always there. Without it the pin
-    floats.
+    the only path to 0 V, and it is always there. Without it the reading
+    jumps about.
 
-  [exit] A pin with nothing holding it is ________.
+  [exit] When the button is not pressed, the resistor holds the pin at
+  ________.
 
 --------------------------------------------------------------------------
 Y7.3  Two things must be true
 --------------------------------------------------------------------------
 
-  A lift that moves only when the door is shut and the button is pressed.
+  Two inputs. One rule, written in words before the code.
 
-  Inquiry: You pressed the button. Why is the lift still not moving?
+  Inquiry: The door is open and you press the button. Why should the lift
+  stay still?
 
-  By the end: By the end you will combine two inputs with && and ||, and
-  write the rule down before you code it.
+  Aim: By the end you will use AND and OR, and write the rule in words
+  before you write the code.
 
-  [idea] && means both, || means either
-    Write the rule as a table first. Four rows for two buttons, and the
-    answer is visible before any code.
+  [idea] And means both. Or means either.
+    && is true only when both inputs are true. || is true when at least
+    one input is true. Write that rule as a sentence, then type it.
 
   [build] Lift safety
     1. Button A to pin 2, button B to pin 3.
@@ -150,20 +148,20 @@ Y7.3  Two things must be true
   pressed.
 
 --------------------------------------------------------------------------
-Y7.4  The board remembers
+Y7.4  Keep a count
 --------------------------------------------------------------------------
 
-  A count that keeps adding up instead of starting again.
+  A number that keeps going up, instead of starting again.
 
-  Inquiry: The person has gone through. How does the turnstile still know
-  the count?
+  Inquiry: How can a program remember how many times the button was
+  pressed?
 
-  By the end: By the end you will keep a count that survives, and
-  recognise the bug that resets it every second.
+  Aim: By the end you will keep a count that goes up, and find the mistake
+  that sets it back to 0.
 
-  [idea] A variable lives where you put it
-    Declared outside loop(), the box survives. Declared inside, it is
-    emptied every time round.
+  [idea] Where you create the variable matters
+    Create the count outside loop() and it keeps its value. Create it
+    inside loop() and it goes back to 0 every time.
 
   [build] A press counter
     1. Keep the button and pull-down from Y7.2 on pin 2.
@@ -190,23 +188,24 @@ Y7.4  The board remembers
     A variable made inside a function lives only while that function runs.
     At the top of the file it lives for as long as the program.
 
-  [exit] The count survives because the variable lives ________ the loop.
+  [exit] A count keeps going up when the variable is created ________
+  loop().
 
 --------------------------------------------------------------------------
 Y7.5  Design a crossing
 --------------------------------------------------------------------------
 
-  Four states, one loop, and a traffic light that behaves.
+  A list of stages. Each stage is which lamps are on, and for how long.
 
-  Inquiry: Nobody is choosing the lamps. How does the crossing know what
-  to show next?
+  Inquiry: How does a traffic light change on its own, with nobody
+  pressing a switch?
 
-  By the end: By the end you will design the states of a traffic light,
-  build it, and time it.
+  Aim: By the end you will list the stages of a traffic light, build it,
+  and set how long each stage lasts.
 
-  [idea] A sequence of states is a machine
-    List the states. Then list what moves you from one to the next. That
-    list is the program.
+  [idea] A stage is a pattern and a time
+    Write each stage as which lamps are on and how many milliseconds it
+    lasts. The loop runs the list from the top, then repeats.
 
   [build] A traffic light
     1. Red on pin 11, amber on 10, green on 9.
@@ -232,7 +231,8 @@ Y7.5  Design a crossing
     A state is the whole picture: which lamps are on right now. A machine
     is a list of states and the rules for moving between them.
 
-  [exit] A machine is a list of ________ and the rules between them.
+  [exit] A traffic light program is a list of ________ and the time for
+  each one.
 
 
 ==========================================================================
@@ -243,27 +243,27 @@ Ranges, sensors, calibration, and a device that decides for itself.
 
 By the end of Year 8 a pupil can read a range, explain why a sensor needs
 a divider, use PWM, turn a raw number into a real unit, and build a device
-with two thresholds that does not chatter.
+with two limits so a small wobble does not switch it on and off.
 
 --------------------------------------------------------------------------
-Y8.1  Not just on and off
+Y8.1  Read a knob
 --------------------------------------------------------------------------
 
-  A dial instead of a switch: turning a voltage into a number.
+  A number from 0 to 1023, not just on or off.
 
-  Inquiry: A knob isn't on or off. How does the board know how far you
-  turned it?
+  Inquiry: A switch is only on or off. How can a knob tell the board how
+  far you turned it?
 
-  By the end: By the end you will read a dial as a number from 0 to 1023,
-  and know what that number means.
+  Aim: By the end you will read a knob as a number from 0 to 1023, and say
+  what that number means.
 
-  [idea] An analog pin says how much, not just yes or no
-    analogRead gives a step from 0 to 1023, and each step is a share of 5
-    V.
+  [idea] A number, not just on or off
+    analogRead gives a whole number from 0 to 1023. That number stands for
+    a voltage between 0 V and 5 V.
 
   [build] A dimmer dial
     1. Outer legs of the pot to 5 V and GND.
-    2. Middle leg — the wiper — to A0.
+    2. Middle pin of the knob to A0.
     3. LED and 220 Ω on pin 9.
     4. Turn the knob and watch the Serial Monitor.
 
@@ -274,7 +274,7 @@ Y8.1  Not just on and off
     Answer: About 512.
 
   [debug] The reading jumps between 0 and 1023, with nothing in between.
-    Fault: The middle leg is not connected to A0.
+    Fault: The middle pin of the knob is not connected to A0.
 
   [check] analogRead(A0) returns 512. What is the voltage on A0?
     A. 512 V
@@ -284,22 +284,25 @@ Y8.1  Not just on and off
     512 is about half of 1023, so the voltage is about half of 5 V. The
     reading is a step number, and the voltage is what it is counting.
 
-  [exit] An analog pin answers ________, not yes or no.
+  [exit] An analog pin gives a ________ from 0 to 1023, not just on or
+  off.
 
 --------------------------------------------------------------------------
-Y8.2  A lamp that knows it's dark
+Y8.2  A light that comes on in the dark
 --------------------------------------------------------------------------
 
-  A lamp that comes on by itself when the room goes dark.
+  The sensor changes resistance. A second resistor makes a voltage the
+  board can read.
 
-  Inquiry: How can a lamp notice that the room has gone dark?
+  Inquiry: How can a light come on by itself when the room gets dark?
 
-  By the end: By the end you will turn a light sensor into a number, and
-  explain why it cannot be connected on its own.
+  Aim: By the end you will use a light sensor to get a number, and explain
+  why it needs a second resistor.
 
-  [idea] The board measures voltage, not resistance
-    Two resistors in a row split the 5 V. Change one, and the middle
-    moves.
+  [idea] The board reads voltage
+    An LDR changes resistance as the light changes. On its own that does
+    not give the pin a voltage. A second resistor makes a divider, so the
+    reading changes with the light.
 
   [build] A night light
     1. 5 V to one leg of the LDR.
@@ -328,22 +331,24 @@ Y8.2  A lamp that knows it's dark
     second resistor is what turns a change in resistance into a change in
     voltage.
 
-  [exit] The board measures ________, not resistance.
+  [exit] The board reads ________. The second resistor turns a change in
+  resistance into that.
 
 --------------------------------------------------------------------------
-Y8.3  Dimming is a trick
+Y8.3  Dim an LED
 --------------------------------------------------------------------------
 
-  How to dim a light when the pin can only be on or off.
+  The pin is still only on or off. It is on for part of the time.
 
-  Inquiry: How can a light look half-on when a pin can only be fully on or
-  fully off?
+  Inquiry: A pin is only fully on or fully off. How can an LED look dim?
 
-  By the end: By the end you will dim an LED, and explain why the pin is
-  never actually at half voltage.
+  Aim: By the end you will dim an LED, and explain that the pin is never
+  at a voltage in between.
 
-  [idea] Fast switching looks like an in-between value
-    The pin is only ever at 5 V or 0 V. The average is what you see.
+  [idea] On for part of the time
+    analogWrite switches the pin on and off thousands of times a second. A
+    low number means on for a small part of each cycle, so the LED looks
+    dim. The pin is never at a voltage in between.
 
   [build] A dimmer
     1. Pot on A0, outer legs to 5 V and GND.
@@ -371,23 +376,25 @@ Y8.3  Dimming is a trick
     It is on for one quarter of the time. One quarter of 5 V is 1.25 V.
     That fraction is called the duty cycle.
 
-  [exit] Fast switching looks like an ________ value.
+  [exit] The LED looks dim because the pin is on for only part of the
+  ________.
 
 --------------------------------------------------------------------------
 Y8.4  A number that means degrees
 --------------------------------------------------------------------------
 
-  Turning a raw number into degrees you can actually trust.
+  0.5 V means 0 °C. Then 0.01 V for each degree.
 
-  Inquiry: The board only measures voltage. How does that become a
-  temperature you can trust?
+  Inquiry: The sensor gives a voltage. How do we turn that into a
+  temperature in °C?
 
-  By the end: By the end you will turn a raw reading into degrees Celsius,
-  and know why the formula has a 0.5 in it.
+  Aim: By the end you will convert the reading to degrees Celsius, and
+  explain why the formula subtracts 0.5.
 
-  [idea] Two points you trust are enough
-    Find two readings you know, draw the line between them, and every
-    other reading has a value.
+  [idea] From volts to degrees
+    Read the voltage. Subtract 0.5 V, because that is what the sensor
+    outputs at 0 °C. Multiply by 100, because each extra 0.01 V is one
+    degree.
 
   [build] A thermometer
     1. Hold the TMP36 with the flat face towards you.
@@ -413,24 +420,24 @@ Y8.4  A number that means degrees
     temperatures below zero. Without subtracting it, 0 °C would read as 50
     °C.
 
-  [exit] Calibration turns a reading into a ________.
+  [exit] We subtract 0.5 because the sensor outputs 0.5 V at ________.
 
 --------------------------------------------------------------------------
-Y8.5  A plant alarm that will not chatter
+Y8.5  An alarm that stays steady
 --------------------------------------------------------------------------
 
-  A buzzer that comes on when the soil is dry — and stays quiet until it
-  is properly wet.
+  Two limits, with a gap, so a small wobble does not switch the buzzer.
 
-  Inquiry: The soil is nearly dry and the alarm will not choose. How do
-  you make it stick?
+  Inquiry: Why does the buzzer keep switching on and off near the limit,
+  and how do you stop it?
 
-  By the end: By the end you will build a device that senses, decides and
-  acts, and stop it chattering at the threshold.
+  Aim: By the end you will turn a buzzer on when the soil is dry, and keep
+  it off until the soil is wet enough.
 
-  [idea] Two thresholds beat one
-    Switch on below the low mark. Switch off above the high mark. The gap
-    is the memory.
+  [idea] Two limits, with a gap
+    Turn the buzzer on when the reading goes below the lower limit. Leave
+    it on until the reading goes above the higher limit. Between the two,
+    do not change anything.
 
   [build] A plant alarm
     1. Probe into A0 and 5 V (two nails work).
@@ -443,7 +450,7 @@ Y8.5  A plant alarm that will not chatter
 
   [predict] The threshold is 400. The reading wobbles between 398 and 402.
   What does the buzzer do?
-    Answer: It chatters.
+    Answer: It keeps switching on and off.
 
   [debug] The buzzer is on when the soil is wet, and off when it is dry.
     Fault: The probe is the other way round in the divider: wet now reads
@@ -451,13 +458,15 @@ Y8.5  A plant alarm that will not chatter
 
   [check] Why two thresholds instead of one?
     A. To make the code longer
-    B. So a wobbling reading cannot make the output chatter
+    B. So a reading that wobbles cannot make the buzzer switch on and off
     C. Because analogRead is noisy
-    Answer: B. So a wobbling reading cannot make the output chatter.
-    One threshold flips on every wobble. The gap means the output changes
-    only when the reading has really moved.
+    Answer: B. So a reading that wobbles cannot make the buzzer switch on
+    and off.
+    One limit makes the buzzer switch every time the reading wobbles
+    across it. A gap between two limits means it changes only when the
+    reading has really moved.
 
-  [exit] The alarm sticks because there are two ________, not one.
+  [exit] The buzzer stays steady because there are two ________, not one.
 
 
 ==========================================================================
@@ -474,16 +483,18 @@ feedback loop, and send a reading as a formatted message.
 Y9.1  A motor needs more than a pin
 --------------------------------------------------------------------------
 
-  Why one metal leg cannot run a motor, and what you put in the way.
+  A pin can light an LED. It cannot power a motor on its own.
 
-  Inquiry: This pin lit an LED all year. Why does it fail the moment you
-  ask for a motor?
+  Inquiry: Why can't a pin power a motor the way it powers an LED?
 
-  By the end: By the end you will switch a motor with a small signal, and
-  explain why the pin alone would fail.
+  Aim: By the end you will switch a motor on with a transistor, and
+  explain why the pin cannot supply the motor's current.
 
-  [idea] A small current can switch a big one
-    The pin drives the base. The transistor carries the motor's current.
+  [idea] The pin sends the signal
+    A pin can give about 20 mA. A motor needs more than that. The pin
+    switches a transistor on and off. The transistor connects the motor to
+    the supply. A diode gives the motor's current a safe path when it
+    switches off.
 
   [build] A motor driver
     1. Motor and a separate 5 V supply.
@@ -511,27 +522,29 @@ Y9.1  A motor needs more than a pin
     generates a voltage spike that can destroy the transistor. The diode
     sends that current round the motor instead.
 
-  [exit] The pin carries the ________; the transistor carries the power.
+  [exit] The pin sends the signal. The ________ carries the motor's
+  current.
 
 --------------------------------------------------------------------------
 Y9.2  Control the speed
 --------------------------------------------------------------------------
 
-  A knob that sets how fast the motor turns, all the way down to a crawl.
+  More of the time on means more power to the motor.
 
-  Inquiry: How do you make a motor crawl, when the pin can only shout on
-  or off?
+  Inquiry: How do you change a motor's speed, not just turn it on or off?
 
-  By the end: By the end you will control a motor's speed with PWM, and
-  explain why half duty is not exactly half speed.
+  Aim: By the end you will set a motor's speed from a knob, and explain
+  why half the time on is not exactly half the speed.
 
-  [idea] Switching fast controls the average power
-    The transistor is a switch. Open and close it quickly and the motor
-    sees the average.
+  [idea] More time on, more power
+    analogWrite still switches fully on and fully off. A higher value
+    means the motor is powered for more of each cycle, so it spins faster.
+    It will not be exactly half speed at 128, because the motor has to
+    overcome friction.
 
   [build] A speed control
     1. Keep the transistor and motor from Y9.1.
-    2. Pot: outer legs 5 V and GND, wiper to A0.
+    2. Knob: outer pins to 5 V and GND, middle pin to A0.
     3. Drive the base from pin 9 — a PWM pin.
     4. Keep the motor supply separate, grounds joined.
 
@@ -554,23 +567,23 @@ Y9.2  Control the speed
     The pin is on for a quarter of each cycle, so the average is a quarter
     of the supply. That is why 25% duty feels much slower than half.
 
-  [exit] PWM controls the ________ power.
+  [exit] PWM changes how much of the ________ the motor is powered for.
 
 --------------------------------------------------------------------------
-Y9.3  A servo asks for a position
+Y9.3  Set a servo to an angle
 --------------------------------------------------------------------------
 
-  A motor that goes to an angle and stays there.
+  You send an angle. The servo moves there and stays.
 
-  Inquiry: A motor spins. How do you tell one to stop at an angle and stay
-  there?
+  Inquiry: How do you tell a motor to go to an angle and stay there?
 
-  By the end: By the end you will command a servo to an angle, and explain
-  why its signal is not a dimmer's.
+  Aim: By the end you will set a servo to an angle you choose, and explain
+  that the signal is the angle, not the speed.
 
-  [idea] A pulse is an instruction, not a power level
-    Every 20 ms the board sends a pulse. Its width sets the angle the
-    servo holds.
+  [idea] The signal is the angle
+    A servo expects a pulse about every 20 ms. A 1 ms pulse means about
+    0°. 1.5 ms means about 90°. 2 ms means about 180°. You tell it where
+    to go, not how fast to spin.
 
   [build] A dial-controlled arm
     1. Signal wire to pin 9.
@@ -597,23 +610,23 @@ Y9.3  A servo asks for a position
     1.5 ms is halfway between 1.0 and 2.0 ms, and halfway between 0° and
     180° is 90°.
 
-  [exit] A servo is told a ________, not a speed.
+  [exit] A servo is told an ________, not a speed.
 
 --------------------------------------------------------------------------
-Y9.4  A system that corrects itself
+Y9.4  Turn towards the light
 --------------------------------------------------------------------------
 
-  Feedback: measure, compare, act, repeat.
+  Read the sensors, move a little, then check again.
 
-  Inquiry: Nobody is steering. How does the lamp turn toward the light and
-  then settle?
+  Inquiry: How can the lamp turn itself towards the light, then stop?
 
-  By the end: By the end you will close a feedback loop: a servo that
-  turns towards the light and settles.
+  Aim: By the end you will make a servo move towards the brighter sensor
+  and stop when the two readings are close.
 
-  [idea] Measure, compare, act, repeat
-    The error is the difference between the target and the measurement.
-    The controller acts on the error.
+  [idea] Move, then check again
+    The error is the difference between the two light readings. If the
+    error is large, move the servo a step towards the brighter sensor. If
+    the error is small, stop. Then read the sensors again.
 
   [build] A light tracker
     1. Two LDRs, left and right, into A0 and A1.
@@ -624,40 +637,39 @@ Y9.4  A system that corrects itself
   [code] The loop, in twelve lines. Decoded: left > right + 40; angle =
   angle - 2; constrain(angle, 0, 180).
 
-  [predict] A heater switches on below 20 °C and off above 21 °C. The room
-  is at 20.5 °C. What happens?
-    Answer: It depends what it was doing before.
+  [predict] The two light readings are 600 and 610. What should the servo
+  do?
+    Answer: Stop, because the readings are close.
 
-  [debug] The arm swings past the light and keeps hunting back and forth.
-    Fault: The deadband is too narrow for how much the two sensors
-    disagree.
+  [debug] The arm swings past the light and keeps going back and forth.
+    Fault: The gap is too small for how much the two sensors disagree.
 
-  [check] What is the error in a control loop?
+  [check] In this program, what is the error?
     A. A mistake in the code
-    B. The difference between the target and the measurement
+    B. The difference between the two light readings
     C. The delay between readings
-    Answer: B. The difference between the target and the measurement.
-    Error = target − measured. The controller's job is to reduce it. When
-    the error is inside the deadband, the system stops correcting.
+    Answer: B. The difference between the two light readings.
+    The error is how far apart the two readings are. The program tries to
+    make that smaller. When the difference is under 40, it stops.
 
-  [exit] The error is the difference between the ________ and the
-  measurement.
+  [exit] The error is the difference between the two ________.
 
 --------------------------------------------------------------------------
-Y9.5  A device that reports
+Y9.5  Send a reading
 --------------------------------------------------------------------------
 
-  Sending a reading down a wire so another machine can read it.
+  Each reading is a name, a value, and a new line.
 
-  Inquiry: The reading is on your screen. How does another machine know
-  where one reading ends?
+  Inquiry: How do you send a reading so another program can tell the
+  readings apart?
 
-  By the end: By the end you will send a reading as a message, and design
-  a device that senses, decides, acts and reports.
+  Aim: By the end you will print each reading on its own line, with a name
+  and a value.
 
-  [idea] Data needs a format
-    Label, value, separator, end of line. That is a protocol, and it is
-    all you need.
+  [idea] Name, value, new line
+    Each message has a name, a value, and a new line. That agreed shape is
+    a protocol. The other program reads one line, splits the name from the
+    value, and knows which reading it is.
 
   [build] A reporting sensor
     1. Use any sensor from Year 8 on A0.
@@ -684,7 +696,8 @@ Y9.5  A device that reports
     A stream of characters has no natural boundaries. A newline, a length
     or a fixed size is what turns characters into messages.
 
-  [exit] Another machine can read it because each message has an ________.
+  [exit] Each reading is separate because the message ends with a
+  ________.
 
 
 ==========================================================================
@@ -697,7 +710,8 @@ survives, and design a short sequence of states.
 
 Year 8, Measure it: By the end of Year 8 a pupil can read a range, explain
 why a sensor needs a divider, use PWM, turn a raw number into a real unit,
-and build a device with two thresholds that does not chatter.
+and build a device with two limits so a small wobble does not switch it on
+and off.
 
 Year 9, Make it move: By the end of Year 9 a pupil can explain why a pin
 cannot drive a motor, switch a big current with a transistor, command a
