@@ -10,7 +10,7 @@
 09	debug   	 61 words	85
 10	check   	 55 words	80
 11	stretch 	 37 words	76
-12	exit    	 55 words	70
+12	exit    	 61 words	100
 
 # Y7.2  A button that lights a lamp
 01	cover   	 48 words	78
@@ -24,7 +24,7 @@
 09	debug   	 74 words	85
 10	check   	 79 words	80
 11	stretch 	 63 words	76
-12	exit    	 54 words	70
+12	exit    	 61 words	100
 
 # Y7.3  Two things must be true
 01	cover   	 45 words	78
@@ -38,7 +38,7 @@
 09	debug   	 57 words	85
 10	check   	 34 words	80
 11	stretch 	 73 words	76
-12	exit    	 42 words	70
+12	exit    	 49 words	100
 
 # Y7.4  Keep a count
 01	cover   	 42 words	78
@@ -52,7 +52,7 @@
 09	debug   	 49 words	85
 10	check   	 60 words	80
 11	stretch 	 53 words	76
-12	exit    	 48 words	70
+12	exit    	 53 words	100
 
 # Y7.5  Design a crossing
 01	cover   	 44 words	78
@@ -66,7 +66,7 @@
 09	debug   	 59 words	85
 10	check   	 49 words	80
 11	stretch 	 55 words	76
-12	exit    	 60 words	70
+12	exit    	 68 words	100
 
 # Y8.1  Read a knob
 01	cover   	 49 words	78
@@ -80,7 +80,7 @@
 09	debug   	 74 words	85
 10	check   	 52 words	80
 11	stretch 	 58 words	76
-12	exit    	 56 words	70
+12	exit    	 64 words	100
 
 # Y8.2  A light that comes on in the dark
 01	cover   	 48 words	78
@@ -94,7 +94,7 @@
 09	debug   	 78 words	85
 10	check   	 72 words	80
 11	stretch 	 55 words	76
-12	exit    	 59 words	70
+12	exit    	 66 words	100
 
 # Y8.3  Dim an LED
 01	cover   	 43 words	78
@@ -108,7 +108,7 @@
 09	debug   	 56 words	85
 10	check   	 57 words	80
 11	stretch 	 45 words	76
-12	exit    	 52 words	70
+12	exit    	 60 words	100
 
 # Y8.4  A number that means degrees
 01	cover   	 44 words	78
@@ -122,7 +122,7 @@
 09	debug   	 61 words	85
 10	check   	 62 words	80
 11	stretch 	 50 words	76
-12	exit    	 61 words	70
+12	exit    	 68 words	100
 
 # Y8.5  An alarm that stays steady
 01	cover   	 53 words	78
@@ -136,7 +136,7 @@
 09	debug   	 97 words	85  over
 10	check   	 69 words	80
 11	stretch 	 51 words	76
-12	exit    	 48 words	70
+12	exit    	 52 words	100
 
 # Y9.1  A motor needs more than a pin
 01	cover   	 48 words	78
@@ -150,7 +150,7 @@
 09	debug   	 62 words	85
 10	check   	 70 words	80
 11	stretch 	 60 words	76
-12	exit    	 45 words	70
+12	exit    	 49 words	100
 
 # Y9.2  Control the speed
 01	cover   	 48 words	78
@@ -164,7 +164,7 @@
 09	debug   	 60 words	85
 10	check   	 53 words	80
 11	stretch 	 54 words	76
-12	exit    	 54 words	70
+12	exit    	 59 words	100
 
 # Y9.3  Set a servo to an angle
 01	cover   	 50 words	78
@@ -178,7 +178,7 @@
 09	debug   	 73 words	85
 10	check   	 32 words	80
 11	stretch 	 54 words	76
-12	exit    	 46 words	70
+12	exit    	 48 words	100
 
 # Y9.4  Turn towards the light
 01	cover   	 42 words	78
@@ -192,7 +192,7 @@
 09	debug   	 68 words	85
 10	check   	 55 words	80
 11	stretch 	 48 words	76
-12	exit    	 49 words	70
+12	exit    	 51 words	100
 
 # Y9.5  Send a reading
 01	cover   	 41 words	78
@@ -206,4 +206,4 @@
 09	debug   	 64 words	85
 10	check   	 63 words	80
 11	stretch 	 54 words	76
-12	exit    	 45 words	70
+12	exit    	 50 words	100

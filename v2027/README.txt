@@ -70,7 +70,7 @@ on where they are and spends it on the electronics.
   Debug        A broken version and the fault to find.
   Check        One misconception, three answers, one reveal.
   Stretch      Two tasks for the pupils who finish early.
-  Exit ticket  Two questions and one sentence frame to collect.
+  Exit ticket  Two questions, then the sentence. Click to reveal the finished sentence.
 
 The same shape in every lesson is deliberate. By lesson 3 the class
 knows that the predictable argument happens on slide 4 and the broken
