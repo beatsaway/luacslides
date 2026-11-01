@@ -77,6 +77,34 @@ knows that the predictable argument happens on slide 4 and the broken
 version is on slide 9, and stops bracing for surprises.
 
 ==========================================================================
+THE PICTURES
+==========================================================================
+
+Every lesson opens with a drawn scene of a thing from a house, a
+street or a bedroom: a lamp, a doorbell, a lift, a crossing, a night
+light, a toy car, a plant alarm. The scene is what a pupil recognises,
+so the first thirty seconds of a lesson are about something they
+already know. The words on the cover come after the picture.
+
+The idea slide is a poster, not a schematic: one claim, five words at
+most, drawn in the same flat style as the cover. A schematic with
+twelve labels teaches nothing in the forty seconds a slide gets.
+
+The style is the same in all thirty pictures, on purpose:
+
+  flat fills, one ink outline, no gradients and no shadows
+  sand and sage ground, cream objects, teal structure
+  gold only for whatever is switched on
+
+That last rule matters. If something in a picture is gold, it is the
+part the lesson is about, and a pupil can find it from the back of
+the room.
+
+To change a picture, edit v26/_art.py (covers) or v26/_posters.py
+(idea posters) and run `python -m v26._art` or
+`python -m v26._posters`. Both write straight into assets/img/v26.
+
+==========================================================================
 THE COURSE IN ONE PARAGRAPH
 ==========================================================================
 

@@ -1,19 +1,19 @@
-# Y7.1  A pin you can switch
-01	cover   	 26 words	34
-02	starter 	 45 words	46
-03	hook    	 56 words	60
+# Y7.1  Make a light blink
+01	cover   	 29 words	34
+02	starter 	 61 words	46  over
+03	hook    	 70 words	60  over
 04	predict 	 70 words	82
-05	idea    	 36 words	48
+05	idea    	 38 words	48
 06	build   	 43 words	44
 07	code    	 53 words	112
 08	test    	 50 words	62
 09	debug   	 61 words	85
 10	check   	 55 words	80
 11	stretch 	 37 words	76
-12	exit    	 37 words	50
+12	exit    	 41 words	50
 
-# Y7.2  Reading a button
-01	cover   	 28 words	34
+# Y7.2  A button that lights a lamp
+01	cover   	 36 words	34  over
 02	starter 	 24 words	46
 03	hook    	 51 words	60
 04	predict 	 75 words	82
@@ -24,10 +24,10 @@
 09	debug   	 74 words	85
 10	check   	 78 words	80
 11	stretch 	 63 words	76
-12	exit    	 35 words	50
+12	exit    	 38 words	50
 
-# Y7.3  Two conditions
-01	cover   	 24 words	34
+# Y7.3  Two things must be true
+01	cover   	 29 words	34
 02	starter 	 29 words	46
 03	hook    	 52 words	60
 04	predict 	 60 words	82
@@ -41,7 +41,7 @@
 12	exit    	 33 words	50
 
 # Y7.4  The board remembers
-01	cover   	 26 words	34
+01	cover   	 28 words	34
 02	starter 	 26 words	46
 03	hook    	 50 words	60
 04	predict 	 65 words	82
@@ -55,7 +55,7 @@
 12	exit    	 34 words	50
 
 # Y7.5  Design a crossing
-01	cover   	 24 words	34
+01	cover   	 26 words	34
 02	starter 	 26 words	46
 03	hook    	 50 words	60
 04	predict 	 60 words	82
@@ -68,8 +68,8 @@
 11	stretch 	 55 words	76
 12	exit    	 48 words	50
 
-# Y8.1  A pin that reads a range
-01	cover   	 31 words	34
+# Y8.1  Not just on and off
+01	cover   	 32 words	34
 02	starter 	 23 words	46
 03	hook    	 58 words	60
 04	predict 	 46 words	82
@@ -80,10 +80,10 @@
 09	debug   	 65 words	85
 10	check   	 52 words	80
 11	stretch 	 58 words	76
-12	exit    	 34 words	50
+12	exit    	 33 words	50
 
-# Y8.2  A sensor is a resistor that changes
-01	cover   	 33 words	34
+# Y8.2  A lamp that knows it's dark
+01	cover   	 34 words	34
 02	starter 	 20 words	46
 03	hook    	 49 words	60
 04	predict 	 71 words	82
@@ -97,7 +97,7 @@
 12	exit    	 41 words	50
 
 # Y8.3  Dimming is a trick
-01	cover   	 26 words	34
+01	cover   	 28 words	34
 02	starter 	 27 words	46
 03	hook    	 53 words	60
 04	predict 	 74 words	82
@@ -111,7 +111,7 @@
 12	exit    	 38 words	50
 
 # Y8.4  A number that means degrees
-01	cover   	 31 words	34
+01	cover   	 33 words	34
 02	starter 	 28 words	46
 03	hook    	 56 words	60
 04	predict 	 48 words	82
@@ -122,10 +122,10 @@
 09	debug   	 61 words	85
 10	check   	 62 words	80
 11	stretch 	 50 words	76
-12	exit    	 35 words	50
+12	exit    	 38 words	50
 
-# Y8.5  A device that decides
-01	cover   	 28 words	34
+# Y8.5  A plant alarm that will not chatter
+01	cover   	 33 words	34
 02	starter 	 31 words	46
 03	hook    	 48 words	60
 04	predict 	 55 words	82
@@ -138,8 +138,8 @@
 11	stretch 	 51 words	76
 12	exit    	 31 words	50
 
-# Y9.1  A pin is a signal, not a supply
-01	cover   	 32 words	34
+# Y9.1  A motor needs more than a pin
+01	cover   	 33 words	34
 02	starter 	 31 words	46
 03	hook    	 57 words	60
 04	predict 	 81 words	82
@@ -153,7 +153,7 @@
 12	exit    	 37 words	50
 
 # Y9.2  Control the speed
-01	cover   	 28 words	34
+01	cover   	 30 words	34
 02	starter 	 38 words	46
 03	hook    	 46 words	60
 04	predict 	 65 words	82
@@ -167,7 +167,7 @@
 12	exit    	 37 words	50
 
 # Y9.3  A servo asks for a position
-01	cover   	 30 words	34
+01	cover   	 32 words	34
 02	starter 	 33 words	46
 03	hook    	 55 words	60
 04	predict 	 66 words	82
@@ -181,7 +181,7 @@
 12	exit    	 37 words	50
 
 # Y9.4  A system that corrects itself
-01	cover   	 27 words	34
+01	cover   	 29 words	34
 02	starter 	 34 words	46
 03	hook    	 50 words	60
 04	predict 	 69 words	82
@@ -195,7 +195,7 @@
 12	exit    	 43 words	50
 
 # Y9.5  A device that reports
-01	cover   	 29 words	34
+01	cover   	 31 words	34
 02	starter 	 26 words	46
 03	hook    	 46 words	60
 04	predict 	 61 words	82

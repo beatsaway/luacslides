@@ -17,18 +17,18 @@ safely, combine two conditions, keep a count that survives, and design a
 short sequence of states.
 
 --------------------------------------------------------------------------
-Y7.1  A pin you can switch
+Y7.1  Make a light blink
 --------------------------------------------------------------------------
 
-  Light an LED from code, and find out what the resistor is for.
+  One light, one board, one line of code that switches it on.
 
-  By the end: By the end you will light an LED from code, and know why it
-  needs a resistor.
+  By the end: By the end you will make a light blink on cue, and know why
+  it needs that little resistor.
 
-  [idea] A pin is a switch that code controls
-    HIGH puts 5 V on the pin. LOW puts 0 V on it. Nothing in between.
+  [idea] A pin is a metal leg that code can switch
+    HIGH puts 5 V on it. LOW takes the 5 V away. There is no half-on.
 
-  [build] A blinking LED
+  [build] A blinking light
     1. Drag an Arduino Uno and a breadboard onto the canvas.
     2. Add an LED. The long leg is the positive one.
     3. Run a 220 Ω resistor from pin 13 to the long leg.
@@ -53,16 +53,17 @@ Y7.1  A pin you can switch
     HIGH is 5 V, LOW is 0 V, and a digital pin can do nothing else.
     Reading is a different instruction: digitalRead.
 
-  [exit] A pin is a ________ that code can switch.
+  [exit] A pin is a metal leg that code can ________.
 
 --------------------------------------------------------------------------
-Y7.2  Reading a button
+Y7.2  A button that lights a lamp
 --------------------------------------------------------------------------
 
-  A light that comes on while a button is held, and why a loose pin lies.
+  Make a light that comes on only while a button is held — and find out
+  why a loose wire lies.
 
-  By the end: By the end you will light an LED while a button is held —
-  and explain why a loose pin cannot be trusted.
+  By the end: By the end you will make a light that comes on while a
+  button is held, and explain why a loose pin cannot be trusted.
 
   [idea] An input pin must be held at a known voltage
     A resistor ties the pin to 0 V, so it stays LOW until the button pulls
@@ -97,7 +98,7 @@ Y7.2  Reading a button
   [exit] A pin with nothing holding it is ________.
 
 --------------------------------------------------------------------------
-Y7.3  Two conditions
+Y7.3  Two things must be true
 --------------------------------------------------------------------------
 
   A lift that moves only when the door is shut and the button is pressed.
@@ -141,7 +142,7 @@ Y7.3  Two conditions
 Y7.4  The board remembers
 --------------------------------------------------------------------------
 
-  A counter that survives from one pass of loop() to the next.
+  A count that keeps adding up instead of starting again.
 
   By the end: By the end you will keep a count that survives, and
   recognise the bug that resets it every second.
@@ -228,10 +229,10 @@ a divider, use PWM, turn a raw number into a real unit, and build a device
 with two thresholds that does not chatter.
 
 --------------------------------------------------------------------------
-Y8.1  A pin that reads a range
+Y8.1  Not just on and off
 --------------------------------------------------------------------------
 
-  From HIGH and LOW to a number between 0 and 1023.
+  A dial instead of a switch: turning a voltage into a number.
 
   By the end: By the end you will read a dial as a number from 0 to 1023,
   and know what that number means.
@@ -266,10 +267,10 @@ Y8.1  A pin that reads a range
   [exit] An analog pin answers ________, not yes or no.
 
 --------------------------------------------------------------------------
-Y8.2  A sensor is a resistor that changes
+Y8.2  A lamp that knows it's dark
 --------------------------------------------------------------------------
 
-  Light, a voltage divider, and a rule that turns a lamp on.
+  A lamp that comes on by itself when the room goes dark.
 
   By the end: By the end you will turn a light sensor into a number, and
   explain why it cannot be connected on its own.
@@ -311,7 +312,7 @@ Y8.2  A sensor is a resistor that changes
 Y8.3  Dimming is a trick
 --------------------------------------------------------------------------
 
-  PWM, duty cycle, and why the pin is never at 2.5 V.
+  How to dim a light when the pin can only be on or off.
 
   By the end: By the end you will dim an LED, and explain why the pin is
   never actually at half voltage.
@@ -351,7 +352,7 @@ Y8.3  Dimming is a trick
 Y8.4  A number that means degrees
 --------------------------------------------------------------------------
 
-  Calibration, the TMP36, and the 0.5 V that everything hangs on.
+  Turning a raw number into degrees you can actually trust.
 
   By the end: By the end you will turn a raw reading into degrees Celsius,
   and know why the formula has a 0.5 in it.
@@ -387,10 +388,11 @@ Y8.4  A number that means degrees
   [exit] Calibration turns a reading into a ________.
 
 --------------------------------------------------------------------------
-Y8.5  A device that decides
+Y8.5  A plant alarm that will not chatter
 --------------------------------------------------------------------------
 
-  Sense, decide, act — with two thresholds so it cannot chatter.
+  A buzzer that comes on when the soil is dry — and stays quiet until it
+  is properly wet.
 
   By the end: By the end you will build a device that senses, decides and
   acts, and stop it chattering at the threshold.
@@ -438,10 +440,10 @@ switch a big current with a transistor, command a position, close a
 feedback loop, and send a reading as a formatted message.
 
 --------------------------------------------------------------------------
-Y9.1  A pin is a signal, not a supply
+Y9.1  A motor needs more than a pin
 --------------------------------------------------------------------------
 
-  Why a motor needs a transistor, a diode and its own ground.
+  Why one metal leg cannot run a motor, and what you put in the way.
 
   By the end: By the end you will switch a motor with a small signal, and
   explain why the pin alone would fail.
@@ -481,7 +483,7 @@ Y9.1  A pin is a signal, not a supply
 Y9.2  Control the speed
 --------------------------------------------------------------------------
 
-  PWM through a transistor, and the deadband at the bottom.
+  A knob that sets how fast the motor turns, all the way down to a crawl.
 
   By the end: By the end you will control a motor's speed with PWM, and
   explain why half duty is not exactly half speed.
@@ -521,7 +523,7 @@ Y9.2  Control the speed
 Y9.3  A servo asks for a position
 --------------------------------------------------------------------------
 
-  Pulses, angles, and why the servo needs its own supply.
+  A motor that goes to an angle and stays there.
 
   By the end: By the end you will command a servo to an angle, and explain
   why its signal is not a dimmer's.
@@ -602,7 +604,7 @@ Y9.4  A system that corrects itself
 Y9.5  A device that reports
 --------------------------------------------------------------------------
 
-  Framing, labels, and the design brief for your own device.
+  Sending a reading down a wire so another machine can read it.
 
   By the end: By the end you will send a reading as a message, and design
   a device that senses, decides, acts and reports.
