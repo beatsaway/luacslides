@@ -5,7 +5,8 @@ A static site. No build step, no server, no dependencies.
   v2026/            the current course: 15 lessons, 12 slides each
   v2025/            the first version, kept for reference
 
-Open index.html in a browser. Everything else is linked from there.
+Published at https://luacslides.netlify.app/ . Open index.html in a browser,
+or that address, and everything else is linked from there.
 
 WHAT IS IN v2026
   15 PowerPoint decks, a self-contained HTML preview of each, one page with

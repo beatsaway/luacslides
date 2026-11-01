@@ -49,7 +49,7 @@
 06	build   	 41 words	44
 07	code    	 74 words	112
 08	test    	 47 words	62
-09	debug   	 55 words	85
+09	debug   	 52 words	85
 10	check   	 60 words	80
 11	stretch 	 53 words	76
 12	exit    	 34 words	50
@@ -133,7 +133,7 @@
 06	build   	 37 words	44
 07	code    	 82 words	112
 08	test    	 46 words	62
-09	debug   	 83 words	85
+09	debug   	 97 words	85  over
 10	check   	 52 words	80
 11	stretch 	 51 words	76
 12	exit    	 31 words	50

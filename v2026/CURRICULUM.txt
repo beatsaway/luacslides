@@ -163,7 +163,7 @@ Y7.4  The board remembers
   press the button three times. What prints?
     Answer: 1, then 0, then 1, then 0…
 
-  [debug] The count is always 0 or always 1, however many times you press.
+  [debug] Every press prints 1. The number never goes above it.
     Fault: int count = 0; is inside loop().
 
   [check] Where must a counter be declared so it survives from one loop()
@@ -413,8 +413,8 @@ Y8.5  A device that decides
     Answer: It chatters.
 
   [debug] The buzzer is on when the soil is wet, and off when it is dry.
-    Fault: The rule is inverted: this divider reads high when wet, but the
-    code treats high as dry.
+    Fault: The probe is the other way round in the divider: wet now reads
+    low and dry reads high.
 
   [check] Why two thresholds instead of one?
     A. To make the code longer

@@ -3,13 +3,26 @@
 <style>
 @font-face{font-family:'Fira Sans';font-weight:400;font-style:normal;src:url(assets/fonts/FiraSans-400.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSans-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans';font-weight:700;font-style:normal;src:url(assets/fonts/FiraSans-700.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSansCondensed-500.woff2) format('woff2')}@font-face{font-family:'Fira Sans Condensed';font-weight:600;font-style:normal;src:url(assets/fonts/FiraSansCondensed-600.woff2) format('woff2')}
 *{box-sizing:border-box}
+:root{--k:1;--dx:0px}
+html,body{overflow-x:hidden}
 body{margin:0;background:#2a1a12;font-family:'Fira Sans',sans-serif}
+/* Outside the show, every slide is scaled down to whatever the window can
+   hold, so a tablet sees the whole slide instead of a crop. --k and --dx are
+   set by the script below: --k shrinks it, --dx centres it, and the negative
+   bottom margin takes back the space the shrink leaves behind. In the show
+   the play rules position the slide themselves. */
 .slide{position:relative;width:1280px;height:720px;background:#E3B08E;overflow:hidden;
-  margin:0 auto 28px;transform-origin:top left}
+  margin:0 0 calc(28px - (1 - var(--k)) * 720px);
+  transform:translateX(var(--dx)) scale(var(--k));transform-origin:top left}
 .sh{position:absolute}
 .img{background-repeat:no-repeat}
 .tx{position:absolute;display:flex;flex-direction:column;overflow:hidden}
 .tx p{margin:0;white-space:pre-wrap;flex:0 0 auto}
+/* a code line lit up by the card that explains it: the marker sits on the
+   text itself, not across the whole column, so it reads as a highlight */
+.tx p.hl span{background:rgba(242,192,74,.55);
+  box-shadow:0 0 0 4px rgba(242,192,74,.55);border-radius:2px}
+[data-t^="card:"]{cursor:pointer}
 .n{position:absolute;right:8px;bottom:6px;font:600 12px 'Fira Sans Condensed';
   color:#8a6a52;z-index:9}
 /* ── reveal ──────────────────────────────────────────────────────── */
@@ -163,16 +176,16 @@ body.play .present{display:none}
 <div class="tx" data-box="64,72,700,44" style="left:64px;top:72px;width:700px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:41.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:41.33px;font-weight:700;color:#24140E;">Labels, values, and one newline</span></p></div>
 <div class="sh" style="left:64px;top:126px;width:300px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:152px;width:600px;height:496px;background:#FBF1E7;"></div>
-<div class="tx" data-box="92,176,544,448" style="left:92px;top:176px;width:544px;height:448px;justify-content:center;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">void setup() {</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.begin(9600);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">}</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;"> </span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">void loop() {</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  int light = analogRead(A0);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  float volts = light * 5.0 / 1024.0;</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;"> </span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.print("L:");</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.print(light);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.print(",V:");</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.print(volts, 2);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.println();</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;"> </span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  delay(1000);</span></p><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">}</span></p></div>
-<div class="sh" style="left:696px;top:152px;width:520px;height:148px;background:#F2C04A;"></div>
-<div class="tx" data-box="716,168,480,24" style="left:716px;top:168px;width:480px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">PRINT VS PRINTLN</span></p></div>
-<div class="tx" data-box="716,196,480,96" style="left:716px;top:196px;width:480px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:22.00px;font-weight:400;color:#000000;">print adds nothing. println adds the newline that ends the message.</span></p></div>
-<div class="sh" style="left:696px;top:316px;width:520px;height:148px;background:#F8E5CF;"></div>
-<div class="tx" data-box="716,332,480,24" style="left:716px;top:332px;width:480px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">L: AND V:</span></p></div>
-<div class="tx" data-box="716,360,480,96" style="left:716px;top:360px;width:480px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:22.00px;font-weight:400;color:#000000;">Labels. The receiver knows which number is which without counting.</span></p></div>
-<div class="sh" style="left:696px;top:480px;width:520px;height:148px;background:#F8E5CF;"></div>
-<div class="tx" data-box="716,496,480,24" style="left:716px;top:496px;width:480px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">VOLTS, 2</span></p></div>
-<div class="tx" data-box="716,524,480,96" style="left:716px;top:524px;width:480px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:22.00px;font-weight:400;color:#000000;">Two decimal places. A format decision, not a measurement.</span></p></div>
+<div class="tx" data-t="code" data-box="92,176,544,448" style="left:92px;top:176px;width:544px;height:448px;justify-content:center;padding:0 0px"><p data-line="0" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">void setup() {</span></p><p data-line="1" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.begin(9600);</span></p><p data-line="2" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">}</span></p><p data-line="3" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;"> </span></p><p data-line="4" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">void loop() {</span></p><p data-line="5" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  int light = analogRead(A0);</span></p><p data-line="6" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  float volts = light * 5.0 / 1024.0;</span></p><p data-line="7" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;"> </span></p><p data-line="8" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.print("L:");</span></p><p data-line="9" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.print(light);</span></p><p data-line="10" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.print(",V:");</span></p><p data-line="11" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.print(volts, 2);</span></p><p data-line="12" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  Serial.println();</span></p><p data-line="13" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;"> </span></p><p data-line="14" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">  delay(1000);</span></p><p data-line="15" style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.37px;line-height:1.42"><span style="font-family:Consolas, 'Courier New', monospace;font-size:19.37px;font-weight:400;color:#24292E;">}</span></p></div>
+<div class="sh" data-t="card:12" style="left:696px;top:152px;width:520px;height:148px;background:#F2C04A;"></div>
+<div class="tx" data-t="card:12" data-box="716,168,480,24" style="left:716px;top:168px;width:480px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">PRINT VS PRINTLN</span></p></div>
+<div class="tx" data-t="card:12" data-box="716,196,480,96" style="left:716px;top:196px;width:480px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:22.00px;font-weight:400;color:#000000;">print adds nothing. println adds the newline that ends the message.</span></p></div>
+<div class="sh" data-t="card:8" style="left:696px;top:316px;width:520px;height:148px;background:#F8E5CF;"></div>
+<div class="tx" data-t="card:8" data-box="716,332,480,24" style="left:716px;top:332px;width:480px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">L: AND V:</span></p></div>
+<div class="tx" data-t="card:8" data-box="716,360,480,96" style="left:716px;top:360px;width:480px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:22.00px;font-weight:400;color:#000000;">Labels. The receiver knows which number is which without counting.</span></p></div>
+<div class="sh" data-t="card:11" style="left:696px;top:480px;width:520px;height:148px;background:#F8E5CF;"></div>
+<div class="tx" data-t="card:11" data-box="716,496,480,24" style="left:716px;top:496px;width:480px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:17.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:17.33px;font-weight:500;color:#000000;letter-spacing:1.60px;">VOLTS, 2</span></p></div>
+<div class="tx" data-t="card:11" data-box="716,524,480,96" style="left:716px;top:524px;width:480px;height:96px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.00px;line-height:1.24"><span style="font-family:'Fira Sans';font-size:22.00px;font-weight:400;color:#000000;">Two decimal places. A format decision, not a measurement.</span></p></div>
 <div class="tx" data-box="696,646,520,24" style="left:696px;top:646px;width:520px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:21.33px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:21.33px;font-weight:500;color:#7A4A33;">One line per second. Read it aloud.</span></p></div>
 <div class="tx" data-box="64,694,1152,18" style="left:64px;top:694px;width:1152px;height:18px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:16.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:16.00px;font-weight:500;color:#7A4A33;letter-spacing:1.60px;">Y9.5 · A DEVICE THAT REPORTS</span></p></div>
 </section>
@@ -318,6 +331,35 @@ body.play .present{display:none}
   }
   slides.forEach(el => paint(el, 0));
 
+  // ── outside the show: fit the slide to the window ──────────────────
+  function shrink() {
+    if (playing) return;
+    const k = Math.min(1, (innerWidth - 24) / 1280);
+    const root = document.documentElement.style;
+    root.setProperty('--k', k.toFixed(4));
+    root.setProperty('--dx', ((innerWidth - 1280 * k) / 2).toFixed(1) + 'px');
+  }
+  shrink();
+  addEventListener('resize', shrink);
+
+  // ── a card on the code slide lights up the line it explains ────────
+  for (const el of document.querySelectorAll('[data-t^="card:"]')) {
+    const n = el.getAttribute('data-t').slice(5);
+    const scope = el.closest('.slide');
+    const lines = scope ? scope.querySelectorAll('[data-line="' + n + '"]') : [];
+    if (!lines.length) continue;
+    const on = v => lines.forEach(l => l.classList.toggle('hl', v));
+    el.addEventListener('mouseenter', () => on(true));
+    el.addEventListener('mouseleave', () => on(false));
+    el.addEventListener('click', e => {
+      // in the show a click means "next", so leave it alone there
+      if (document.body.classList.contains('play')) return;
+      e.stopPropagation();
+      on(true);
+      setTimeout(() => on(false), 1600);
+    });
+  }
+
   function fit() {
     if (!playing) return;
     const s = Math.min(innerWidth / 1280, innerHeight / 720);
@@ -352,6 +394,7 @@ body.play .present{display:none}
     } else {
       slides.forEach(el => el.classList.remove('on'));
       if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+      shrink();
     }
   }
 
