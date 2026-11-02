@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Write a design sentence</title>
+<style>
+@font-face{font-family:'Fira Sans';font-weight:400;font-style:normal;src:url(assets/fonts/FiraSans-400.woff2) format('woff2')}
+@font-face{font-family:'Fira Sans';font-weight:500;font-style:normal;src:url(assets/fonts/FiraSans-500.woff2) format('woff2')}
+@font-face{font-family:'Fira Sans';font-weight:700;font-style:normal;src:url(assets/fonts/FiraSans-700.woff2) format('woff2')}
+@font-face{font-family:'Fira Sans Condensed';font-weight:600;font-style:normal;src:url(assets/fonts/FiraSansCondensed-600.woff2) format('woff2')}
+*{box-sizing:border-box}
+body{margin:0;padding:48px 28px 80px;background:#E3B08E;
+  font-family:'Fira Sans',sans-serif;color:#24140E;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto}
+.eyebrow{margin:0 0 10px;font:600 13px 'Fira Sans Condensed';letter-spacing:.16em;
+  text-transform:uppercase;color:#4E2E1F}
+h1{margin:0;font-size:40px;line-height:1.1;letter-spacing:-.01em}
+.lede{margin:12px 0 0;max-width:46ch;font-size:17px;line-height:1.5;color:#2A1A12}
+.rule{width:120px;height:7px;background:#1E4D48;margin:22px 0 28px}
+.sheet{background:#F8E5CF;padding:32px 32px 28px;border-top:7px solid #F2C04A}
+.sentence{margin:0;font-size:26px;line-height:1.7;font-weight:500}
+.fixed{margin:18px 0 0;font-size:22px;line-height:1.55;font-weight:500}
+.gap{position:relative;display:inline-block;vertical-align:baseline;margin:0 2px}
+.gap input,.help input{font:500 22px 'Fira Sans',sans-serif;color:#24140E;
+  background:transparent;border:0;border-bottom:3px solid #1E4D48;border-radius:0;
+  padding:0 2px 1px;min-width:9ch;max-width:100%}
+.gap input:focus,.help input:focus,.essay:focus{outline:none;border-bottom-color:#F2C04A}
+.list{position:absolute;left:0;top:calc(100% + 6px);z-index:5;min-width:260px;max-width:340px;
+  max-height:280px;overflow:auto;margin:0;padding:6px;list-style:none;background:#FBF1E7;
+  box-shadow:0 10px 28px rgba(36,20,14,.18)}
+.list[hidden]{display:none}
+.list button{display:block;width:100%;text-align:left;border:0;background:transparent;
+  font:500 16px 'Fira Sans',sans-serif;color:#24140E;padding:7px 10px;cursor:pointer}
+.list button[aria-selected="true"],.list button:hover{background:#F2C04A}
+.list .empty{padding:8px 10px;font-size:14.5px;color:#4E2E1F}
+.help{display:inline}
+.help input{width:16ch}
+.essay{display:block;width:100%;min-height:180px;margin:16px 0 0;padding:14px 16px;
+  border:0;border-bottom:3px solid #1E4D48;background:#FBF1E7;resize:vertical;
+  font:400 18px/1.5 'Fira Sans',sans-serif;color:#24140E}
+.actions{display:flex;gap:10px;align-items:center;margin:18px 0 0}
+.actions button{padding:9px 16px;border:0;border-radius:2px;cursor:pointer;
+  font:500 14px 'Fira Sans',sans-serif;background:#1E4D48;color:#F8E5CF}
+.actions button:hover{opacity:.78}
+.note{font-size:14.5px;color:#4E2E1F}
+footer{margin:28px 0 0;font-size:13.5px}
+footer a{color:#2A1A12}
+</style></head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Design writing</p>
+  <h1>Say what you are making</h1>
+  <p class="lede">Type in a gap and pick from the list, or keep your own words. The last two gaps are only yours.</p>
+  <div class="rule"></div>
+  <article class="sheet">
+    <p class="sentence">I want to design
+      <span class="gap" id="project-gap">
+        <input id="project" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="project-list" placeholder="a locker" autocomplete="off">
+        <ul class="list" id="project-list" role="listbox" hidden></ul>
+      </span>
+      for
+      <span class="gap" id="who-gap">
+        <input id="who" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="who-list" placeholder="Year 7" autocomplete="off">
+        <ul class="list" id="who-list" role="listbox" hidden></ul>
+      </span>
+      to help them
+      <span class="help"><input id="help" type="text" placeholder="keep a book dry" autocomplete="off"></span>.
+    </p>
+    <p class="fixed">In the following I will introduce its design features and how they are useful. I will also evaluate on what could be improved in my design.</p>
+    <textarea class="essay" id="essay" placeholder="Name the features, say why each one is useful, then say what you would improve."></textarea>
+    <div class="actions">
+      <button type="button" id="copy">Copy this writing</button>
+      <span class="note" id="copied" role="status"></span>
+    </div>
+  </article>
+  <footer><p><a href="index.html">Back to the lessons</a></p></footer>
+</div>
+<script>
+var PROJECTS = [
+  "a locker","a vending machine","a candy machine","a snack dispenser","a drink machine",
+  "a ticket machine","a pencil dispenser","a lead feeder","a door lock","a keypad lock",
+  "a secret-knock lock","a drawer lock","a bike lock","a locker alarm","a safe",
+  "a treasure box","a night light","a desk lamp","a reading light","a motion light",
+  "a cupboard light","a stair light","a traffic light","a pedestrian crossing","a parking sensor",
+  "a reverse alarm","a distance meter","an obstacle alarm","a people counter","a room counter",
+  "a chair detector","a seat reminder","a fan","an automatic fan","a plant waterer",
+  "a soil monitor","a smart plant pot","a greenhouse vent","a weather station","a rain alarm",
+  "a temperature alarm","a humidity monitor","a thermostat","a doorbell","a door alarm",
+  "a window alarm","a bag alarm","a fridge alarm","a bin alarm","a leak alarm",
+  "a fire alarm","a smoke alarm","a gas alarm","a noise meter","a quiet light",
+  "a clap light","an alarm clock","a class timer","a kitchen timer","a stopwatch",
+  "a reaction timer","a lap timer","a set of race lights","a scoreboard","a quiz buzzer",
+  "a game buzzer","a dice","a spinner","a name picker","a music box",
+  "a mini piano","a metronome","a guitar tuner","a Morse flasher","a message board",
+  "a door sign","an occupied sign","a pet feeder","a bird feeder","a cat flap",
+  "a fish feeder","a robot car","a line follower","a robot arm","a claw",
+  "a crane","a lift","a garage door","a curtain opener","a set of blinds",
+  "a soap dispenser","a handwash reminder","a watering reminder","a sun reminder","a bike light",
+  "a bike alarm","a helmet reminder","a turn signal","a step counter","a strength meter",
+  "a posture reminder","a bag-weight alarm","a glasses finder","a key finder","an umbrella reminder",
+  "a lunch timer","a water reminder","a colour sorter","a recycling sorter","a paper-plane launcher",
+  "an automatic twister","a seasoning shaker","a prize machine","a gumball machine","a stamp dispenser",
+  "a library return box","an attendance clicker","a period bell","a lesson timer","a chess clock",
+  "a goal light","a set of starting lights","a knock sensor","a whistle switch","a torch",
+  "a path light","a solar tracker","a light follower","a plant turner","a drip waterer",
+  "a sprinkler","an egg timer","a tea timer","a cup warmer","a charging reminder",
+  "a battery meter","a welcome mat","a name-badge light","a scrolling sign","a random picker",
+  "a group picker","a prize draw","a coat reminder","a shoe reminder","a wet-floor sign",
+  "a crossing timer","a school-gate counter","a late bell","a cupboard alarm","a lunch-box alarm",
+  "a desk fan","a porch light","a corridor light","a reading timer","a homework timer",
+  "a bin reminder","a stationery dispenser","a ruler dispenser","a tissue reminder","a boot dryer",
+  "a glove dryer","a helmet light","a bag light","a step light","a wardrobe light",
+  "a phone-stand reminder","a sun tracker","a drip alarm","a tap timer","a soap reminder"
+];
+var PEOPLE = [
+  "my class","my teacher","Year 7","Year 8","Year 9","younger pupils","new pupils",
+  "visitors","parents","my family","a younger brother or sister","grandparents","a friend",
+  "myself","a pet","a dog","a cat","the class pet","someone who forgets","someone who loses things",
+  "someone who is late","a librarian","the school office","the canteen","the science lab",
+  "the design workshop","a cyclist","a pedestrian","a gardener","a cook","a musician",
+  "a player","a team","a referee","the robotics club","the sports team","a club",
+  "the caretaker","the receptionist","someone walking home in the dark","someone who cannot hear an alarm",
+  "someone who cannot see a small light","someone who uses a wheelchair","someone who cannot reach a high shelf",
+  "a neighbour","the whole school","a new teacher","a supply teacher","the form tutor",
+  "someone waiting at the gate","someone in the corridor","the lunch queue"
+];
+
+function wire(input, list, words) {
+  var active = -1;
+  function show(items) {
+    list.innerHTML = "";
+    if (!items.length) {
+      var note = document.createElement("li");
+      note.className = "empty";
+      note.textContent = "Nothing in the list. Keep your own words.";
+      list.appendChild(note);
+    }
+    items.slice(0, 8).forEach(function (word, i) {
+      var li = document.createElement("li");
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.setAttribute("role", "option");
+      btn.textContent = word;
+      btn.addEventListener("mousedown", function (e) {
+        e.preventDefault();
+        choose(word);
+      });
+      li.appendChild(btn);
+      list.appendChild(li);
+    });
+    active = items.length ? 0 : -1;
+    mark();
+    list.hidden = false;
+    input.setAttribute("aria-expanded", "true");
+  }
+  function mark() {
+    var buttons = list.querySelectorAll("button");
+    buttons.forEach(function (btn, i) {
+      btn.setAttribute("aria-selected", i === active ? "true" : "false");
+    });
+    if (buttons[active]) buttons[active].scrollIntoView({ block: "nearest" });
+  }
+  function choose(word) {
+    input.value = word;
+    close();
+    input.focus();
+  }
+  function close() {
+    list.hidden = true;
+    input.setAttribute("aria-expanded", "false");
+    active = -1;
+  }
+  function matches() {
+    var q = input.value.trim().toLowerCase();
+    if (!q) return words.slice();
+    return words.filter(function (word) { return word.toLowerCase().indexOf(q) !== -1; });
+  }
+  input.addEventListener("focus", function () { show(matches()); });
+  input.addEventListener("click", function () { show(matches()); });
+  input.addEventListener("input", function () { show(matches()); });
+  input.addEventListener("keydown", function (e) {
+    var buttons = list.querySelectorAll("button");
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (list.hidden) show(matches());
+      if (!buttons.length) return;
+      active = Math.min(buttons.length - 1, active + 1);
+      mark();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (!buttons.length) return;
+      active = Math.max(0, active - 1);
+      mark();
+    } else if (e.key === "Enter") {
+      if (!list.hidden && buttons[active]) {
+        e.preventDefault();
+        choose(buttons[active].textContent);
+      }
+    } else if (e.key === "Escape") {
+      close();
+    }
+  });
+  input.addEventListener("blur", function () { close(); });
+}
+
+wire(document.getElementById("project"), document.getElementById("project-list"), PROJECTS);
+wire(document.getElementById("who"), document.getElementById("who-list"), PEOPLE);
+
+var helpBox = document.getElementById("help");
+function growHelp() {
+  helpBox.style.width = Math.max(16, helpBox.value.length + 1) + "ch";
+}
+helpBox.addEventListener("input", growHelp);
+
+function writing() {
+  var project = document.getElementById("project").value.trim() || "_____";
+  var who = document.getElementById("who").value.trim() || "_____";
+  var help = document.getElementById("help").value.trim() || "_____";
+  var essay = document.getElementById("essay").value.trim();
+  var opening = "I want to design " + project + " for " + who + " to help them " + help + ". " +
+    "In the following I will introduce its design features and how they are useful. " +
+    "I will also evaluate on what could be improved in my design.";
+  return essay ? opening + "\n\n" + essay : opening;
+}
+
+document.getElementById("copy").addEventListener("click", function () {
+  var text = writing();
+  var note = document.getElementById("copied");
+  function fallback() {
+    var box = document.createElement("textarea");
+    box.value = text;
+    box.setAttribute("readonly", "");
+    box.style.position = "fixed";
+    box.style.left = "-9999px";
+    document.body.appendChild(box);
+    box.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(box);
+    note.textContent = ok ? "Copied." : "Select the writing and copy it.";
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function () { note.textContent = "Copied."; }, fallback);
+  } else {
+    fallback();
+  }
+});
+</script>
+</body></html>
