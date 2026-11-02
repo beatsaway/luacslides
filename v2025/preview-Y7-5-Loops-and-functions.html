@@ -15,6 +15,9 @@ body{margin:0;background:#2a1a12;font-family:'Fira Sans',sans-serif}
   margin:0 0 calc(28px - (1 - var(--k)) * 720px);
   transform:translateX(var(--dx)) scale(var(--k));transform-origin:top left}
 .sh{position:absolute}
+.vid{position:absolute;border:0;background:#24140E;z-index:4}
+.vidlink{position:absolute;z-index:8;font:700 16px 'Fira Sans';color:#1E4D48;
+  text-decoration:underline}
 .img{background-repeat:no-repeat}
 .tx{position:absolute;display:flex;flex-direction:column;overflow:hidden}
 .tx p{margin:0;white-space:pre-wrap;flex:0 0 auto}
@@ -52,7 +55,7 @@ body.play .present{display:none}
 @media print{.present{display:none}}
 </style></head>
 <body><section class="slide" id="s1" data-beat="cover" data-steps="0">
-<div class="n">1/7</div>
+<div class="n">1/8</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -61,8 +64,17 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will put a repeated job in a function, and call it.</span></p></div>
 </section>
-<section class="slide" id="s2" data-beat="hook" data-steps="1">
-<div class="n">2/7</div>
+<section class="slide" id="s2" data-beat="watch" data-steps="0">
+<div class="n">2/8</div>
+<div class="tx" data-box="64,44,1152,28" style="left:64px;top:44px;width:1152px;height:28px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">WATCH FIRST</span></p></div>
+<div class="tx" data-box="64,78,1152,78" style="left:64px;top:78px;width:1152px;height:78px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What runs once, and what keeps running?</span></p></div>
+<div class="sh" style="left:64px;top:168px;width:120px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,188,1152,40" style="left:64px;top:188px;width:1152px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:28.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:28.00px;font-weight:500;color:#2A1A12;">Watch from 10 seconds. Then we put a job in a function and call it from loop().</span></p></div>
+<iframe class="vid" title="Watch first" src="https://www.youtube.com/embed/dENKe71ISU4?start=10" style="left:284px;top:244px;width:712px;height:400px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a class="vidlink" href="https://youtu.be/dENKe71ISU4?t=10" target="_blank" rel="noopener noreferrer" style="left:284px;top:652px;width:712px">Open the video</a>
+</section>
+<section class="slide" id="s3" data-beat="hook" data-steps="1">
+<div class="n">3/8</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:33.20px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:33.20px;font-weight:700;color:#24140E;">You need the same blink in three places. Do you copy it three times?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-traffic.png);background-size:cover;background-position:center"></div>
@@ -75,8 +87,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Write it once, then call it by name.</span></p></div>
 </section>
-<section class="slide" id="s3" data-beat="idea" data-steps="0">
-<div class="n">3/7</div>
+<section class="slide" id="s4" data-beat="idea" data-steps="0">
+<div class="n">4/8</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">A function is a named block of code</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -87,8 +99,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">A value you pass in, such as how many milliseconds to wait. The same function can then blink fast or slowly.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">The names in the brackets only exist inside the function.</span></p></div>
 </section>
-<section class="slide" id="s4" data-beat="idea" data-steps="0">
-<div class="n">4/7</div>
+<section class="slide" id="s5" data-beat="idea" data-steps="0">
+<div class="n">5/8</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">A loop repeats a block</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -98,8 +110,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,316,512,32" style="left:680px;top:316px;width:512px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">while</span></p></div>
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Use while when you do not know how many times. It keeps going while a test is true.</span></p></div>
 </section>
-<section class="slide" id="s5" data-beat="code" data-steps="0">
-<div class="n">5/7</div>
+<section class="slide" id="s6" data-beat="code" data-steps="0">
+<div class="n">6/8</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">One function, two speeds</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -114,8 +126,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">void</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">The function does a job. It does not hand a number back to loop().</span></p></div>
 </section>
-<section class="slide" id="s6" data-beat="mission" data-steps="1">
-<div class="n">6/7</div>
+<section class="slide" id="s7" data-beat="mission" data-steps="1">
+<div class="n">7/8</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Blink three times, then pause</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -139,8 +151,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">Three times.</span></p></div>
 </section>
-<section class="slide" id="s7" data-beat="check" data-steps="1">
-<div class="n">7/7</div>
+<section class="slide" id="s8" data-beat="check" data-steps="1">
+<div class="n">8/8</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What is a parameter?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -281,6 +293,7 @@ body.play .present{display:none}
   });
 
   addEventListener('click', e => {
+    if (e.target.closest('a, iframe, .vid')) return;
     if (playing) { e.shiftKey ? back() : forward(); return; }
     // outside the slideshow, clicking a slide with a hidden answer reveals it
     const el = e.target.closest('.slide');

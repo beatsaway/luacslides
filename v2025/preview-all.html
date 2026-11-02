@@ -15,6 +15,9 @@ body{margin:0;background:#2a1a12;font-family:'Fira Sans',sans-serif}
   margin:0 0 calc(28px - (1 - var(--k)) * 720px);
   transform:translateX(var(--dx)) scale(var(--k));transform-origin:top left}
 .sh{position:absolute}
+.vid{position:absolute;border:0;background:#24140E;z-index:4}
+.vidlink{position:absolute;z-index:8;font:700 16px 'Fira Sans';color:#1E4D48;
+  text-decoration:underline}
 .img{background-repeat:no-repeat}
 .tx{position:absolute;display:flex;flex-direction:column;overflow:hidden}
 .tx p{margin:0;white-space:pre-wrap;flex:0 0 auto}
@@ -52,7 +55,7 @@ body.play .present{display:none}
 @media print{.present{display:none}}
 </style></head>
 <body><section class="slide" id="s1" data-beat="cover" data-steps="0">
-<div class="n">1/128</div>
+<div class="n">1/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -61,8 +64,17 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will blink an LED, and say what setup() and loop() do.</span></p></div>
 </section>
-<section class="slide" id="s2" data-beat="hook" data-steps="1">
-<div class="n">2/128</div>
+<section class="slide" id="s2" data-beat="watch" data-steps="0">
+<div class="n">2/131</div>
+<div class="tx" data-box="64,44,1152,28" style="left:64px;top:44px;width:1152px;height:28px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">WATCH FIRST</span></p></div>
+<div class="tx" data-box="64,78,1152,78" style="left:64px;top:78px;width:1152px;height:78px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What is this board?</span></p></div>
+<div class="sh" style="left:64px;top:168px;width:120px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,188,1152,40" style="left:64px;top:188px;width:1152px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:28.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:28.00px;font-weight:500;color:#2A1A12;">Watch this first. Then we ask what the board can do.</span></p></div>
+<iframe class="vid" title="Watch first" src="https://www.youtube.com/embed/lYkJzfeTbWs" style="left:284px;top:244px;width:712px;height:400px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a class="vidlink" href="https://www.youtube.com/shorts/lYkJzfeTbWs" target="_blank" rel="noopener noreferrer" style="left:284px;top:652px;width:712px">Open the video</a>
+</section>
+<section class="slide" id="s3" data-beat="hook" data-steps="1">
+<div class="n">3/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#24140E;">What can this board do?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/object-microwave.jpg);background-size:cover;background-position:center"></div>
@@ -75,8 +87,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">This board runs one program, again and again.</span></p></div>
 </section>
-<section class="slide" id="s3" data-beat="idea" data-steps="0">
-<div class="n">3/128</div>
+<section class="slide" id="s4" data-beat="idea" data-steps="0">
+<div class="n">4/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">One program, two parts</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -95,15 +107,15 @@ body.play .present{display:none}
 <div class="tx" data-box="832,492,373,40" style="left:832px;top:492px;width:373px;height:40px;justify-content:center;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:500;color:#000000;">Output</span></p></div>
 <div class="tx" data-box="832,574,373,62" style="left:832px;top:574px;width:373px;height:62px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">A pin turns something on.</span></p></div>
 </section>
-<section class="slide" id="s4" data-beat="picture" data-steps="0">
-<div class="n">4/128</div>
+<section class="slide" id="s5" data-beat="picture" data-steps="0">
+<div class="n">5/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">The pins you will use</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:64px;top:143px;width:1149px;height:467px;background-image:url(assets/img/board.jpg);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="64,624,1149,34" style="left:64px;top:624px;width:1149px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">Digital pins are on or off. Analog pins read a range. 5 V and GND supply the parts.</span></p></div>
 </section>
-<section class="slide" id="s5" data-beat="steps" data-steps="0">
-<div class="n">5/128</div>
+<section class="slide" id="s6" data-beat="steps" data-steps="0">
+<div class="n">6/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Open the blink circuit</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -127,8 +139,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-blink.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s6" data-beat="code" data-steps="0">
-<div class="n">6/128</div>
+<section class="slide" id="s7" data-beat="code" data-steps="0">
+<div class="n">7/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">The blink program</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -143,8 +155,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">delay(1000)</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">Wait 1000 milliseconds. That is 1 second.</span></p></div>
 </section>
-<section class="slide" id="s7" data-beat="mission" data-steps="1">
-<div class="n">7/128</div>
+<section class="slide" id="s8" data-beat="mission" data-steps="1">
+<div class="n">8/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Change the speed</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -168,8 +180,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">Faster. 200 ms is a shorter wait than 1000 ms.</span></p></div>
 </section>
-<section class="slide" id="s8" data-beat="check" data-steps="1">
-<div class="n">8/128</div>
+<section class="slide" id="s9" data-beat="check" data-steps="1">
+<div class="n">9/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What does loop() do?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -180,8 +192,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">loop() runs the same code again and again, while the board has power.</span></p></div>
 </section>
-<section class="slide" id="s9" data-beat="cover" data-steps="0">
-<div class="n">9/128</div>
+<section class="slide" id="s10" data-beat="cover" data-steps="0">
+<div class="n">10/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/button-parts.png);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -190,8 +202,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will turn an LED on while a button is held.</span></p></div>
 </section>
-<section class="slide" id="s10" data-beat="hook" data-steps="1">
-<div class="n">10/128</div>
+<section class="slide" id="s11" data-beat="hook" data-steps="1">
+<div class="n">11/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#24140E;">How does the board know a button is pressed?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-doorbell.png);background-size:cover;background-position:center"></div>
@@ -204,8 +216,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Pressed is 5 V. Not pressed must be a clear 0 V.</span></p></div>
 </section>
-<section class="slide" id="s11" data-beat="idea" data-steps="0">
-<div class="n">11/128</div>
+<section class="slide" id="s12" data-beat="idea" data-steps="0">
+<div class="n">12/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">HIGH is 5 V. LOW is 0 V.</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -216,8 +228,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">A resistor to 0 V holds the pin LOW, so the reading stays steady.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">digitalWrite sends a voltage out. digitalRead reads the voltage that is already there.</span></p></div>
 </section>
-<section class="slide" id="s12" data-beat="steps" data-steps="0">
-<div class="n">12/128</div>
+<section class="slide" id="s13" data-beat="steps" data-steps="0">
+<div class="n">13/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the button and the LED</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -241,8 +253,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-button.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s13" data-beat="code" data-steps="0">
-<div class="n">13/128</div>
+<section class="slide" id="s14" data-beat="code" data-steps="0">
+<div class="n">14/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Read the button, light the LED</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -257,8 +269,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">if and else</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">if runs when the test is true. else runs when it is not.</span></p></div>
 </section>
-<section class="slide" id="s14" data-beat="mission" data-steps="1">
-<div class="n">14/128</div>
+<section class="slide" id="s15" data-beat="mission" data-steps="1">
+<div class="n">15/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Swap the rule</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -282,8 +294,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">When you let go of the button.</span></p></div>
 </section>
-<section class="slide" id="s15" data-beat="check" data-steps="1">
-<div class="n">15/128</div>
+<section class="slide" id="s16" data-beat="check" data-steps="1">
+<div class="n">16/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">Why is the 10 kΩ resistor there?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -294,8 +306,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">The resistor keeps the pin at 0 V until the button connects it to 5 V.</span></p></div>
 </section>
-<section class="slide" id="s16" data-beat="cover" data-steps="0">
-<div class="n">16/128</div>
+<section class="slide" id="s17" data-beat="cover" data-steps="0">
+<div class="n">17/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/ldr-cover.png);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -304,8 +316,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will read a light sensor as a number from 0 to 1023.</span></p></div>
 </section>
-<section class="slide" id="s17" data-beat="hook" data-steps="1">
-<div class="n">17/128</div>
+<section class="slide" id="s18" data-beat="hook" data-steps="1">
+<div class="n">18/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.27px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:34.27px;font-weight:700;color:#24140E;">A button is only on or off. How can a sensor say how bright it is?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-lamp.png);background-size:cover;background-position:center"></div>
@@ -318,8 +330,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">analogRead turns that voltage into a number.</span></p></div>
 </section>
-<section class="slide" id="s18" data-beat="idea" data-steps="0">
-<div class="n">18/128</div>
+<section class="slide" id="s19" data-beat="idea" data-steps="0">
+<div class="n">19/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">0 to 1023, not just on or off</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -330,8 +342,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">In bright light its resistance falls. In the dark its resistance rises.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">map() can turn 0–1023 into another range, such as 0–100.</span></p></div>
 </section>
-<section class="slide" id="s19" data-beat="steps" data-steps="0">
-<div class="n">19/128</div>
+<section class="slide" id="s20" data-beat="steps" data-steps="0">
+<div class="n">20/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the light sensor</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -355,8 +367,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-light.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s20" data-beat="code" data-steps="0">
-<div class="n">20/128</div>
+<section class="slide" id="s21" data-beat="code" data-steps="0">
+<div class="n">21/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Print the reading</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -371,8 +383,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">Serial.println</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">Sends the number, then starts a new line, so each reading is separate.</span></p></div>
 </section>
-<section class="slide" id="s21" data-beat="mission" data-steps="1">
-<div class="n">21/128</div>
+<section class="slide" id="s22" data-beat="mission" data-steps="1">
+<div class="n">22/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Watch the number move</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -396,8 +408,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">It changed with the light.</span></p></div>
 </section>
-<section class="slide" id="s22" data-beat="check" data-steps="1">
-<div class="n">22/128</div>
+<section class="slide" id="s23" data-beat="check" data-steps="1">
+<div class="n">23/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What does analogRead return?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -408,8 +420,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">A whole number from 0 to 1023. It stands for a voltage from 0 V to 5 V.</span></p></div>
 </section>
-<section class="slide" id="s23" data-beat="cover" data-steps="0">
-<div class="n">23/128</div>
+<section class="slide" id="s24" data-beat="cover" data-steps="0">
+<div class="n">24/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/knob-cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -418,8 +430,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will use a knob to change how bright an LED looks.</span></p></div>
 </section>
-<section class="slide" id="s24" data-beat="hook" data-steps="1">
-<div class="n">24/128</div>
+<section class="slide" id="s25" data-beat="hook" data-steps="1">
+<div class="n">25/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#24140E;">The pin is only fully on or fully off. How can an LED look dim?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-dimmer.png);background-size:cover;background-position:center"></div>
@@ -432,8 +444,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">It switches on and off, faster than you can see.</span></p></div>
 </section>
-<section class="slide" id="s25" data-beat="idea" data-steps="0">
-<div class="n">25/128</div>
+<section class="slide" id="s26" data-beat="idea" data-steps="0">
+<div class="n">26/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">The middle pin shows how far you turned it</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -444,8 +456,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">A number from 0 to 255. 0 is off. 255 is on all the time. 128 is on about half the time.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">The LED looks dim because it is on for only part of the time.</span></p></div>
 </section>
-<section class="slide" id="s26" data-beat="steps" data-steps="0">
-<div class="n">26/128</div>
+<section class="slide" id="s27" data-beat="steps" data-steps="0">
+<div class="n">27/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the knob and the LED</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -469,8 +481,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-knob.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s27" data-beat="code" data-steps="0">
-<div class="n">27/128</div>
+<section class="slide" id="s28" data-beat="code" data-steps="0">
+<div class="n">28/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Knob in, brightness out</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -485,8 +497,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">Not a voltage in between</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">The pin is never at 2.5 V. Your eye blends the flashes, so the LED looks dim.</span></p></div>
 </section>
-<section class="slide" id="s28" data-beat="mission" data-steps="1">
-<div class="n">28/128</div>
+<section class="slide" id="s29" data-beat="mission" data-steps="1">
+<div class="n">29/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Reverse the knob</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -510,8 +522,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">The brightness now goes the other way.</span></p></div>
 </section>
-<section class="slide" id="s29" data-beat="check" data-steps="1">
-<div class="n">29/128</div>
+<section class="slide" id="s30" data-beat="check" data-steps="1">
+<div class="n">30/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:38.67px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:38.67px;font-weight:700;color:#24140E;">Is the pin ever at a voltage in between?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -522,8 +534,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">The pin is fully on or fully off. It is on for only part of the time.</span></p></div>
 </section>
-<section class="slide" id="s30" data-beat="cover" data-steps="0">
-<div class="n">30/128</div>
+<section class="slide" id="s31" data-beat="cover" data-steps="0">
+<div class="n">31/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -532,8 +544,17 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will put a repeated job in a function, and call it.</span></p></div>
 </section>
-<section class="slide" id="s31" data-beat="hook" data-steps="1">
-<div class="n">31/128</div>
+<section class="slide" id="s32" data-beat="watch" data-steps="0">
+<div class="n">32/131</div>
+<div class="tx" data-box="64,44,1152,28" style="left:64px;top:44px;width:1152px;height:28px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">WATCH FIRST</span></p></div>
+<div class="tx" data-box="64,78,1152,78" style="left:64px;top:78px;width:1152px;height:78px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What runs once, and what keeps running?</span></p></div>
+<div class="sh" style="left:64px;top:168px;width:120px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,188,1152,40" style="left:64px;top:188px;width:1152px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:28.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:28.00px;font-weight:500;color:#2A1A12;">Watch from 10 seconds. Then we put a job in a function and call it from loop().</span></p></div>
+<iframe class="vid" title="Watch first" src="https://www.youtube.com/embed/dENKe71ISU4?start=10" style="left:284px;top:244px;width:712px;height:400px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a class="vidlink" href="https://youtu.be/dENKe71ISU4?t=10" target="_blank" rel="noopener noreferrer" style="left:284px;top:652px;width:712px">Open the video</a>
+</section>
+<section class="slide" id="s33" data-beat="hook" data-steps="1">
+<div class="n">33/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:33.20px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:33.20px;font-weight:700;color:#24140E;">You need the same blink in three places. Do you copy it three times?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-traffic.png);background-size:cover;background-position:center"></div>
@@ -546,8 +567,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Write it once, then call it by name.</span></p></div>
 </section>
-<section class="slide" id="s32" data-beat="idea" data-steps="0">
-<div class="n">32/128</div>
+<section class="slide" id="s34" data-beat="idea" data-steps="0">
+<div class="n">34/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">A function is a named block of code</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -558,8 +579,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">A value you pass in, such as how many milliseconds to wait. The same function can then blink fast or slowly.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">The names in the brackets only exist inside the function.</span></p></div>
 </section>
-<section class="slide" id="s33" data-beat="idea" data-steps="0">
-<div class="n">33/128</div>
+<section class="slide" id="s35" data-beat="idea" data-steps="0">
+<div class="n">35/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">A loop repeats a block</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -569,8 +590,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,316,512,32" style="left:680px;top:316px;width:512px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">while</span></p></div>
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Use while when you do not know how many times. It keeps going while a test is true.</span></p></div>
 </section>
-<section class="slide" id="s34" data-beat="code" data-steps="0">
-<div class="n">34/128</div>
+<section class="slide" id="s36" data-beat="code" data-steps="0">
+<div class="n">36/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">One function, two speeds</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -585,8 +606,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">void</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">The function does a job. It does not hand a number back to loop().</span></p></div>
 </section>
-<section class="slide" id="s35" data-beat="mission" data-steps="1">
-<div class="n">35/128</div>
+<section class="slide" id="s37" data-beat="mission" data-steps="1">
+<div class="n">37/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Blink three times, then pause</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -610,8 +631,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">Three times.</span></p></div>
 </section>
-<section class="slide" id="s36" data-beat="check" data-steps="1">
-<div class="n">36/128</div>
+<section class="slide" id="s38" data-beat="check" data-steps="1">
+<div class="n">38/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What is a parameter?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -622,8 +643,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">It is the value you give the function when you call it. Here, 200 is the wait.</span></p></div>
 </section>
-<section class="slide" id="s37" data-beat="cover" data-steps="0">
-<div class="n">37/128</div>
+<section class="slide" id="s39" data-beat="cover" data-steps="0">
+<div class="n">39/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/ldr-cover.png);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -632,8 +653,17 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will compare two readings and choose what to do.</span></p></div>
 </section>
-<section class="slide" id="s38" data-beat="hook" data-steps="1">
-<div class="n">38/128</div>
+<section class="slide" id="s40" data-beat="watch" data-steps="0">
+<div class="n">40/131</div>
+<div class="tx" data-box="64,44,1152,28" style="left:64px;top:44px;width:1152px;height:28px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">WATCH FIRST</span></p></div>
+<div class="tx" data-box="64,78,1152,78" style="left:64px;top:78px;width:1152px;height:78px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">Where does a program keep a number?</span></p></div>
+<div class="sh" style="left:64px;top:168px;width:120px;height:7px;background:#1E4D48;"></div>
+<div class="tx" data-box="64,188,1152,40" style="left:64px;top:188px;width:1152px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:28.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:28.00px;font-weight:500;color:#2A1A12;">Watch from 9 seconds. Then we store two readings and choose.</span></p></div>
+<iframe class="vid" title="Watch first" src="https://www.youtube.com/embed/Mf7iU2VBHOs?start=9" style="left:284px;top:244px;width:712px;height:400px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a class="vidlink" href="https://youtu.be/Mf7iU2VBHOs?t=9" target="_blank" rel="noopener noreferrer" style="left:284px;top:652px;width:712px">Open the video</a>
+</section>
+<section class="slide" id="s41" data-beat="hook" data-steps="1">
+<div class="n">41/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#24140E;">One side of the room is brighter. How does the program decide?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/ldr-sensor.png);background-size:cover;background-position:center"></div>
@@ -646,8 +676,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Store both numbers, then test them.</span></p></div>
 </section>
-<section class="slide" id="s39" data-beat="idea" data-steps="0">
-<div class="n">39/128</div>
+<section class="slide" id="s42" data-beat="idea" data-steps="0">
+<div class="n">42/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">A variable stores a value</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -658,8 +688,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">= stores a value. == asks if two values are equal. They are not the same.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">The name should say what the number is. lightLeft is clearer than x.</span></p></div>
 </section>
-<section class="slide" id="s40" data-beat="idea" data-steps="0">
-<div class="n">40/128</div>
+<section class="slide" id="s43" data-beat="idea" data-steps="0">
+<div class="n">43/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">if chooses. AND and OR combine.</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -669,8 +699,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,316,512,32" style="left:680px;top:316px;width:512px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">&amp;&amp; and ||</span></p></div>
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">&amp;&amp; is true only when both tests are true. || is true when at least one test is true.</span></p></div>
 </section>
-<section class="slide" id="s41" data-beat="code" data-steps="0">
-<div class="n">41/128</div>
+<section class="slide" id="s44" data-beat="code" data-steps="0">
+<div class="n">44/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Which side is brighter?</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -685,8 +715,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">else</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">Runs when the two readings are equal. Somebody has to cover that case.</span></p></div>
 </section>
-<section class="slide" id="s42" data-beat="mission" data-steps="1">
-<div class="n">42/128</div>
+<section class="slide" id="s45" data-beat="mission" data-steps="1">
+<div class="n">45/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Add an AND</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -710,8 +740,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">Only when both are dark.</span></p></div>
 </section>
-<section class="slide" id="s43" data-beat="check" data-steps="1">
-<div class="n">43/128</div>
+<section class="slide" id="s46" data-beat="check" data-steps="1">
+<div class="n">46/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:37.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:37.33px;font-weight:700;color:#24140E;">What is the difference between = and ==?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -722,8 +752,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">= puts a value into a variable. == asks whether two values are equal.</span></p></div>
 </section>
-<section class="slide" id="s44" data-beat="cover" data-steps="0">
-<div class="n">44/128</div>
+<section class="slide" id="s47" data-beat="cover" data-steps="0">
+<div class="n">47/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/board.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -732,8 +762,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will use V = I × R, and compare series with parallel.</span></p></div>
 </section>
-<section class="slide" id="s45" data-beat="hook" data-steps="1">
-<div class="n">45/128</div>
+<section class="slide" id="s48" data-beat="hook" data-steps="1">
+<div class="n">48/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#24140E;">A resistor is in the way of the current. What changes?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-dimmer.png);background-size:cover;background-position:center"></div>
@@ -746,8 +776,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Voltage pushes. Current flows. Resistance slows it.</span></p></div>
 </section>
-<section class="slide" id="s46" data-beat="idea" data-steps="0">
-<div class="n">46/128</div>
+<section class="slide" id="s49" data-beat="idea" data-steps="0">
+<div class="n">49/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">V = I × R</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -766,8 +796,8 @@ body.play .present{display:none}
 <div class="tx" data-box="832,492,373,40" style="left:832px;top:492px;width:373px;height:40px;justify-content:center;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:500;color:#000000;">R = V / I</span></p></div>
 <div class="tx" data-box="832,574,373,62" style="left:832px;top:574px;width:373px;height:62px;justify-content:flex-start;padding:0 0px"><p style="text-align:center;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.2"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Find the resistance.</span></p></div>
 </section>
-<section class="slide" id="s47" data-beat="idea" data-steps="0">
-<div class="n">47/128</div>
+<section class="slide" id="s50" data-beat="idea" data-steps="0">
+<div class="n">50/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Series shares the path. Parallel splits it.</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -778,8 +808,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">More than one path. The voltage across each is the same. Total resistance is less than the smallest.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">The voltage at the join depends on the two resistances.</span></p></div>
 </section>
-<section class="slide" id="s48" data-beat="steps" data-steps="0">
-<div class="n">48/128</div>
+<section class="slide" id="s51" data-beat="steps" data-steps="0">
+<div class="n">51/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Read a resistor, then do one sum</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -803,8 +833,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/board-small.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s49" data-beat="mission" data-steps="1">
-<div class="n">49/128</div>
+<section class="slide" id="s52" data-beat="mission" data-steps="1">
+<div class="n">52/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Share 5 V</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -828,8 +858,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">2.5 V.</span></p></div>
 </section>
-<section class="slide" id="s50" data-beat="check" data-steps="1">
-<div class="n">50/128</div>
+<section class="slide" id="s53" data-beat="check" data-steps="1">
+<div class="n">53/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:29.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:29.33px;font-weight:700;color:#24140E;">Two resistors in series. What happens to the total resistance?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -840,8 +870,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">Series resistances add, because there is only one path.</span></p></div>
 </section>
-<section class="slide" id="s51" data-beat="cover" data-steps="0">
-<div class="n">51/128</div>
+<section class="slide" id="s54" data-beat="cover" data-steps="0">
+<div class="n">54/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/rgb-cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -850,8 +880,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will mix red, green and blue to make another colour.</span></p></div>
 </section>
-<section class="slide" id="s52" data-beat="hook" data-steps="1">
-<div class="n">52/128</div>
+<section class="slide" id="s55" data-beat="hook" data-steps="1">
+<div class="n">55/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:30.93px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:30.93px;font-weight:700;color:#24140E;">Red light and green light shine on the same spot. What colour do you see?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/rgb-parts.png);background-size:cover;background-position:center"></div>
@@ -864,8 +894,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Red and green light make yellow.</span></p></div>
 </section>
-<section class="slide" id="s53" data-beat="idea" data-steps="0">
-<div class="n">53/128</div>
+<section class="slide" id="s56" data-beat="idea" data-steps="0">
+<div class="n">56/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Three LEDs, one shared pin to 0 V</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -876,8 +906,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Each colour goes through its own resistor to a PWM pin, so you can set each brightness.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">Red + green = yellow. All three = white. All off = dark.</span></p></div>
 </section>
-<section class="slide" id="s54" data-beat="steps" data-steps="0">
-<div class="n">54/128</div>
+<section class="slide" id="s57" data-beat="steps" data-steps="0">
+<div class="n">57/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the RGB LED</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -901,8 +931,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-rgb.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s55" data-beat="code" data-steps="0">
-<div class="n">55/128</div>
+<section class="slide" id="s58" data-beat="code" data-steps="0">
+<div class="n">58/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Set a colour</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -917,8 +947,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">delay(1000)</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">Holds the colour for one second, so you can see it.</span></p></div>
 </section>
-<section class="slide" id="s56" data-beat="mission" data-steps="1">
-<div class="n">56/128</div>
+<section class="slide" id="s59" data-beat="mission" data-steps="1">
+<div class="n">59/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Make yellow, then white</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -942,8 +972,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">White.</span></p></div>
 </section>
-<section class="slide" id="s57" data-beat="check" data-steps="1">
-<div class="n">57/128</div>
+<section class="slide" id="s60" data-beat="check" data-steps="1">
+<div class="n">60/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:38.67px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:38.67px;font-weight:700;color:#24140E;">Why does each colour need a PWM pin?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -954,8 +984,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">analogWrite needs a pin marked ~. That is how you set each colour somewhere between off and full on.</span></p></div>
 </section>
-<section class="slide" id="s58" data-beat="cover" data-steps="0">
-<div class="n">58/128</div>
+<section class="slide" id="s61" data-beat="cover" data-steps="0">
+<div class="n">61/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/screen.png);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -964,8 +994,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will print a word on a 16 by 2 screen.</span></p></div>
 </section>
-<section class="slide" id="s59" data-beat="hook" data-steps="1">
-<div class="n">59/128</div>
+<section class="slide" id="s62" data-beat="hook" data-steps="1">
+<div class="n">62/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.53px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:26.53px;font-weight:700;color:#24140E;">The Serial Monitor is on the computer. How can the project show a message on its own?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-screen.png);background-size:cover;background-position:center"></div>
@@ -978,8 +1008,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Four wires: power, ground, and two for the data.</span></p></div>
 </section>
-<section class="slide" id="s60" data-beat="idea" data-steps="0">
-<div class="n">60/128</div>
+<section class="slide" id="s63" data-beat="idea" data-steps="0">
+<div class="n">63/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Two wires carry the message</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -990,8 +1020,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">LiquidCrystal_I2C knows the commands. You include it, then name the screen's address, columns and rows.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">setCursor(column, row) picks the place. print sends the letters. clear wipes the screen.</span></p></div>
 </section>
-<section class="slide" id="s61" data-beat="steps" data-steps="0">
-<div class="n">61/128</div>
+<section class="slide" id="s64" data-beat="steps" data-steps="0">
+<div class="n">64/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Connect the screen</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -1015,8 +1045,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/screen.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s62" data-beat="code" data-steps="0">
-<div class="n">62/128</div>
+<section class="slide" id="s65" data-beat="code" data-steps="0">
+<div class="n">65/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Print two lines</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -1031,8 +1061,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">print</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">Writes the letters from the cursor. clear() wipes both lines before a new reading.</span></p></div>
 </section>
-<section class="slide" id="s63" data-beat="mission" data-steps="1">
-<div class="n">63/128</div>
+<section class="slide" id="s66" data-beat="mission" data-steps="1">
+<div class="n">66/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Show a changing number</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -1056,8 +1086,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">So the old number does not stay on screen.</span></p></div>
 </section>
-<section class="slide" id="s64" data-beat="check" data-steps="1">
-<div class="n">64/128</div>
+<section class="slide" id="s67" data-beat="check" data-steps="1">
+<div class="n">67/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What does setCursor(0, 1) do?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -1068,8 +1098,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">Column 0, row 1. That is the first character on the second line.</span></p></div>
 </section>
-<section class="slide" id="s65" data-beat="cover" data-steps="0">
-<div class="n">65/128</div>
+<section class="slide" id="s68" data-beat="cover" data-steps="0">
+<div class="n">68/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/hook-thermo.png);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -1078,8 +1108,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will read a temperature and a humidity from one sensor.</span></p></div>
 </section>
-<section class="slide" id="s66" data-beat="hook" data-steps="1">
-<div class="n">66/128</div>
+<section class="slide" id="s69" data-beat="hook" data-steps="1">
+<div class="n">69/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:31.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:31.33px;font-weight:700;color:#24140E;">The room can be warm and dry, or warm and damp. How do you measure both?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-thermo.png);background-size:cover;background-position:center"></div>
@@ -1092,8 +1122,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">You ask the library. It gives you two numbers.</span></p></div>
 </section>
-<section class="slide" id="s67" data-beat="idea" data-steps="0">
-<div class="n">67/128</div>
+<section class="slide" id="s70" data-beat="idea" data-steps="0">
+<div class="n">70/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">One pin, two numbers</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -1104,8 +1134,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">A thermistor. Its resistance changes as it warms up. The sensor turns that into a number.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">DHT22 measures a wider range more closely. It is used the same way, with a different type name.</span></p></div>
 </section>
-<section class="slide" id="s68" data-beat="steps" data-steps="0">
-<div class="n">68/128</div>
+<section class="slide" id="s71" data-beat="steps" data-steps="0">
+<div class="n">71/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the DHT11</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -1129,8 +1159,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/hook-thermo.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s69" data-beat="code" data-steps="0">
-<div class="n">69/128</div>
+<section class="slide" id="s72" data-beat="code" data-steps="0">
+<div class="n">72/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Print both readings</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -1145,8 +1175,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">delay(2000)</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">The DHT11 needs about 2 seconds between readings. Faster than that and the number fails.</span></p></div>
 </section>
-<section class="slide" id="s70" data-beat="mission" data-steps="1">
-<div class="n">70/128</div>
+<section class="slide" id="s73" data-beat="mission" data-steps="1">
+<div class="n">73/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Label the lines</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -1170,8 +1200,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">The sensor needs the time.</span></p></div>
 </section>
-<section class="slide" id="s71" data-beat="check" data-steps="1">
-<div class="n">71/128</div>
+<section class="slide" id="s74" data-beat="check" data-steps="1">
+<div class="n">74/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">Why is the reading a float?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -1182,8 +1212,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">int would cut off the decimal. float keeps it.</span></p></div>
 </section>
-<section class="slide" id="s72" data-beat="cover" data-steps="0">
-<div class="n">72/128</div>
+<section class="slide" id="s75" data-beat="cover" data-steps="0">
+<div class="n">75/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/hook-alarm.png);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -1192,8 +1222,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will turn an LED on when a sensor sees movement.</span></p></div>
 </section>
-<section class="slide" id="s73" data-beat="hook" data-steps="1">
-<div class="n">73/128</div>
+<section class="slide" id="s76" data-beat="hook" data-steps="1">
+<div class="n">76/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.93px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:26.93px;font-weight:700;color:#24140E;">A light comes on when you walk in, and not when you stand still. What is it sensing?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-alarm.png);background-size:cover;background-position:center"></div>
@@ -1206,8 +1236,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">It looks for a change in heat.</span></p></div>
 </section>
-<section class="slide" id="s74" data-beat="idea" data-steps="0">
-<div class="n">74/128</div>
+<section class="slide" id="s77" data-beat="idea" data-steps="0">
+<div class="n">77/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">HIGH when the heat moves</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -1218,8 +1248,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">One slot sees the warmer body first, then the other. That difference makes the output HIGH.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">Two small dials: one sets how easily it triggers, one sets how long it stays HIGH.</span></p></div>
 </section>
-<section class="slide" id="s75" data-beat="steps" data-steps="0">
-<div class="n">75/128</div>
+<section class="slide" id="s78" data-beat="steps" data-steps="0">
+<div class="n">78/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the sensor and an LED</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -1243,8 +1273,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/hook-alarm.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s76" data-beat="code" data-steps="0">
-<div class="n">76/128</div>
+<section class="slide" id="s79" data-beat="code" data-steps="0">
+<div class="n">79/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">LED on when it sees you</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -1259,8 +1289,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">LOW</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">No movement. The LED goes off, after the sensor's own timer allows it.</span></p></div>
 </section>
-<section class="slide" id="s77" data-beat="mission" data-steps="1">
-<div class="n">77/128</div>
+<section class="slide" id="s80" data-beat="mission" data-steps="1">
+<div class="n">80/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Find the time dial</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -1284,8 +1314,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">How long the output stays HIGH.</span></p></div>
 </section>
-<section class="slide" id="s78" data-beat="check" data-steps="1">
-<div class="n">78/128</div>
+<section class="slide" id="s81" data-beat="check" data-steps="1">
+<div class="n">81/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">Why is it called passive?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -1296,8 +1326,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">It only receives infrared from warm objects. It does not send anything out.</span></p></div>
 </section>
-<section class="slide" id="s79" data-beat="cover" data-steps="0">
-<div class="n">79/128</div>
+<section class="slide" id="s82" data-beat="cover" data-steps="0">
+<div class="n">82/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/ultrasonic-cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -1306,8 +1336,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will turn an echo time into centimetres.</span></p></div>
 </section>
-<section class="slide" id="s80" data-beat="hook" data-steps="1">
-<div class="n">80/128</div>
+<section class="slide" id="s83" data-beat="hook" data-steps="1">
+<div class="n">83/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:30.13px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:30.13px;font-weight:700;color:#24140E;">You cannot reach the wall with a ruler. How can the board still measure it?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/ultrasonic-parts.png);background-size:cover;background-position:center"></div>
@@ -1320,8 +1350,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Time the echo, then halve it.</span></p></div>
 </section>
-<section class="slide" id="s81" data-beat="idea" data-steps="0">
-<div class="n">81/128</div>
+<section class="slide" id="s84" data-beat="idea" data-steps="0">
+<div class="n">84/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">There and back</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -1332,8 +1362,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">The echo pin stays HIGH until the sound comes back. That time is the whole trip.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">0.034 cm per microsecond is the speed of sound. Divide by 2 because of the return journey.</span></p></div>
 </section>
-<section class="slide" id="s82" data-beat="steps" data-steps="0">
-<div class="n">82/128</div>
+<section class="slide" id="s85" data-beat="steps" data-steps="0">
+<div class="n">85/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the HC-SR04</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -1357,8 +1387,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-dist.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s83" data-beat="code" data-steps="0">
-<div class="n">83/128</div>
+<section class="slide" id="s86" data-beat="code" data-steps="0">
+<div class="n">86/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Centimetres from the echo</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -1373,8 +1403,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">÷ 2</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">The sound went to the object and back. Half of that time is one way.</span></p></div>
 </section>
-<section class="slide" id="s84" data-beat="mission" data-steps="1">
-<div class="n">84/128</div>
+<section class="slide" id="s87" data-beat="mission" data-steps="1">
+<div class="n">87/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Check it with a ruler</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -1398,8 +1428,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">It should be close.</span></p></div>
 </section>
-<section class="slide" id="s85" data-beat="check" data-steps="1">
-<div class="n">85/128</div>
+<section class="slide" id="s88" data-beat="check" data-steps="1">
+<div class="n">88/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">Why do we divide the time by 2?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -1410,8 +1440,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">The measured time is the trip to the object and back. Half of it is the distance once.</span></p></div>
 </section>
-<section class="slide" id="s86" data-beat="cover" data-steps="0">
-<div class="n">86/128</div>
+<section class="slide" id="s89" data-beat="cover" data-steps="0">
+<div class="n">89/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/buzzer-cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -1420,8 +1450,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will tell the two buzzers apart, and play a note.</span></p></div>
 </section>
-<section class="slide" id="s87" data-beat="hook" data-steps="1">
-<div class="n">87/128</div>
+<section class="slide" id="s90" data-beat="hook" data-steps="1">
+<div class="n">90/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:31.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:31.33px;font-weight:700;color:#24140E;">One buzzer beeps as soon as you give it 5 V. The other only clicks. Why?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/buzzer-parts.png);background-size:cover;background-position:center"></div>
@@ -1434,8 +1464,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">One makes its own tone. The other needs you to send it.</span></p></div>
 </section>
-<section class="slide" id="s88" data-beat="idea" data-steps="0">
-<div class="n">88/128</div>
+<section class="slide" id="s91" data-beat="idea" data-steps="0">
+<div class="n">91/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Active makes the tone. Passive does not.</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -1445,8 +1475,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,316,512,32" style="left:680px;top:316px;width:512px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">Passive</span></p></div>
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">It needs a changing signal. tone(pin, frequency) plays a note. noTone(pin) stops it.</span></p></div>
 </section>
-<section class="slide" id="s89" data-beat="steps" data-steps="0">
-<div class="n">89/128</div>
+<section class="slide" id="s92" data-beat="steps" data-steps="0">
+<div class="n">92/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire a passive buzzer</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -1470,8 +1500,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-buzzer.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s90" data-beat="code" data-steps="0">
-<div class="n">90/128</div>
+<section class="slide" id="s93" data-beat="code" data-steps="0">
+<div class="n">93/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Play a note</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -1486,8 +1516,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">523</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">A higher frequency is a higher note. 523 Hz is the C above that A.</span></p></div>
 </section>
-<section class="slide" id="s91" data-beat="mission" data-steps="1">
-<div class="n">91/128</div>
+<section class="slide" id="s94" data-beat="mission" data-steps="1">
+<div class="n">94/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Add a third note</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -1511,8 +1541,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">It plays a higher note.</span></p></div>
 </section>
-<section class="slide" id="s92" data-beat="check" data-steps="1">
-<div class="n">92/128</div>
+<section class="slide" id="s95" data-beat="check" data-steps="1">
+<div class="n">95/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:29.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:29.33px;font-weight:700;color:#24140E;">You connect a buzzer to 5 V and it beeps steadily. Which type is it?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -1523,8 +1553,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">An active buzzer has its own oscillator, so 5 V is enough. A passive one would only click.</span></p></div>
 </section>
-<section class="slide" id="s93" data-beat="cover" data-steps="0">
-<div class="n">93/128</div>
+<section class="slide" id="s96" data-beat="cover" data-steps="0">
+<div class="n">96/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/motor-cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -1533,8 +1563,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will set a motor's speed and direction.</span></p></div>
 </section>
-<section class="slide" id="s94" data-beat="hook" data-steps="1">
-<div class="n">94/128</div>
+<section class="slide" id="s97" data-beat="hook" data-steps="1">
+<div class="n">97/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:34.67px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:34.67px;font-weight:700;color:#24140E;">Why can't a pin power a motor the way it powers an LED?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/motor-parts.png);background-size:cover;background-position:center"></div>
@@ -1547,8 +1577,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">The pin sends the signal. A driver carries the current.</span></p></div>
 </section>
-<section class="slide" id="s95" data-beat="idea" data-steps="0">
-<div class="n">95/128</div>
+<section class="slide" id="s98" data-beat="idea" data-steps="0">
+<div class="n">98/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">An H-bridge can reverse the current</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -1559,8 +1589,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Current flows the other way, so the motor reverses.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">The motor's power comes from a battery pack, not from the Arduino pin. The grounds must be joined.</span></p></div>
 </section>
-<section class="slide" id="s96" data-beat="idea" data-steps="0">
-<div class="n">96/128</div>
+<section class="slide" id="s99" data-beat="idea" data-steps="0">
+<div class="n">99/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Speed and direction are separate</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -1570,8 +1600,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,316,512,32" style="left:680px;top:316px;width:512px;height:32px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">Speed</span></p></div>
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">analogWrite on the enable pin. A higher number means the motor is powered for more of the time.</span></p></div>
 </section>
-<section class="slide" id="s97" data-beat="steps" data-steps="0">
-<div class="n">97/128</div>
+<section class="slide" id="s100" data-beat="steps" data-steps="0">
+<div class="n">100/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the driver</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -1595,8 +1625,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-motor.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s98" data-beat="code" data-steps="0">
-<div class="n">98/128</div>
+<section class="slide" id="s101" data-beat="code" data-steps="0">
+<div class="n">101/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">On, then reverse</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -1611,8 +1641,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">The swap</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">After 2 seconds the two direction pins swap, so the motor reverses.</span></p></div>
 </section>
-<section class="slide" id="s99" data-beat="mission" data-steps="1">
-<div class="n">99/128</div>
+<section class="slide" id="s102" data-beat="mission" data-steps="1">
+<div class="n">102/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Find a slow speed</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -1636,8 +1666,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">Friction. Not enough power yet.</span></p></div>
 </section>
-<section class="slide" id="s100" data-beat="check" data-steps="1">
-<div class="n">100/128</div>
+<section class="slide" id="s103" data-beat="check" data-steps="1">
+<div class="n">103/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What job does the pin do?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -1648,8 +1678,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">The pin tells the driver what to do. The driver, fed by the battery, carries the motor's current.</span></p></div>
 </section>
-<section class="slide" id="s101" data-beat="cover" data-steps="0">
-<div class="n">101/128</div>
+<section class="slide" id="s104" data-beat="cover" data-steps="0">
+<div class="n">104/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/servo-cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -1658,8 +1688,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will send a servo to an angle and have it stay there.</span></p></div>
 </section>
-<section class="slide" id="s102" data-beat="hook" data-steps="1">
-<div class="n">102/128</div>
+<section class="slide" id="s105" data-beat="hook" data-steps="1">
+<div class="n">105/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:29.33px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:29.33px;font-weight:700;color:#24140E;">A normal motor keeps spinning. How do you tell a motor to stop at 90 degrees?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/servo-parts.png);background-size:cover;background-position:center"></div>
@@ -1672,8 +1702,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">You tell it an angle. It moves there and holds.</span></p></div>
 </section>
-<section class="slide" id="s103" data-beat="idea" data-steps="0">
-<div class="n">103/128</div>
+<section class="slide" id="s106" data-beat="idea" data-steps="0">
+<div class="n">106/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">The signal is the angle</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -1684,8 +1714,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Servo hides those pulses. attach(pin) connects it. write(angle) sends the angle.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">Power and ground as usual. The third wire is the signal.</span></p></div>
 </section>
-<section class="slide" id="s104" data-beat="steps" data-steps="0">
-<div class="n">104/128</div>
+<section class="slide" id="s107" data-beat="steps" data-steps="0">
+<div class="n">107/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Connect the servo</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -1709,8 +1739,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-servo.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s105" data-beat="code" data-steps="0">
-<div class="n">105/128</div>
+<section class="slide" id="s108" data-beat="code" data-steps="0">
+<div class="n">108/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Go to 90, then to 180</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -1725,8 +1755,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">write(90)</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">Go to 90 degrees and hold. write does not set a speed.</span></p></div>
 </section>
-<section class="slide" id="s106" data-beat="mission" data-steps="1">
-<div class="n">106/128</div>
+<section class="slide" id="s109" data-beat="mission" data-steps="1">
+<div class="n">109/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Sweep slowly</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -1750,8 +1780,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">It sets how fast the arm moves.</span></p></div>
 </section>
-<section class="slide" id="s107" data-beat="check" data-steps="1">
-<div class="n">107/128</div>
+<section class="slide" id="s110" data-beat="check" data-steps="1">
+<div class="n">110/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What do you send a servo?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -1762,8 +1792,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">write(90) tells it the position. It moves there and holds. You are not sending a speed.</span></p></div>
 </section>
-<section class="slide" id="s108" data-beat="cover" data-steps="0">
-<div class="n">108/128</div>
+<section class="slide" id="s111" data-beat="cover" data-steps="0">
+<div class="n">111/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/stepper-cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -1772,8 +1802,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will move a motor by a set number of steps.</span></p></div>
 </section>
-<section class="slide" id="s109" data-beat="hook" data-steps="1">
-<div class="n">109/128</div>
+<section class="slide" id="s112" data-beat="hook" data-steps="1">
+<div class="n">112/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#24140E;">A DC motor spins, but you do not know how far it has turned. How can a motor move by a set angle?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/stepper-parts.png);background-size:cover;background-position:center"></div>
@@ -1786,8 +1816,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">You say how many steps. Each step is a known angle.</span></p></div>
 </section>
-<section class="slide" id="s110" data-beat="idea" data-steps="0">
-<div class="n">110/128</div>
+<section class="slide" id="s113" data-beat="idea" data-steps="0">
+<div class="n">113/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Energise the coils in order</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -1798,8 +1828,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">The coils need more current than a pin can give. A driver, such as a ULN2003, carries that current.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">In Tinkercad the driver you have may be an L293D. The idea is the same.</span></p></div>
 </section>
-<section class="slide" id="s111" data-beat="steps" data-steps="0">
-<div class="n">111/128</div>
+<section class="slide" id="s114" data-beat="steps" data-steps="0">
+<div class="n">114/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Wire the driver</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -1823,8 +1853,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/tinkercad-stepper.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s112" data-beat="code" data-steps="0">
-<div class="n">112/128</div>
+<section class="slide" id="s115" data-beat="code" data-steps="0">
+<div class="n">115/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Turn 100 steps</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:552px;height:534px;background:#FBF1E7;"></div>
@@ -1839,8 +1869,8 @@ body.play .present{display:none}
 <div class="tx" data-box="685,518,509,30" style="left:685px;top:518px;width:509px;height:30px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:23.33px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:23.33px;font-weight:500;color:#000000;">step(100) and step(-100)</span></p></div>
 <div class="tx" data-box="685,553,509,102" style="left:685px;top:553px;width:509px;height:102px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:19.33px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:19.33px;font-weight:400;color:#000000;">100 steps one way, then 100 steps back. A negative number reverses the direction.</span></p></div>
 </section>
-<section class="slide" id="s113" data-beat="mission" data-steps="1">
-<div class="n">113/128</div>
+<section class="slide" id="s116" data-beat="mission" data-steps="1">
+<div class="n">116/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Turn a quarter of a circle</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -1864,8 +1894,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">512.</span></p></div>
 </section>
-<section class="slide" id="s114" data-beat="check" data-steps="1">
-<div class="n">114/128</div>
+<section class="slide" id="s117" data-beat="check" data-steps="1">
+<div class="n">117/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What is one step?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -1876,8 +1906,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">One step is one fixed turn of the shaft. Count the steps and you know the angle.</span></p></div>
 </section>
-<section class="slide" id="s115" data-beat="cover" data-steps="0">
-<div class="n">115/128</div>
+<section class="slide" id="s118" data-beat="cover" data-steps="0">
+<div class="n">118/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/esp32-cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -1886,8 +1916,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will say what an ESP32 adds, and how you prepare the IDE.</span></p></div>
 </section>
-<section class="slide" id="s116" data-beat="hook" data-steps="1">
-<div class="n">116/128</div>
+<section class="slide" id="s119" data-beat="hook" data-steps="1">
+<div class="n">119/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:25.73px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:25.73px;font-weight:700;color:#24140E;">The Uno has to borrow a shield to reach Wi-Fi. What if the radio is already on the chip?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/esp32-parts.png);background-size:cover;background-position:center"></div>
@@ -1900,8 +1930,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Wi-Fi and Bluetooth are already on it.</span></p></div>
 </section>
-<section class="slide" id="s117" data-beat="idea" data-steps="0">
-<div class="n">117/128</div>
+<section class="slide" id="s120" data-beat="idea" data-steps="0">
+<div class="n">120/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">You still write a sketch. You tell the IDE about the new board first.</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -1912,15 +1942,15 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">Choose the matching board, such as ESP32 Wrover Module for the camera board, and the right port.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">The camera example is CameraWebServer. You uncomment the board you actually have, and comment out the others.</span></p></div>
 </section>
-<section class="slide" id="s118" data-beat="picture" data-steps="0">
-<div class="n">118/128</div>
+<section class="slide" id="s121" data-beat="picture" data-steps="0">
+<div class="n">121/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">What is on the ESP32-CAM</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:64px;top:143px;width:1149px;height:467px;background-image:url(assets/img/esp32-parts.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="64,624,1149,34" style="left:64px;top:624px;width:1149px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">The ESP32 chip, a camera, a reset button, and an aerial. It still has pins you can wire.</span></p></div>
 </section>
-<section class="slide" id="s119" data-beat="steps" data-steps="0">
-<div class="n">119/128</div>
+<section class="slide" id="s122" data-beat="steps" data-steps="0">
+<div class="n">122/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Get one sketch onto it</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -1944,8 +1974,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/esp32-cover.jpg);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s120" data-beat="mission" data-steps="1">
-<div class="n">120/128</div>
+<section class="slide" id="s123" data-beat="mission" data-steps="1">
+<div class="n">123/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Find the address</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -1969,8 +1999,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">The camera picture.</span></p></div>
 </section>
-<section class="slide" id="s121" data-beat="check" data-steps="1">
-<div class="n">121/128</div>
+<section class="slide" id="s124" data-beat="check" data-steps="1">
+<div class="n">124/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:32.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:32.00px;font-weight:700;color:#24140E;">What does an ESP32 have that an Uno does not?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -1981,8 +2011,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:821px;top:398px;width:134px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="821,434,405,130" style="left:821px;top:434px;width:405px;height:130px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">The radio is on the chip. An ESP32-CAM also has a camera. You still write a sketch.</span></p></div>
 </section>
-<section class="slide" id="s122" data-beat="cover" data-steps="0">
-<div class="n">122/128</div>
+<section class="slide" id="s125" data-beat="cover" data-steps="0">
+<div class="n">125/131</div>
 <div class="sh" style="left:0px;top:0px;width:1280px;height:720px;background:#E3B08E;"></div>
 <div class="sh img" style="left:0px;top:0px;width:1280px;height:720px;background-image:url(assets/img/cover.jpg);background-size:cover;background-position:center"></div>
 <div class="sh" style="left:64px;top:133px;width:653px;height:406px;background:#E3B08E;"></div>
@@ -1991,8 +2021,8 @@ body.play .present{display:none}
 <div class="sh" style="left:107px;top:417px;width:284px;height:7px;background:#1E4D48;"></div>
 <div class="tx" data-box="107,462,500,60" style="left:107px;top:462px;width:500px;height:60px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:26.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:26.67px;font-weight:500;color:#2A1A12;">By the end you will explain how a solar cell makes a voltage.</span></p></div>
 </section>
-<section class="slide" id="s123" data-beat="hook" data-steps="1">
-<div class="n">123/128</div>
+<section class="slide" id="s126" data-beat="hook" data-steps="1">
+<div class="n">126/131</div>
 <div class="tx" data-box="64,44,1152,46" style="left:64px;top:44px;width:1152px;height:46px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:24.00px;line-height:1.06"><span style="font-family:'Fira Sans';font-size:24.00px;font-weight:700;color:#24140E;">A calculator has no battery you can see, but it still switches on in the light. Where is the electricity coming from?</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh img" style="left:88px;top:172px;width:315px;height:250px;background-image:url(assets/img/hook-lamp.png);background-size:cover;background-position:center"></div>
@@ -2005,8 +2035,8 @@ body.play .present{display:none}
 <div class="sh" style="left:64px;top:608px;width:1216px;height:64px;background:#F2C04A;"></div>
 <div class="tx rv" data-step="1" data-box="88,624,1128,34" style="left:88px;top:624px;width:1128px;height:34px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:700;color:#000000;">Light frees electrons. The cell sends them one way.</span></p></div>
 </section>
-<section class="slide" id="s124" data-beat="idea" data-steps="0">
-<div class="n">124/128</div>
+<section class="slide" id="s127" data-beat="idea" data-steps="0">
+<div class="n">127/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Two layers, and light</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -2017,8 +2047,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">A bright enough particle of light frees an electron. The junction's electric field sends that electron one way only.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">A diode is the same junction used as a one-way gate. A solar cell uses it to separate charges.</span></p></div>
 </section>
-<section class="slide" id="s125" data-beat="idea" data-steps="0">
-<div class="n">125/128</div>
+<section class="slide" id="s128" data-beat="idea" data-steps="0">
+<div class="n">128/131</div>
 <div class="tx" data-box="64,45,1152,44" style="left:64px;top:45px;width:1152px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.0"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Light is not a steady supply</span></p></div>
 <div class="sh" style="left:64px;top:110px;width:380px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:143px;width:560px;height:300px;background:#F2C04A;"></div>
@@ -2029,8 +2059,8 @@ body.play .present{display:none}
 <div class="tx" data-box="680,356,512,84" style="left:680px;top:356px;width:512px;height:84px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#2A1A12;">It charges a 3.7 V battery from the cell or from USB, and gives a steady 5 V out to the project.</span></p></div>
 <div class="tx" data-box="64,664,1216,26" style="left:64px;top:664px;width:1216px;height:26px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#4E2E1F;">A protection chip stops the battery being charged too far, or emptied too far.</span></p></div>
 </section>
-<section class="slide" id="s126" data-beat="steps" data-steps="0">
-<div class="n">126/128</div>
+<section class="slide" id="s129" data-beat="steps" data-steps="0">
+<div class="n">129/131</div>
 <div class="tx" data-box="64,50,636,44" style="left:64px;top:50px;width:636px;height:44px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Follow the power</span></p></div>
 <div class="sh" style="left:64px;top:115px;width:178px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:146px;width:197px;height:34px;background:#DAF1EE;"></div>
@@ -2054,8 +2084,8 @@ body.play .present{display:none}
 <div class="sh img" style="left:800px;top:48px;width:448px;height:560px;background-image:url(assets/img/board-small.png);background-size:contain;background-position:center"></div>
 <div class="tx" data-box="800,628,448,40" style="left:800px;top:628px;width:448px;height:40px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:18.67px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:18.67px;font-weight:500;color:#000000;">Use the live Tinkercad menus.</span></p></div>
 </section>
-<section class="slide" id="s127" data-beat="mission" data-steps="1">
-<div class="n">127/128</div>
+<section class="slide" id="s130" data-beat="mission" data-steps="1">
+<div class="n">130/131</div>
 <div class="tx" data-box="64,52,741,64" style="left:64px;top:52px;width:741px;height:64px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:36.00px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:36.00px;font-weight:700;color:#24140E;">Say it in one sentence</span></p></div>
 <div class="sh" style="left:64px;top:120px;width:245px;height:7px;background:#1E4D48;"></div>
 <div class="sh" style="left:64px;top:196px;width:47px;height:47px;background:#F2C04A;"></div>
@@ -2079,8 +2109,8 @@ body.play .present{display:none}
 <div class="sh rv" data-step="1" style="left:891px;top:437px;width:116px;height:7px;background:#1E4D48;"></div>
 <div class="tx rv" data-step="1" data-box="891,466,389,92" style="left:891px;top:466px;width:389px;height:92px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:22.67px;line-height:1.3"><span style="font-family:'Fira Sans';font-size:22.67px;font-weight:400;color:#000000;">A store of energy.</span></p></div>
 </section>
-<section class="slide" id="s128" data-beat="check" data-steps="1">
-<div class="n">128/128</div>
+<section class="slide" id="s131" data-beat="check" data-steps="1">
+<div class="n">131/131</div>
 <div class="tx" data-box="64,190,704,24" style="left:64px;top:190px;width:704px;height:24px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:20.00px;line-height:1.0"><span style="font-family:'Fira Sans Condensed';font-size:20.00px;font-weight:500;color:#24140E;letter-spacing:2.80px;">CHECK</span></p></div>
 <div class="tx" data-box="64,222,704,66" style="left:64px;top:222px;width:704px;height:66px;justify-content:flex-start;padding:0 0px"><p style="text-align:left;margin-top:0.0px;margin-bottom:0.0px;font-size:45.33px;line-height:1.05"><span style="font-family:'Fira Sans';font-size:45.33px;font-weight:700;color:#24140E;">What does the junction do?</span></p></div>
 <div class="sh" style="left:64px;top:299px;width:211px;height:7px;background:#1E4D48;"></div>
@@ -2221,6 +2251,7 @@ body.play .present{display:none}
   });
 
   addEventListener('click', e => {
+    if (e.target.closest('a, iframe, .vid')) return;
     if (playing) { e.shiftKey ? back() : forward(); return; }
     // outside the slideshow, clicking a slide with a hidden answer reveals it
     const el = e.target.closest('.slide');
